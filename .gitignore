@@ -1,0 +1,10 @@
+# 环境变量与密钥文件
+.env
+env
+**/env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
