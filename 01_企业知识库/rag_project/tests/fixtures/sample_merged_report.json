@@ -1,0 +1,13 @@
+{
+  "metainfo": {
+    "sha1": "abc123deadbeef",
+    "doc_id": "2021-KS-0017",
+    "doc_title": "D06单元控规调整"
+  },
+  "content": {
+    "pages": [
+      {"page": 1, "text": "第一章 总则\n本规划针对D06单元。"},
+      {"page": 5, "text": "用地性质包括二类居住用地、商业用地。"}
+    ]
+  }
+}

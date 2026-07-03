@@ -1,0 +1,28 @@
+{
+  "metainfo": {
+    "sha1": "abc123deadbeef",
+    "doc_id": "2021-KS-0017",
+    "doc_title": "D06单元控规调整",
+    "file_name": "2021-Ⅰ-KS-0017   D06单元控规调整.pdf",
+    "project_code": "2021-Ⅰ-KS-0017",
+    "year": 2021,
+    "region": "昆山市",
+    "doc_type": "控规调整"
+  },
+  "content": {
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "page": 5,
+        "text": "用地性质包括二类居住用地、商业用地。",
+        "image_paths": ["debug_data/04_page_images/abc123deadbeef/page_005.png"]
+      },
+      {
+        "chunk_index": 1,
+        "page": 6,
+        "text": "道路交通组织以主干路为骨架。",
+        "image_paths": []
+      }
+    ]
+  }
+}
