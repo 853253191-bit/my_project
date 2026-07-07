@@ -1,0 +1,42 @@
+[project]
+name = "manus"
+version = "0.1.0"
+description = "Manus 产业链投研 Agent"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0.0",
+    "httpx>=0.27.0",
+    "feedparser>=6.0.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "chromadb>=0.5.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+    "tushare>=1.4.0",
+    "loguru>=0.7.0",
+    "jinja2>=3.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=5.0.0",
+    "httpx>=0.27.0",
+    "click>=8.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning"]

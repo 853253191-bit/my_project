@@ -1,0 +1,9 @@
+config/config.toml
+src/manus/rag/store/
+runs/
+output/reports/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

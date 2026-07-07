@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manus 产业链投研</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Manus 产业链投研 Agent</h1>
+    <p>逐步确认工作流 · step0～5</p>
+  </header>
+  <main>
+    <section id="progress">
+      <div class="steps" id="step-bar"></div>
+    </section>
+    <section id="live-log-panel">
+      <h2>实时处理过程</h2>
+      <div id="event-log" class="event-log"></div>
+    </section>
+    <section id="approval-panel">
+      <h2>步骤确认</h2>
+      <p id="status-msg" class="status-msg"></p>
+      <div id="hints" class="hints hidden"></div>
+      <div id="output"></div>
+      <div class="actions">
+        <button id="btn-proceed">满意，下一步</button>
+        <button id="btn-rerun">重跑本步</button>
+        <button id="btn-change" style="display:none">重选方向</button>
+      </div>
+    </section>
+    <section id="report-panel" class="hidden">
+      <h2>研究报告</h2>
+      <pre id="report-md"></pre>
+    </section>
+  </main>
+  <script src="/static/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2167 @@
+{
+  "user": "aleabitoreddit",
+  "source_url": "https://x.com/aleabitoreddit/superfollows",
+  "scraped_at": "2026-07-07T03:41:47.626559+00:00",
+  "total": 164,
+  "posts": [
+    {
+      "tweet_id": "2073738179338019282",
+      "url": "https://x.com/aleabitoreddit/status/2073738179338019282",
+      "author": "宁静号",
+      "created_at": "2026-07-05T11:58:04.000Z",
+      "text": "只是关于波士顿动力+类人生物+汽车玩家的高级方向思考：\n\n至于他们的“投机供应商”：\n\n三星电机 /\n$INTC\nLG Innotek视觉感测组件集成到Atlas中\n三星电子 / Sk 海力士 /\n$MU\n- 记忆\n$NVDA\n- Jetson Thor 计算",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HMdl4NSbcAAErX_?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HMdl4NQawAA4t0Z?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:32:31.957831+00:00",
+      "is_article": false,
+      "char_count": 130
+    },
+    {
+      "tweet_id": "2072930633811419601",
+      "url": "https://x.com/aleabitoreddit/status/2072930633811419601",
+      "author": "Serenity",
+      "created_at": "2026-07-03T06:29:10.000Z",
+      "text": "This is a conspiracy theory of mine: but Jensen hates \n$AVGO\n. \n\nFeels like all of \n$NVDA\n allied ASIC challengers…\n\n \n$MRVL\n, Mediatek, AlChip, GUC (nvlink) and others are all slowly chipping away Broadcom’s ASIC share.\n\nThis is done discretely with Nvidia support.\n\nJust like Neoclouds offerings last year as a defacto extension to place create moat against CSPs custom ASICs with Nvidia’s ecosystem. \n\nObviously overall ASIC market goes up, but many of these challengers feel like they’re taking on more hyperscaler-adjacent projects. Probably supported by Nvidia.. \n\nNFA think this would be an interesting 2 year trade opportunity, but IMO past 2030, I’d expect many like Google to bring design in house.\n\nNvidia clearly is the kingmaker… so anything they kinda touch gets brought up such as that next Marvell $1T company comment.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:32:35.199336+00:00",
+      "is_article": true,
+      "char_count": 834
+    },
+    {
+      "tweet_id": "2071870184047198575",
+      "url": "https://x.com/aleabitoreddit/status/2071870184047198575",
+      "author": "Serenity",
+      "created_at": "2026-06-30T08:15:20.000Z",
+      "text": "So I come across random bottlenecks here and there:\n\nPump lasers / packaging was one of them, with claims it’s a more severe bottleneck than EML.\n\nFor example in Korea: RF materials (327260) is apparently sole source to \n$LITE\n in this specific bottleneck.\n\nBecause of Chinese exclusion.\n\nAnother personal heuristic I’ve experienced from bottleneck investing:\n\nIs it needs to take down an entire industry like \n$AXTI\n for it to be rerated thousands of percent? Rather than material revenue increase then a 2x.\n\nSo if they were supplying to \n$COHR\n and other EML players (they work with coherent too but for something unrelated) I would have seen more value?\n\nThink Kyocera was Coherent’s supplier for this chokepoint.\n\nFeels like markets don’t care about small specific upstream bottlenecks to one or two suppliers Japanese companies to \n$KLAC\n or optical components (at least yet).\n\nAlso I’m not a fan of Korean markets given extreme volatility so not adding more asset in that market personally now. (Don’t have positions)",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HMDC8lNWQAAqlVA?format=jpg&name=900x900",
+        "https://pbs.twimg.com/media/HMDC8lLXYAA08sn?format=jpg&name=900x900"
+      ],
+      "scraped_at": "2026-07-07T03:32:39.288261+00:00",
+      "is_article": true,
+      "char_count": 1024
+    },
+    {
+      "tweet_id": "2070851932147880042",
+      "url": "https://x.com/aleabitoreddit/status/2070851932147880042",
+      "author": "Serenity",
+      "created_at": "2026-06-27T12:49:09.000Z",
+      "text": "Just some random notes : \n\nThe upstream MLCC bottleneck stack looks like this:\n\nMLCC-grade BaTiO₃ / dielectric powder\n- Sakai Chemical (40%), Nippon Chemica, Fuji Titanium / MF Material, Sinocera\n\nkinda important too:\nhigh purity Ni powder and Ni internal-electrode paste\n- Shoei Chemical, JFE Mineral, Toho Titanium, Sumitomo Metal Mining, Daiken Chemical\n\nOther:\nDy/Y/Ho/Gd rare-earth dopants and high-purity oxide additives\n- Solvay (purity oxide additives/dopants), Shin‑Etsu, Mitsui Mining, Lynas Rare Earths, etc.\n\nmisc: \n\nsilicon capacitors- AP memory, SEMCO, murata just looking into them vs. mlcc\n\nPMICs (TI, Infineon, Renesas, Analog Devices, MPS, ON Semi, NXP)\n\nBMCs - Aspeed: ~$18.5B MC: BMCs. around 70% global BMC share (very interesting)\n\nThen China indium metal export controls kinda like Wf6 if anything goes down:\n\n- InGaAs, InAs, InSb, InGaP, AlInGaP, InGaN, infrared detectors, LEDs, VCSELs, CPV, sensors, epitaxy source materials, and MOCVD precursors.\n\nNon-China refined indium producers: Korea Zinc/Young Poong, DOWA/Mitsui/JX/Sumitomo Japan type companies, Teck obvious just substitute trade \n\nStockpile suppliers: eg. companies sitting on a bunch, kinda like RPI hoarding memory then benefiting later on\n\n-ITO substitutes: (antimony tin oxide, carbon nanotubes, PEDOT conductive polymers, silver/copper nanowires, graphene, and zinc oxide nanopowder)?\n\ncause Indium Tin Oxide is largest volume use of indium. \n\nso smartphone, TV, and automotive display manufacturing might have troubles lol. \n\nAlready covered China export controls quite a bit with InP substrates and \n$AXTI\n, I'm just trying to guess what happens with indium metal export controls next. \n\nIdk yet still looking",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:32:43.115108+00:00",
+      "is_article": true,
+      "char_count": 1703
+    },
+    {
+      "tweet_id": "2070731304241606694",
+      "url": "https://x.com/aleabitoreddit/status/2070731304241606694",
+      "author": "Serenity",
+      "created_at": "2026-06-27T02:36:01.000Z",
+      "text": "So just the humanoid high level so far overview from investor decks.\n\nFor agility robotics: \n- Digit V5: can lift 50 pounds lift (Up 50% from v4)\n- 10:1 charge ratio  (2.5x higher)\n- 22H battery output (+35%)\n- 7.2 ft vertical reach (up 30% from v4)\n(NVIDIA Halos / IGX Thor / Halos Core integration for safety specs)\n\nProprietary:\n- Actuators, Modular end effectors, sensors, battery, control platform. \n\nThey have \"Robofab\" - 10k annual production robots right now and US domestic supply chains. \n\nBOM is ~$125K but they're projecting that to go down actually to looks like ~20k? At 10k units/year. \n\nOn the software side: They're working with \n$GOOGL\n Deepmind + \n$NVDA\n for initial intelligence/reasoning intents. Then trained models for task execution, multi-humanoid coordination is done by Agility. \n\nNormally you'd expect these humanoid companies to be mostly hype/precommercial.\n\nBut it's extremely impressive they have mass production setup + early stage commercial validation. Kinda reminds me of the humanoid version of \n$RKLB\n (like early success with reusable rockets).\n\nAs a worker in manufacturing, humanoids have it of potential. Not sure on this one though, my money is still on Elon pulling off Optimus. I’d like  to see some videos and specs on this company your speaking of",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HLyzTpxaAAIuKGW?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HLyz0gwa0AANy0u?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HLy0iQUbgAA0_eZ?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HLy1EbmaoAAX7zm?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:32:47.421718+00:00",
+      "is_article": true,
+      "char_count": 1294
+    },
+    {
+      "tweet_id": "2070695321060188540",
+      "url": "https://x.com/aleabitoreddit/status/2070695321060188540",
+      "author": "Serenity",
+      "created_at": "2026-06-27T02:26:50.000Z",
+      "text": "I'm actually excited for the United States gets its first pure play Humanoid public company!\n\nAt a personally compelling valuation like Unitree's $6.5B (they're IPOing at $2.5B)\n\nThat I personally invested in Agility Robotics. Couple days ago when they first announced it. \n\n\n$CCXI\n is the current name -> ticker change $AGLT on IPO\n\nIt's IPOing ~September per news sources, so around 3M from now, so a lot of waiting time, but less so than $WLAC / \n$BRUN\n. \n\nAs a TLDR rundown of what I've found so far + my thoughts:\n\nIt's a very commercializable humanoid (eg. warehouses, delivery, etc),  compared to others like Figure (~$49B) that are general purpose.\n\nAnd I personally heavily favor application-specific ones for workforce automation, that can step-function into becoming general purpose.\n\nIPO valuation is ~$2.5B, but since it's trading as a holding company now and is up a decent amount, it's roughly ~$4.4B pro forma last I checked. \n\nIn terms of dilution, there's a 180 day lockup period, which is a very green flag for SPAC structures. \n\nIn terms of fundamentals:\n\n- \"Agility also says it has $300M+ of multi-year Digit v5 orders and a pipeline of 30+ customers\"\n- \"65,000+ operating hours\"\n- GXO, Schaeffler, Toyota Motor Manufacturing Canada, and Mercado Libre  as external customers, with Amazon and others testing it\n\nSo it’s definitely not vaporware/promises, and is actually commercializable. \n\nTheir investor list includes:\n\n$NVDA\n, Foxconn, \n$AMZN\n, Softbank + others.\n\nAs for warnings: current BOM is ~$125k+ since they claim 75% of components are sourced from US, but they're trying to get that down to $50K.\n\nSo there is US scarcity, compared to Optimus where large part of BOM is  China suppliers. \n\nThere's also a chance the SPAC gets canceled + filings get delayed past Nov.\n\nThat being said I'm just sharing the IPO news and personal thoughts. Probably going to do more research this weekend, but I'm very excited. \n\nIt kinda feels like ChatGPT when it first got announced (infancy), but the technology scaled up really fast over 2-3 years.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HLyWaVcbQAAcBUV?format=jpg&name=900x900",
+        "https://pbs.twimg.com/media/HLyWaVZbUAA7014?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HLyWaVYa8AEY9QX?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:32:51.088397+00:00",
+      "is_article": true,
+      "char_count": 2066
+    },
+    {
+      "tweet_id": "2069981824885887060",
+      "url": "https://x.com/aleabitoreddit/status/2069981824885887060",
+      "author": "Serenity",
+      "created_at": "2026-06-25T02:20:01.000Z",
+      "text": "Just from my personal experiences:\n\nMy new heuristic is markets tend to price things in ~8 months in advance unless your theme is Space, Robotics/Quantum.\n\nFor themes I'm tracking:\n\nFor photonics:\n- Next-gen pluggables (1.6T) are right around now (ex. \n$LITE\n, \n$COHR\n, Innolight, etc. then \n$AAOI\n, \n$JBL\n 1.6T LRO and other later bloomers H1 2027).\n- CPO Scale Out related stuff is late H2 2026 (ex. \n$POET\n, Shunsin, etc)\n- NPO stuff H2 2026/2027 prob as bridge architectures\n- CPO Scale Up H2 2027 (ex. Ayar, Celestial, etc).\n\nIf I use the 8 month rule like 4 months too early for CPO Scale Up Names.\n\nBut in hindsight, I wanted to be early this time around given I felt this was the most compelling architectural shift given GS tam projections + markets seem to disagree, which is why there's a selloff with Foci/MSScorp and others.\n\nMaybe it should start picking up again and start to be priced in December 2026 IG? idk we'll see. \n\nStuff like lasers, \n$AXTI\n (InP substrates) are used across all those themes. FAU/silicon photonics/PCB midplanes, etc. are more concentrated around different architectures.\n\nMemory theme is quite a massive bottleneck as you've been seeing:\n\n- HBM3e around now as you've seen with Micron, Samsung, Sk Hynix etc. and NAND with Sandisk.\n- HBM4 mass production right around now too with SK Hynix, Micron/Samsung.\n- HBF 2027?\n\nBut again these are the same Kioxia, Samsung, Sk Hynix, \n$MU\n, Kioxia players across different architectures, and we're seeing re-rating cause we're mid-bottleneck.\n\nSo these are likely to keep compounding. \n\nGlass Substrates:\nH2 2026 start with SKC Absolics (probably just early stage ramp).\nH2 2027 - 2028 is where the fun begins, with 2028 TSM CoPoS, others like Samsung etc. 2027. and Intel later on.\n\nHumanoid Suppliers:\nVery early, but as I said with Space markets probably won't wait to price this in with Elon giving bullish \n$TSLA\n optimus projections and Chinese humanoid companies like Unitree/AGI Bot starting to ramp up.\n\nNeoclouds:\nI said this was probably the buildout period for many of the players and Q4 2026 earnings is when some of the leaders typically hit inflection.\n\nMaybe was a bit early focusing so hard H4 2025 last year.\n\nLike with \n$NBIS\n $7-9B ARR, that ARR proj should hit Q4 earnings. If we apply that ~8M rule, Jan/Feb was very depressing, but should have bought in March 2026 rather than Sept last year. But as you've seen recently, markets might be pricing in Feb 2027 window.\n\nSo I'm personally probably going to repositioning right now around:\n- Memory\n- Neoclouds\n- Photonics\n- Robotics\n\nProbably heavier when something is ~8m in advance or captures many different themes eg. $SIVE for pluggable, NPO, CPO, and all architectures.\n\nAnd just having exposure to mini-shifts in between like advanced packaging materials, hybrid bonding for memory, or random bottlenecks like MLCCs.\n\nI probably shouldn't have heavy exposure to something way out 12M+ if I rethink my decisions.\n\nAlso something to note is machine suppliers in general hit revenue faster than the general volume ramp, since your main companies like Samsung, Absolics, etc. need machines to get going in the first place. Which is why I ended up getting $LPK positions personally.\n\nI should probably use follow my personal 8 rule to the T myself since I probably was a little too early to many names.\n\nThose are just my own experiences tho I'm learning along the way.\n\nMaybe you'll come up with your own rule of thumbs to make allocation/weighting decisions.\n\nI’m curious how you think about timing of entry and allocation relative to timing. For example with CPO being expected to ramp mid 2027 is it best to hold smaller allocation in the meantime or when do you go heavy on the theme?",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:32:54.532878+00:00",
+      "is_article": true,
+      "char_count": 3745
+    },
+    {
+      "tweet_id": "2069483291158385112",
+      "url": "https://x.com/aleabitoreddit/status/2069483291158385112",
+      "author": "Serenity",
+      "created_at": "2026-06-23T18:10:40.000Z",
+      "text": "Swing/recovery trading is always a fun side hobby. If I had to make a \"beaten down\" shower thought list in the US rn:\n\n- \n$CRCL\n $78: Rate hikes actually benefit this name, down from $132 -> $78.\n- \n$NFLX\n $71 - Down 41.6% over the past year. Probably just no banger shows like Squid",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:32:57.438561+00:00",
+      "is_article": false,
+      "char_count": 283
+    },
+    {
+      "tweet_id": "2069044528435318979",
+      "url": "https://x.com/aleabitoreddit/status/2069044528435318979",
+      "author": "Serenity",
+      "created_at": "2026-06-22T13:07:11.000Z",
+      "text": "Just found this interesting around top 10 fastest growth TW IC companies if anyone wanted to take a deeper look. \n\nEtron was the most interesting so far. (DRAM, DDR4, KGD/KGDM, networking memory).\n\n605.5% Y/Y growth is just staggering . Annualized net income, roughly 12.5x P/E. \n\nNo positions in any of these so far, just wanted to share.\n\n(Phison was an older one, AP memory should be a very promising long that was qualified in Intel's EMIB supply chains earlier).",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HLawcmYaAAAa2mo?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:00.706447+00:00",
+      "is_article": true,
+      "char_count": 467
+    },
+    {
+      "tweet_id": "2068501485546303853",
+      "url": "https://x.com/aleabitoreddit/status/2068501485546303853",
+      "author": "Serenity",
+      "created_at": "2026-06-21T01:09:19.000Z",
+      "text": "This is the first time I’ve heard the name organ-on-chip and it sounds kinda gross.\n\nApparently this is going through an explosive growth cycle from Nvidia’s biomedical push?\n\nAnother rabbit hole for the weekend I guess.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HLTLIrfbAAAJcJ2?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HLTLIreacAA7dHV?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:03.627690+00:00",
+      "is_article": true,
+      "char_count": 220
+    },
+    {
+      "tweet_id": "2067100222778704207",
+      "url": "https://x.com/aleabitoreddit/status/2067100222778704207",
+      "author": "Serenity",
+      "created_at": "2026-06-17T04:21:12.000Z",
+      "text": "So I’m reading about an activist report about WUS (2316) right now from Palliser.\n\nI actually thought their report was super compelling… that I decided to follow along and buy in as well. (not my idea this time, I own shares, had to change some weightings around to add this in).\n\nBasically WUS Taiwan owns 11.3% of Kunshan (which is 45% Nvidia AI switch PCB share from their ests.).\n\nWUS TW is valued ~$1B, probably from their own standalone PCB business, which does around $120M revenue, with AI growth ahead.\n\nThat stake of WUS Kunshan is worth around $4-4.3B MC.\n\nAfter tax it’s around $3.2B, which by itself is 3-4x the current business value.\n\nAnd they’re trying to pressure management to unlock that value.\n\nI looked at WUS for PCB exposure earlier, and thought it was an interesting idea but didn’t know about ownership.\n\nAnd this should derisk downside quite a bit. \n\nMain risk is that is management ignores them completely, but don’t think it will be completely ignored like Snapchat. \n\nMaybe some middle ground like selling 1/3rd stake?\n\nApparently it’s some family business that’s stubborn but feel like activists can do some work.\n\nAnyway just doing research into this now sharing my findings.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HK_QrvhaYAAeR7Y?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HK_QrvjboAAWAQv?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:33:06.687470+00:00",
+      "is_article": true,
+      "char_count": 1206
+    },
+    {
+      "tweet_id": "2065347103417897423",
+      "url": "https://x.com/aleabitoreddit/status/2065347103417897423",
+      "author": "Serenity",
+      "created_at": "2026-06-12T08:14:56.000Z",
+      "text": "So doing research into some random \n$TSM\n, SK Hynix, SMIC, type bottleneck. \n\nnot familiar with WF₆ but Peric Special Gases (SHA: 688146) is main benefiary. \n\nTLDR: China -> Tungsten export controls (60-70% of Wf6 costs)\n-> Needed for DRAM/NAND\n-> Japan (35% of capacity)\n-> South Korea 20% of cpacity\n\n\"Japan’s Kanto Denka Kogyo and Central Glass had warned South Korean  chipmakers such as Samsung Electronics and DB HiTek of potential WF₆  supply disruptions\"\n\nChemNet reports that Kanto Denka and Central Glass are expected to permanently halt production starting July 2026.\n\n\"WF₆ is a critical precursor gas applied in DRAM, NAND,\"\n\nPeric Special Gases entered the supply chains of leading global foundries and memory makers, including \n$TSM\n, Samsung, SMIC.\n\nSo usually you can just invest in the main \n$AXTI\n type beneficary... \n\nOr go the other route of looking at other players that can make up for supply gaps in western supply chains\n\nI was doing too much research into inp substrates that i forgot about Tungsten third order effects i guess... \n\nBy the time news publishes something, kinda on the later end but helpful to see if there's any ripple effect anywhere",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HKmVPoMbMAAaO48?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HKmV736a8AAwYGa?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:09.930482+00:00",
+      "is_article": true,
+      "char_count": 1175
+    },
+    {
+      "tweet_id": "2065039294126030906",
+      "url": "https://x.com/aleabitoreddit/status/2065039294126030906",
+      "author": "Serenity",
+      "created_at": "2026-06-11T11:51:48.000Z",
+      "text": "I'm trying a new research style going through trade records for fun, in case I find anything random. \n\neg. Starlink direct suppliers:\n\nEson Precision - ($585M, 5243)\nLite-On - (way too many times for power, $16B)\nMeiko - $4.94B\nLens Technology - 300433\nCompeq - $10.36B (I covered this awhile back for spacex)\nChicony Power Technology - $1.13B (never heard of this one)\nFoxconn Interconnect - $7.48B\nDISCO (6146) - oh hey\nE&R (8027) - $758.73M (was looking at this with $LPK)\n\nlot of noise, lot of names, but it's fun",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HKh9raGakAE1VPR?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:13.065803+00:00",
+      "is_article": true,
+      "char_count": 517
+    },
+    {
+      "tweet_id": "2064958428813140424",
+      "url": "https://x.com/aleabitoreddit/status/2064958428813140424",
+      "author": "Serenity",
+      "created_at": "2026-06-11T06:30:29.000Z",
+      "text": "Lot of \n$TSM\n CoPoS posts on X... just some of their likely external suppliers for this:\n\nFavite(3535) ~$306M: Inspection / metrology\nGMM (6640) ~$930M: Panel-level alignment\nV5 (7822) ~1.43B: AOI / metrology\nGudeng (3680) ~$1.50B: advanced-packaging carriers\nScientech (3583) ~$1.99B: Wet process / cleaning \nTa Liang(3167) ~$2.39B: precision equipment\nC SUn (2467) ~$2.67B: thermal process\nGPTC (3131) ~$2.90B: Wet process \nAPT (7734) ~$2.93B: thermal\nChroma (2360: ~$29.63B: measurement / automation\n\nIn case people found any interesting",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:33:16.149537+00:00",
+      "is_article": true,
+      "char_count": 540
+    },
+    {
+      "tweet_id": "2063434493911081202",
+      "url": "https://x.com/aleabitoreddit/status/2063434493911081202",
+      "author": "Serenity",
+      "created_at": "2026-06-07T01:34:54.000Z",
+      "text": "Looks like HBF (memory) wars are kicking off:\n\n- Hanmi Semiconductor (first mover)\n- Hanwha Semiconductor (first mover)\n-ASMPT (entry)\n- K&S (entry)\n\nFlagged in reports, with Hanmi leading.\n\n“TC bonders are expected to benefit immediately” if people wanna research that segment.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HKLKu_nacAAG3hS?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:33:19.039123+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2062472717283312046",
+      "url": "https://x.com/aleabitoreddit/status/2062472717283312046",
+      "author": "Serenity",
+      "created_at": "2026-06-04T09:53:09.000Z",
+      "text": "$TSM\n chairman: CoPoS very large within 2-3 year volumes already pilot lines now. \n\nThought markets would wait another few months but Visera (TSM subsidiary heavy exposure) already got re-rated a bit.\n\nJust something to keep in mind as a long idea next year, everyone kept saying",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJ9gALibIAAY8rf?format=jpg&name=900x900",
+        "https://pbs.twimg.com/media/HJ9gALbbwAAjjjc?format=jpg&name=900x900"
+      ],
+      "scraped_at": "2026-07-07T03:33:26.151498+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2062169440444444887",
+      "url": "https://x.com/aleabitoreddit/status/2062169440444444887",
+      "author": "Serenity",
+      "created_at": "2026-06-03T13:48:02.000Z",
+      "text": "Honestly CHIPS ACT 2 supply chain research is kinda goated.\n\nsince its done for you by the EU government if you go through their impact analysis.\n\nThey mention names like TOWA \"61% in moulding and sealing systems\"\n\nThen breakdown of control like \n$ONTO\n, $BESI, etc.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJ5MJWZbIAAxrK8?format=png&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:29.264307+00:00",
+      "is_article": true,
+      "char_count": 266
+    },
+    {
+      "tweet_id": "2061956165307883521",
+      "url": "https://x.com/aleabitoreddit/status/2061956165307883521",
+      "author": "Serenity",
+      "created_at": "2026-06-02T23:40:33.000Z",
+      "text": "ASIC research report from Jan that I found interesting.\n\nI don’t really mention AlChip much but there’s a lot of tam expansion opportunities if they want to M&A like Marvell.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJ2KM-fbAAAauYD?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:33.812320+00:00",
+      "is_article": true,
+      "char_count": 174
+    },
+    {
+      "tweet_id": "2061916930039291914",
+      "url": "https://x.com/aleabitoreddit/status/2061916930039291914",
+      "author": "Serenity",
+      "created_at": "2026-06-02T21:04:39.000Z",
+      "text": "$TSM\n COUPE supplier idea:\n\nAnother is Xintech (3374) that I have exposure to.\n\nThis is $TSM’s testing subsidiary, currently trading at 255 ~$2.1B MC.\n\nBiggest wonder was if they were linked to COUPE… otherwise I wouldn’t take positions. \n\nBut some report recently confirmed TSM’s vertical integration plans:\n\n“TSMC is building a Silicon Photonics empire, aggressively pursuing Co-Packaged Optics (CPO) opportunities with subsidiaries **Xintec** and VisEra citing unnamed supply chain sources… \n\nTSMC is expected to talk up its SiPho plans, including its COUPE platform May 14 (Thursday) at its Technology Symposium in Hsinchu, Taiwan.”\n\nSo that kinda seals the deal for me if they’re “aggressively pursuit opportunities”.\n\nDerisked long anyway given \n$TSM\n owns it. Upside from COUPE?\n\nThought it was an interesting idea personally.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:33:38.568043+00:00",
+      "is_article": true,
+      "char_count": 833
+    },
+    {
+      "tweet_id": "2061239244379803958",
+      "url": "https://x.com/aleabitoreddit/status/2061239244379803958",
+      "author": "Serenity",
+      "created_at": "2026-06-01T00:11:46.000Z",
+      "text": "At Computex Taiwan, for new CPO exposure companies, always a good opportunity to find ideas:\n\nEg. 3362 Advanced Optoelectronic ~$477M with Largan Precision (3008) ~$14.6B\n\nPMLA (microlens array) and FAU. Kinda reminds me of \n$HIMX\n / Foci\n\nThere’s a difference between sampling/demo stage though and having active customers, so need do more research beyond this. \n\nJust a good starting research process",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJr-Kffa8AAmvO9?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:42.265850+00:00",
+      "is_article": true,
+      "char_count": 402
+    },
+    {
+      "tweet_id": "2060708982906294613",
+      "url": "https://x.com/aleabitoreddit/status/2060708982906294613",
+      "author": "Serenity",
+      "created_at": "2026-05-30T13:04:42.000Z",
+      "text": "$IBM\n Starling was est. 2029 (cool name btw).\n\nVery interesting Foxconn is flagging quantum commercialization in 2030 from their conference. 2027 prototyping. \n\nJust some helpful timelines for the \n$QBTS\n \n$RGTI\n \n$IONQ\n bros out there\n\nQuantum is something I’m not as familiar with, but just in investing standpoints since it’s popular, maybe h2 2028, h1 2029 is a good time for quantum frontrunning unless there’s some random breakthrough?\n\nWhatever is happening now looks way too early. Typically not a good idea to serve as the dilution in the prototyping phases. \n\nBut just sharing interesting notes I came across in terms of 2030 timelines for quantum computing commercialization timeline ests.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJkb5QHa0AAoO3I?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HJkb5QGaoAEoSy9?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HJkb5QNbsAE2yOt?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:46.694027+00:00",
+      "is_article": true,
+      "char_count": 700
+    },
+    {
+      "tweet_id": "2059532571839729902",
+      "url": "https://x.com/aleabitoreddit/status/2059532571839729902",
+      "author": "Serenity",
+      "created_at": "2026-05-27T07:10:04.000Z",
+      "text": "This was the company i personally liked + have positions in.\n\nDefinitely not \n$DPZ\n. \n\nBut kinda me of Soitec in a way.\n\nPower semi / SiPH exposure both to Nvidia ecosystems.\n\nPhotonics side eval through Nvidia right now. Power semi exposure through NVtS and powl, ~1.29 p/b, EU chips act grantee. US chips act grant ongoing. \n\n ~$1.28B MC, should be beneficiary of eu chips act round 2 today as a catalyst",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HJTt9LkbQAAzNer?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HJTt9LwbYAAtkJU?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HJTt9LkacAEL3m1?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HJTt9LtbIAAR2bn?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:33:49.927077+00:00",
+      "is_article": true,
+      "char_count": 406
+    },
+    {
+      "tweet_id": "2058584021681250411",
+      "url": "https://x.com/aleabitoreddit/status/2058584021681250411",
+      "author": "Serenity",
+      "created_at": "2026-05-24T16:20:52.000Z",
+      "text": "Four critical themes for h2 2026 if you want long ideas:\n\n1. CPO, #1 #1 #1 #1 favorite theme. I cannot stress how much markets misunderstand this. \n\nEveryone I've talked in SV are privately funding optical startups right now and it's a big signal of what's to come. \n\n2. 800 VDC power semis. I think other analysts kinda convinced me on this. \n\nI was in \n$NVTS\n for a tiny bit, low concentration. But this almost doubled to my surprise. But after doing more research, it's a pretty seismic shift in terms of what players become important\n\n3. Physical AI Humanoids/Robotics. As you know \n$VPG\n basically tripled, and there's a lot of other players I've been trying to find longs on.\n\nMost downstream of interest are private sector... Then components are mainly in China/Japan. \n\n4. Maybe Glass Substrate / advanced packaging stuff still eg. $LPK. Memory got pushed down on the list given how much players have re-rated recently, lot of opportunity still with niche hbm4 players.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:33:53.523422+00:00",
+      "is_article": true,
+      "char_count": 977
+    },
+    {
+      "tweet_id": "2058550475260400103",
+      "url": "https://x.com/aleabitoreddit/status/2058550475260400103",
+      "author": "Serenity",
+      "created_at": "2026-05-24T14:07:33.000Z",
+      "text": "Just random themes im looking im having a good time looking into over the weekend: \n\n-> power semis, integrated voltage regulators, multiphase controllers, CDUs, cold plates, manifolds, pumps, valves, heat exchangers, rear-door systems, chillers. \n\n\n$POWL\n, \n$NVT\n, 010120 KS, 267260 KS, 2308 TT,  \n$VICR\n, \n$POWI\n , CATL, Sungrow 300274 C\n\n-> thermal stuff (ALFA SS, ASTK DC, Daikin 6367 JP), \n$CARR\n, MTRS SS)\n\nThese are just ones aside from the ones I've talked about eg. \n$NVTS\n or $HPS.A. \n\nThey're all kinda more priced in but now but it's a good starting point in terms of finding more important players that's not priced in. \n\nThen you try and look: which single company do most of these probably rely on? \n\nI'm personally less familiar with the energy/cooling/power trade, which I'm happy to admit since everything is a learning process. \n\nBut normally even if I find something interesting, i don't find it more compelling than staying in CPO longs. Always it's always fun learning more. \n\nWas always looking for SRAM-adjacent exposure, think private markets are better to go then \n$CBRS\n?",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:33:57.882958+00:00",
+      "is_article": true,
+      "char_count": 1098
+    },
+    {
+      "tweet_id": "2057759549478859144",
+      "url": "https://x.com/aleabitoreddit/status/2057759549478859144",
+      "author": "Serenity",
+      "created_at": "2026-05-22T09:44:42.000Z",
+      "text": "For \n$INTC\n EMIB advanced packaging supply chains: \n\nIf you thought it couldn’t get worse after taking AP History or AP Chemistry:\n\nThere’s apparently a company called: AP Memory (6531). $4.8B MC that got qualified.\n\nIn case anyone wanted to take a look. I’m eating hot pot rn so not enough time for DD.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HI6hYssacAAwPge?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HI6hYsraUAAgT6w?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HI6hYsxaEAEndM-?format=jpg&name=360x360"
+      ],
+      "scraped_at": "2026-07-07T03:34:01.244402+00:00",
+      "is_article": true,
+      "char_count": 303
+    },
+    {
+      "tweet_id": "2057402264311230805",
+      "url": "https://x.com/aleabitoreddit/status/2057402264311230805",
+      "author": "Serenity",
+      "created_at": "2026-05-21T10:04:59.000Z",
+      "text": "Power Semis seem to be very popular now. These names got flagged in reports: \n\nPan Jit (2481) ~$1,6B\nEris Tech (3675) ~$532M MC\nAdvanced Power Electronics (8261) ~$565M MC\nInergy Technology (6693) ~$202m MC\nPotens (7712) ~$170M \n\nfor power semiconductor makers that might play an important role.\n\nAll really low MC, maybe high upside in a few, so I'll probably do some more research on each one now.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:04.859970+00:00",
+      "is_article": true,
+      "char_count": 399
+    },
+    {
+      "tweet_id": "2056898658046779667",
+      "url": "https://x.com/aleabitoreddit/status/2056898658046779667",
+      "author": "Serenity",
+      "created_at": "2026-05-20T00:43:50.000Z",
+      "text": "Starlink / Amazon Kuiper LEO ideas:\n\n-> Compeq (2313): \"has secured orders from leading operators, including Starlink and Amazon's Kuiper program\" - $9.6B MC\n\n\"Analysts say the influx of PCB suppliers is likely to produce a \"many  players, limited pie\" dynamic, raising barriers",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:08.353107+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2056774589741720043",
+      "url": "https://x.com/aleabitoreddit/status/2056774589741720043",
+      "author": "Serenity",
+      "created_at": "2026-05-19T16:30:49.000Z",
+      "text": "$500m \n$AAPL\n supplier likely primary source for their new high end apple watches:\n\nTASC (2340) if people wanted to take a look or were curious. I'm prob passing, but could be something interesting here",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HIsg4msb0AAgkWi?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:12.313473+00:00",
+      "is_article": true,
+      "char_count": 202
+    },
+    {
+      "tweet_id": "2056761997598028113",
+      "url": "https://x.com/aleabitoreddit/status/2056761997598028113",
+      "author": "Paradis Labs",
+      "created_at": "2026-07-06T22:01:53.000Z",
+      "text": "$DISK\n is a new memory ETF that just launched last week.\n\nBy Tema ETFs (in partnership with SemiAnalysis).\n\nTop 10 holdings:\n1. Kioxia: 17.10%\n2. \n$SNDK\n: 16.81%\n3. Samsung Electronics: 8.01%\n4. SK Hynix: 7.45%\n5. SK Square: 5.24%\n6. Innodisk: 5.13%\n7. \n$MU\n: 4.70%\n8. \n$WDC\n: 4.67%\n9.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:20.037483+00:00",
+      "is_article": true,
+      "char_count": 285
+    },
+    {
+      "tweet_id": "2054673608484737042",
+      "url": "https://x.com/aleabitoreddit/status/2054673608484737042",
+      "author": "Serenity",
+      "created_at": "2026-05-13T21:22:16.000Z",
+      "text": "Interesting humanoid landscape and players that I came across from GS. \n\nLot of these are Chinese players sadly, it’s hard for me to talk about assets because don’t want to inadvertently\n\nVpg, as one of the few us players, BOM was a lot lower than I expected eg. $150/component",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HIOqwT-boAI3THw?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HIOqwT9aUAAsgmg?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:34:23.396859+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2054131560270696884",
+      "url": "https://x.com/aleabitoreddit/status/2054131560270696884",
+      "author": "Serenity",
+      "created_at": "2026-05-12T09:28:22.000Z",
+      "text": "No positions but there's a fun $300m MC robotics company in Taiwan I'm researching right now called Aurotek.\n\n-> revenue growth 58.7%, gross profit 101.2% growth, net profit 212% growth (NT$94 million). \n\nThey make robotic arms and then the software that goes inside them for \"AI infrastructure, AI servers, high-end semiconductors, and electronics manufacturing.\"\n\nLike there's practical sht abroad that looks highly compelling but in US we're stuck with \n$RR\n.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HIG9ljObwAASnV3?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:26.456679+00:00",
+      "is_article": true,
+      "char_count": 462
+    },
+    {
+      "tweet_id": "2054122189235122667",
+      "url": "https://x.com/aleabitoreddit/status/2054122189235122667",
+      "author": "Serenity",
+      "created_at": "2026-05-12T08:51:08.000Z",
+      "text": "As for Taiwan Thermal players: Kaori (8996), Sunon (2421), Auras(3324), Jentech (3653), AVC (3017). \n\nAre frequently flagged. \n\nKaori 86% Y/Y revenue growth... (NT$948.8 million)\nAuras ~40% Y/Y revenue growth (NT$2.84 billion)\n\nBoth ~$3B valuations, with likely hyperscaler ties. \n\nAre probably the two higher upside ones to take a look at closer. \n\nDon't have any, just throwing this out there if people wanted other ideas to do research on for thematic longs.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:30.672380+00:00",
+      "is_article": true,
+      "char_count": 461
+    },
+    {
+      "tweet_id": "2054033907751023058",
+      "url": "https://x.com/aleabitoreddit/status/2054033907751023058",
+      "author": "Serenity",
+      "created_at": "2026-05-12T03:00:20.000Z",
+      "text": "Just qualitatively though about this CPO supercycle long:\n\nFOCI (3363) is looks super compelling around now at ~$3.2B MC after \n$HIMX\n earnings call? Personally made it one of my larger positions. \n\nBasically: \n\n1. \n$TSM\n COUPE advanced packaging director did hint that FAU would be a pretty big bottleneck and would scale up soon. \n\n2. Himax up 75% while Foci had a modest 2.6% bump over the last week. They kind of go hand in hand. \n\nYou all know the GS note about CPO ramp by now.T Then Foci shows up so many times from FAU to optical components... \n\nThose happen to make up a massive % of CPO scale up/scale out costs? \n\n$3.2B at the center of it all seems very promising.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HIFhj4LawAAyGwL?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HIFiS2YbMAAbdEL?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:34.153849+00:00",
+      "is_article": true,
+      "char_count": 676
+    },
+    {
+      "tweet_id": "2052629888071532587",
+      "url": "https://x.com/aleabitoreddit/status/2052629888071532587",
+      "author": "Serenity",
+      "created_at": "2026-05-08T06:01:15.000Z",
+      "text": "As for \n$NVDA\n CPO suppliers from the GS note:\n\nI'm just investigating right now why this random $200m company Nextronics is still $200m..\n\nWhen they're Nvidia's supplier for CPO connectors and Cage Thermal? \n\nThey also happen to be a a humanoids / \n$AMZN\n supplier and it's actually",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HHxm54DbwAARkOT?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:34:37.305400+00:00",
+      "is_article": false,
+      "char_count": 283
+    },
+    {
+      "tweet_id": "2051004642612634051",
+      "url": "https://x.com/aleabitoreddit/status/2051004642612634051",
+      "author": "Serenity",
+      "created_at": "2026-05-03T18:23:07.000Z",
+      "text": "$NVDA\n + \n$AVGO\n ecosystem:\n\nThis is goldman's report. But it only covers mainly the obvious names.\n\nFun fact, whenever you read through analysis reports (eg. Goldman  Sachs)...\n\nIt's good to look out for players not listed in them, since  those are the \"hidden gems\" institutions",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HHah1klbMAAxlwy?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:34:40.617218+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2049745676125536657",
+      "url": "https://x.com/aleabitoreddit/status/2049745676125536657",
+      "author": "Serenity",
+      "created_at": "2026-04-30T07:00:26.000Z",
+      "text": "Samsung/SK Hynix Supplier Korean Stock Idea:\n\nIt's kinda like $SIVE + CPO mixed with \n$AEHR\n but for memory (and less TAM).\n\nAuros (322310): ~$210m MC.\n\nIt's the SK Hynix and Samsung supplier for next-gen HBM.\n\nThis is a direct play for HBM4e hybrid bonding (every memory maker) + HBM4 (samsung) / metrology.\n\nA comparison is $SIVE for CPO, where they weren't really around for  HBM3 (photonics equivalent is like 800g) and have been developing the  past many years. But with next-gen it's there for volume ramp.\n\nIt's the only Korean Domestic company for IR metrology. And product #1 is used for hybrid bonding.\n\nSo Samsung HBM4 lines use hybrid copper bonding in 2026, so they're trying to push overlay tool through qualification H2?\n\nSk Hynix actually just used MR-MUF (no hybrid bonding) for HBM4. But  Trendforce reported today SK Hynix has completed 12-high hybrid  bonding HBM validation and is raising yields for mass production?\n\nSo maybe SK Hynix are adopters too soon, which is bullish. \n\nBut at least for short-term it's probably Samsung first for volume if qualifications pass.\n\n$KLA is a pure monopoly over this sort of IR metrology overlay that Korea (SK Hynix/Samsung) wants to break.\n\nSo Samsung they are likely using Auros to customize IR tools and keep domestic secrets.\n\nThink of it as the Korean \n$INTC\n where they will use their domestic  champion as much as possible if it actually works. And both will ramp up  HBM4E -> HBM5 with this technology, so multiple years capex.\n\nFor product #2 (this is why I mention \n$AEHR\n, similar):\n\nThere's also the \"AUROS Technology Inc. is conducting qualification  testing of its ultra-precision thin-film thickness measurement equipment  with a major  domestic chipmaker\".\n\nThis was dominated by $KLA and \n$AMAT\n before.\n\n\"Development began at its research center, followed by pilot   manufacturing at a new facility from 2021, with about four years  required to reach the current qualification stage\"\n\nBasically they've been developing many years + qualifying now, and  around h2 if it passes it switches to high volume production for 2027.\n\nSo this is the sweet spot for timelines. It's really high risktho ...\n\nBut high reward, lower downside risk given Samsung/SK Hynix are kinda supporting this company. (disclosure: have positions, NFA, DYOR)\n\nAnyway, still doing reserach into this but found it compelling, just my thoughts so far.\n\nTLDR:\n\nNot really well known $210M MC supplier to Samsung/SK Hynix.\n\nThen both of their main product lines finish qualification h2 for  volume ramp 2027? So h1 into h2 (now) seemed like the sweet spot.\n\nStill doing research of course, new company to me. just caught my eye. Very very early of course before any movement.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HHIoxKbakAAdzOH?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HHIoxnaboAADINl?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HHIoyN8bkAAxR58?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HHIozG1aIAAzMfm?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:43.804681+00:00",
+      "is_article": true,
+      "char_count": 2720
+    },
+    {
+      "tweet_id": "2049336470079668713",
+      "url": "https://x.com/aleabitoreddit/status/2049336470079668713",
+      "author": "Serenity",
+      "created_at": "2026-04-29T03:54:23.000Z",
+      "text": "So new long idea of a functional photonics monopoly I was looking into with a friend:\n\nMiss\nSnake\nSisters\nCould\nOperate\nRobot\nPokemon\nSkarmory\n6830 for CPO, ~$1.2B MC.\n\nFor customers:\n\n\n$TSM\n - Taipei times names TSM as a client that Msscorps provides them with advanced material and failure analysis.\n\n\n$NVDA\n, \n$AAPL\n, \n$AMAT\n, \n$LRCX\n\n\n\n$ASML\n - Taipei Times, Sept 10, 2024 \"ASML adopted Msscorps' ultra-sensitive materials analysis of photoresists\"\n\n  \n$INTC\n - Material analysis lab MSSCORPS has secured orders from major manufacturers such as Nvidia and Intel (Industrial Technology Research). \n\nSamsung (speculative)-  \"A closer look at Samsung 3nm GAA transistors\" in stuff like case studies\n\nUnfortunately it got dispositioned so it went up 64% in the past month... But finally got to take positions.\n\nBasically: their claim was \"seize a 90 percent share of the CPO inspection market\" (basically 100% but they can't say that otherwise antitrust).\n\nAnd they're weaponizing patents and refusing to license them to competitors like Enli. So it's almost like Soitec not licensing to Shin Etsu and just claiming 100%.\n\nYou have \n$LWLG\n at 1.8B fking serving \n$TSEM\n only off a development contract.\n\nThen you have a literal living monopoly for inspection serving every single company lol at $1.2B?\n\nIt's inelastic demand for yield and can charge whatever for test. (Disclosure: I am long. NFA.) \n\nStill researching it more into customer links since they did mention EU and others.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HHCzygHbEAAbSXy?format=jpg&name=900x900",
+        "https://pbs.twimg.com/media/HHCzygpaMAA_-Ks?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HHC0HLJa4AEfhwx?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:47.081848+00:00",
+      "is_article": true,
+      "char_count": 1484
+    },
+    {
+      "tweet_id": "2049251501978325014",
+      "url": "https://x.com/aleabitoreddit/status/2049251501978325014",
+      "author": "Serenity",
+      "created_at": "2026-04-28T22:16:45.000Z",
+      "text": "Possible Japanese \n$TSM\n CoPoS link (~260m MC):\n\nI'm going to start doing a lot of these mini DD style posts for subscribers on stuff I passed on. (1 by 1) \n\nBut just in case others find it interesting to pick up, (and they're genuinely decent longs that I filter) I'll post them",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:50.574515+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2048994957462302918",
+      "url": "https://x.com/aleabitoreddit/status/2048994957462302918",
+      "author": "Serenity",
+      "created_at": "2026-04-28T02:42:36.000Z",
+      "text": "As for Korean longs list:\n\nif you're curious I'm just going through a massive list of names (there's a lot more) and picking 1-2:\n\nBigger names like Samsung Electro-Mechanics can't hurt... \n\nDI (003160) burn in testers.\nSTI (039440) Fluxless Vacuum equipment\nYEST(122640)  Underfill Curing\nKC Tech (281820) hybrid bonding\nTaesung (323280) Wet Processing\nChemtronics(089010) wet etching\nPhiloptics (161580) glass core. \n\nThere's a ton of these. Can always just equal weight but I try and pick winners.\n\nWoah no way.\n\n$IBKR has Korean stocks now.\n\nThis is going to be fun, I had a lot of ideas in mind I couldn’t long.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:34:54.697594+00:00",
+      "is_article": true,
+      "char_count": 616
+    },
+    {
+      "tweet_id": "2048565314053681285",
+      "url": "https://x.com/aleabitoreddit/status/2048565314053681285",
+      "author": "Serenity",
+      "created_at": "2026-04-27T00:50:06.000Z",
+      "text": "Fun fact for research:\n\nYou can find a lot of \"hidden gems\" by looking at who companies like \n$COHR\n lists as competitors in the SEC filings.\n\nNames I've mentioned like 5N are there and it went from $.92 -> $24 in a few years.\n\n\n$LITE\n, Eoptolink, Innolight, are all there too. \n\nThis was year 2022. A lot of them turn out really well in a few years.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HG328Z4a8AAACTu?format=png&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:34:58.218195+00:00",
+      "is_article": true,
+      "char_count": 350
+    },
+    {
+      "tweet_id": "2046903608122495384",
+      "url": "https://x.com/aleabitoreddit/status/2046903608122495384",
+      "author": "宁静号",
+      "created_at": "2026-04-22T10:47:04.000Z",
+      "text": "My neighbors just keep going at it every day with a lot of noise. It's super annoying. \n\nThat aside, got curious on the PGME / PGMEA shortages.\n\n- Toagosei (4045) - PGMEA\n- Shiny Chemical (TW 1773) - high purity PGME and PGMEA\n- Daxin (TW 5234) - Thinner, BARC, SOH\nSan Fu (TW",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HGgP-oWbUAAzoeM?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:35:01.998828+00:00",
+      "is_article": false,
+      "char_count": 276
+    },
+    {
+      "tweet_id": "2046677013445132584",
+      "url": "https://x.com/aleabitoreddit/status/2046677013445132584",
+      "author": "Serenity",
+      "created_at": "2026-04-21T19:46:40.000Z",
+      "text": "There’s always going to be new opportunities in the markets.\n\nlike scale across with \n$MXL\n tam expansion. \n\nI’ll keep pointing them out for fun but I’m not long on many ideas unless it’s super super compelling like cpo.\n\nBut I’m personally happy chilling in existing longs I’ve mentioned recently, like win, Shunsin, sivers, IQE, and those types.\n\nSometimes it’s better to just let them play out if they’re early in the cycle, or a bit further in like Nebius, or even \n$EWY\n for memory or \n$COHR\n for photonics.\n\nThen constantly hopping ship to ship to catch a completely new wave like glass core substrates and such.\n\nHelps remove a lot of the fomo since a lot of times winners keep on winning when a thesis is validated.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:05.211189+00:00",
+      "is_article": true,
+      "char_count": 723
+    },
+    {
+      "tweet_id": "2046159918751981633",
+      "url": "https://x.com/aleabitoreddit/status/2046159918751981633",
+      "author": "Serenity",
+      "created_at": "2026-04-20T09:31:55.000Z",
+      "text": "Two random stocks taking a look into... \n\nSkytech (6937) - $722m, CMIt (7853 TWSE?) \n\nSkytech - PvD/wafer bonders\nCMIt - optical metrology\n\nBoth machine suppliers to ASE's CoPos, that started volume ramp? Think 2025, CMIt tried breaking \n$KLAC\n monopoly and was just test samples..",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:08.758594+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2045578992452063383",
+      "url": "https://x.com/aleabitoreddit/status/2045578992452063383",
+      "author": "Serenity",
+      "created_at": "2026-04-18T18:10:59.000Z",
+      "text": "MLCC, inductor + PCB drill bottleneck: \n\n- Murata (TSE: 6981) \n- Taiyo Yuden(TSE: 6976), third largest MLCC in the world \n- TDK (TSE: 6762) \n- Kyocera(TSE: 6971)\n - Yageo(TWSE 2327) \n- Walsin (TWSE 2492)  \n- \n$VSH\n in the US.  \n\nSakai Chemical (4078) is a raw chemical suppliers to the MLCC companies, so might be worth taking a look at. (Barium Titanate) (sorry for repost some ticket # wrong) \n\nI'll let you know obviously if I like a few enough to go long on.\n\nThere's also a PCB drill shortage too so:\nTopoint Technology (8021) \nUnion Tool (6278)\nKyocera (appears again)\n\nthrew this in so it's not an exact repeat lol\n\nBut many are kinda priced in already, probably want to find a new one.\n\nJust some TLDRs to save you time: \n\n1. $ASML, $TSM earnings = Good Outlook. Semis + capex go brrr.\n\n2. Opus 4.7 + Anthropic go brrr. Software = sad.\n\n3. Samsung go brrr because of partly bc of $TSLA AI Chips.\n\n4. $UMC = price hike for foundry. foundries go brrr. \n\n5. Training =",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:12.389719+00:00",
+      "is_article": false,
+      "char_count": 973
+    },
+    {
+      "tweet_id": "2044529097783840882",
+      "url": "https://x.com/aleabitoreddit/status/2044529097783840882",
+      "author": "Serenity",
+      "created_at": "2026-04-15T21:31:37.000Z",
+      "text": "So my opinion on current markets and thoughts:\n\nLot of photonics stuff ran up too much like \n$LITE\n, \n$AXTI\n, \n$AAOI\n, and others. eg. \n$AAOI\n $40 -> $150. \n\nProbably going to see some range-bound chopping for awhile until next earnings? \n\n While a lot of the newer CPO ecosystem names like ASE, Sivers, etc, have a lot of re-rating to do. \n\nStuff like \n$AEHR\n more priced in after the 100% rally, probably better not to take short term capital gains imo... I can see it chopping a tiny bit too. But hint was volume orders shortly after. So maybe if you wait a month, volume order hits, then stock goes up another 30% is my guess? \n\nThere's some nuance like \n$SMTC\n for LPO/LRO transitions, but it's really complicated as a briedge. \n\nSoftware obviously got sold off too much. I was questioning why \n$META\n, \n$MSFT\n were sold off 20% after macro, even more with \n$RDDT\n.  \n\nEven though Meta was doing 36% or so revenue growth Y/Y, which is stupidly insane. And reddit was doing 1/3 net income of revenue that grew 70% Y/Y. \n\nI think AI is accelerates revenue for some software names actually, esp. social media. \n\nBut there's obvious companies that get disrupted over time as seen with Chegg from both vibe coded competitors as well as just direct to AI from ChatGPT/Gemini. \n\nAs for Crypto, got sold off too much. I'm always bullish Ethereum 1.5-2K, and bearish at 3-4k. Don't ask me why but it just repeats like this for the past 6 years.\n\nI like Bitcoin, and some protocols that actually generate revenue like hyperliquid. \n\n\n$CRCL\n is extreme nuanced. Clarity act is a nuke on yields, and I can't project how that would affect circulating supply yet. \n\nRate cuts projections dropped to 0 as highest probability. Which is heavily bullish circle, but if yields get banned, idk if stablecoin derivative liqudity flows into USDC supply or if liquidity just gets nuked if people just convert stablecoins to just banks instead. \n\nI don't have the answer. \n\nStuff that I said early H1, like \n$MRVL\n, \n$NBIS\n being accelerated latter part of H2 is playing out now. Nebius was Q4 earnings (the big showtime) onward. \n\nMarvell benefits so much from ASIC revenue like Microsoft Maia (which I've heard rumors about delay), and there's some rumors about them design wins from \n$GOOGL\n TPU but I think that's just to scare Broadcom/mediatek into better contracts. \n\nThey actually lose off from CPO, but have Celestial, the business is just way too ***** big so really hard to model. But it seems like a good compounder. \n\nStuff like \n$INTC\n, \n$ARM\n great holds. Just generally, Intel thesis still stands (made in america) for foundry. \n\n\n$ARM\n unholy revenue acceleration from CPUs. And as you might have seen theres a CPU shortage too. \n\nAs for memory companies... My \n$EWY\n leaps hit triple digit returns, I'm just holding. \n\nNot seeing any red flags, I already said the Google algo paper was stupid and won't affect DRAM/NAND prices much. And if you read it, it optimized lighter models not larger frontier models. \n\nI did cut crypto exposure to chase AI semi supply chain names, but I do expect Bitcoin to recover... And if does, \n$HOOD\n, and other companies heavily tied to crypto revenue will do well too.  \n\nSpaceX IPO at $1.75T is just insane... idk. \n$RKLB\n was my long back at $10's, but it's just extreme premiums at $40B. They're not going to make much revenue from Neutron until like 2028+, but markets don't care. \n\nI've said it before but Rocketlab is my favorite long long term stock, but you'll probably get faster returns elsewhere. \n\nI don't think capex/revenue driving SpaceX will funnel down into the supply chains to the degree of AI. \n\nThe valuations look insane, but capex is not anywhere close to the degree of frontier lab spend. But still doing more research here. \n\nAs for overall macro, I wouldn't fade this rally and just go along for the ride.\n\nMarkets are extremely resilient and midterms are now coming up and it would look super bad, if markets were very red. \n\nWhat I'm doing is: \n\nIMO long recovery names like \n$META\n, \n$MSFT\n these types (there's a lot more). \n\nThen long pure play 1.6T/CPO ramp has highest upside. \n\nHave some misc stocks for quantum, and others.  \n\nThen just pyramid a lot of names that went up a lot already like \n$TSEM\n, etc. even if it chops a bit, more better to not take short term capital gains imo? even if it's more priced in can keep going higher.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:15.776637+00:00",
+      "is_article": true,
+      "char_count": 4402
+    },
+    {
+      "tweet_id": "2044272039700377753",
+      "url": "https://x.com/aleabitoreddit/status/2044272039700377753",
+      "author": "Serenity",
+      "created_at": "2026-04-15T04:30:09.000Z",
+      "text": "okay so few i was interested in:\n\nPCL - broadcom optical foundry $494m MC\nfittech - browave/foci supplier + maybe avgo for testing (s/o to latentvalue for the DD) $366m MC. markets missed this since foci/browave were re-rated hundreds of % but didnt know this was the equipment",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:22.908853+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2044240071889703312",
+      "url": "https://x.com/aleabitoreddit/status/2044240071889703312",
+      "author": "Serenity",
+      "created_at": "2026-04-15T02:23:07.000Z",
+      "text": "So just a random thought for \n$NVDA\n CPO ecosystem..\n\nWas thinking about going long on VisEra as TSM's optical foundry but it's H2 2028 volume ramp for gen3... \n\nEnded up scratching that off my list. \n\nI didn't like \n$HIMX\n cause it's just going to get designed out later. \n\nAt $4B",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:25.768434+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2044165549173915714",
+      "url": "https://x.com/aleabitoreddit/status/2044165549173915714",
+      "author": "Serenity",
+      "created_at": "2026-04-14T21:27:00.000Z",
+      "text": "4 new longs in \n$NVDA\n CPO Asia ecosystem + 1 misc pluggable/test one. \n\nWill just announce one every day so I can spend some more time doing a mini write up/answer more questions about it. \n\nI'm personally trimming some longs and just rotating capital into purer play names since volume ramp should hit h2. \n\nJust as a recap Shunsin, was the latest one. Already took a few others like \n$TSEM\n in the past.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:29.223595+00:00",
+      "is_article": true,
+      "char_count": 406
+    },
+    {
+      "tweet_id": "2043898787794694388",
+      "url": "https://x.com/aleabitoreddit/status/2043898787794694388",
+      "author": "Serenity",
+      "created_at": "2026-04-14T03:46:59.000Z",
+      "text": "So fun fact: You can disrupt the entire photonics industry with just $160m by taking over Nippon Chemical Industry (NCI) \n\nThey're the leading supplier of red phosphorous to \n$AXTI\n, Sumitomo, JX, and others needed for InP substrates (indium + phosphorous)\n\nJust found this pretty",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:32.592007+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2042800782735753670",
+      "url": "https://x.com/aleabitoreddit/status/2042800782735753670",
+      "author": "Serenity",
+      "created_at": "2026-04-11T03:03:54.000Z",
+      "text": "So CPO is actually happening a lot earlier than I personally expected... \n\nI'll probably be adding more toward \n$NVDA\n CPO ecosystem next week and I'll make a little ETF for u all.\n\nThere's a decent amount of players like \n\n- FOCI (3363)\n- LuxNet (4979)\n- Elaser (3450)\n- ShunSin",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:38.738164+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2041873341943074979",
+      "url": "https://x.com/aleabitoreddit/status/2041873341943074979",
+      "author": "Serenity",
+      "created_at": "2026-04-08T13:38:35.000Z",
+      "text": "this was my personal new quantum long\nfor the MBE duopoly with \n$VECO\n. \n\nthey reported earnings today, and p/e compressed to round 25 fwd p/e...\n\nwhich is extremely surprising that it's profitable, healthy balance sheet, and has that fundamental duopoly for MBE in quantum",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:41.936218+00:00",
+      "is_article": false,
+      "char_count": 273
+    },
+    {
+      "tweet_id": "2041860425885872280",
+      "url": "https://x.com/aleabitoreddit/status/2041860425885872280",
+      "author": "Serenity",
+      "created_at": "2026-04-08T12:47:16.000Z",
+      "text": "So random notes about \n$JBL\n, $SMHMD, QD laser, and others that i passed on:\n\n1. \n$JBL\n: Very promising at $28B. Would not be surprised if it ended up $45B MC next year. Kinda like western innolight after they bought intel's siph ip. \n\nFwd p/e roughly ~22x, compresses down to sub 18",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:44.944291+00:00",
+      "is_article": false,
+      "char_count": 283
+    },
+    {
+      "tweet_id": "2041674619346976972",
+      "url": "https://x.com/aleabitoreddit/status/2041674619346976972",
+      "author": "Serenity",
+      "created_at": "2026-04-08T00:28:56.000Z",
+      "text": "having a chat rn\nwith former president of groq, anyone hv questions?",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:35:48.083961+00:00",
+      "is_article": false,
+      "char_count": 68
+    },
+    {
+      "tweet_id": "2041164225511559182",
+      "url": "https://x.com/aleabitoreddit/status/2041164225511559182",
+      "author": "Serenity",
+      "created_at": "2026-04-06T14:40:49.000Z",
+      "text": "For transformers pick…\n\nI was referring to the current transformers bottleneck with dry/liquid and others having extended lead times causing DCs buildout to slow.\n\nThere’s an interesting company that supplies transformers/switchgear to likely companies like Powell, Eaton with an",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HFOsCKaaIAABsoe?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:35:51.734181+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2040754726703386849",
+      "url": "https://x.com/aleabitoreddit/status/2040754726703386849",
+      "author": "Serenity",
+      "created_at": "2026-04-05T11:33:36.000Z",
+      "text": "I wonder if there’s more than meets the eye with \n$PYPL\n.\n\nTheir stablecoin is increasing share silently and they’re now at ~$4B supply.\n\nI don’t know anyone who uses PayPal usd for settlement but worth taking a closer look if it can eat into the usdt/usdc duopoly rn.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HFI3mrWaIAANMXs?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:35:55.132188+00:00",
+      "is_article": false,
+      "char_count": 268
+    },
+    {
+      "tweet_id": "2040404013125083482",
+      "url": "https://x.com/aleabitoreddit/status/2040404013125083482",
+      "author": "Serenity",
+      "created_at": "2026-04-04T12:20:00.000Z",
+      "text": "For rare earths/compound semiconductors... Vietnam is probably one of the most important rare earths countries in the world for Western supply chains now.\n\nEspecially after China rare earth export controlled Japan / Sumitomo once again this year. \n\nThere's actually a decent",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HFD1j4dagAABsZa?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:35:58.057867+00:00",
+      "is_article": false,
+      "char_count": 274
+    },
+    {
+      "tweet_id": "2039593631137566823",
+      "url": "https://x.com/aleabitoreddit/status/2039593631137566823",
+      "author": "Serenity",
+      "created_at": "2026-04-02T06:39:50.000Z",
+      "text": "I've been talking about \n$LASR\n, $EOS.AX for energy directed weapons. \n\nYou can shoot down drones/missiles. For the cost of a a dollar or two with laser beams.\n\nTurns out if you can shoot down drones... You can shoot down mosquitoes too?  \"Detecting mosquitoes with LiDAR and eliminate them with lasers\" \n\nBill Gates also funded something called \"Photonic Fence\"\n\n\"The Photonic Fence monitors insects in flight and eliminates those identified as targets by shooting them down with a micro-burst of laser  energy. The Photonic Fence also holds the potential to create entirely new methods of entomological study.\"\n\nJust thought this was interesting, so many random use cases of photonics.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HE4VLWLbAAAGnyx?format=jpg&name=large"
+      ],
+      "scraped_at": "2026-07-07T03:36:01.237990+00:00",
+      "is_article": true,
+      "char_count": 687
+    },
+    {
+      "tweet_id": "2039328199507894390",
+      "url": "https://x.com/aleabitoreddit/status/2039328199507894390",
+      "author": "Serenity",
+      "created_at": "2026-04-01T13:05:06.000Z",
+      "text": "I’ve been thinking… energy directed weapons are the future since it’s too expensive to keep shooting down drones with missiles.\n\nYou have infinite ammo that costs like $1 to shoot.\n\nIf you want to big brain this, maybe there’s opportunity in anti-energy directed lasers for",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:04.983862+00:00",
+      "is_article": false,
+      "char_count": 273
+    },
+    {
+      "tweet_id": "2039297252985057604",
+      "url": "https://x.com/aleabitoreddit/status/2039297252985057604",
+      "author": "Serenity",
+      "created_at": "2026-04-01T11:02:08.000Z",
+      "text": "Looking more into \n$MRVL\n photonics ecosystem.\n\nApparently optical interposers through \n$POET\n is manufactured by SilTerra Malaysia?\n\nPOET Infinity / Teralight (EMLs for 1.6T): Mitsubishi Electric. \n\nNext architecture for CW: Starlight and Blazar: that's $SIVE (already established)",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HE0JBU5bYAAxmdA?format=jpg&name=900x900"
+      ],
+      "scraped_at": "2026-07-07T03:36:08.189391+00:00",
+      "is_article": false,
+      "char_count": 282
+    },
+    {
+      "tweet_id": "2039154438372524237",
+      "url": "https://x.com/aleabitoreddit/status/2039154438372524237",
+      "author": "Serenity",
+      "created_at": "2026-04-01T01:34:38.000Z",
+      "text": "Found a new monopoly/duopoly company similar to \n$AXTI\n in the upstream inp substrate creation process. \n\nThink if it went down it would cause a similar catastrophe to \n$COHR\n, \n$LITE\n and others. \n\nDoing more research rn.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:11.207712+00:00",
+      "is_article": false,
+      "char_count": 222
+    },
+    {
+      "tweet_id": "2038904934423548236",
+      "url": "https://x.com/aleabitoreddit/status/2038904934423548236",
+      "author": "Serenity",
+      "created_at": "2026-03-31T09:03:12.000Z",
+      "text": "Supply chain list for substrate chokepoint  \n\nThe thing \n$AXTI\n does differently is they vertically integrate 4 different chokepoints under 1 supply chain.  \n\nI think \n$COHR\n or US is going to go on a vertical integration buying spree or capacity securing spree due to \n$AXTI\n.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:14.298079+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2038433084794871847",
+      "url": "https://x.com/aleabitoreddit/status/2038433084794871847",
+      "author": "Serenity",
+      "created_at": "2026-03-30T01:48:14.000Z",
+      "text": "CPO Landscape:\n\nI think Mirae Assets got this wrong and missed quite a few names. \n\nThey conflate ELS with the actual laser source but I'll cross check. \n\nApart from that it's a good high-level overview on landscape (I'll need to do some translating but ill post TLDR on main",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEn3G_lbQAA0VsO?format=jpg&name=900x900",
+        "https://pbs.twimg.com/media/HEn3kl-bMAA9vP9?format=jpg&name=360x360"
+      ],
+      "scraped_at": "2026-07-07T03:36:17.168685+00:00",
+      "is_article": false,
+      "char_count": 275
+    },
+    {
+      "tweet_id": "2038292836903461170",
+      "url": "https://x.com/aleabitoreddit/status/2038292836903461170",
+      "author": "Serenity",
+      "created_at": "2026-03-29T16:30:56.000Z",
+      "text": "CW Laser Chokepoint Company im looking at rn:\n\nIf you look at the well known suppliers out there kinda looks like this:\nT1: Lumentum, Broadcom, Coherent, Sumitomo\nT2: \n$AAOI\n, Furukawa, \n$MTSI\n\nT3: \n$INTC\n, $SIVE, Luxnet. \n\nLuxnet I'm doing DD on right now, found pretty interesting at",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:20.442556+00:00",
+      "is_article": false,
+      "char_count": 285
+    },
+    {
+      "tweet_id": "2037878120745931051",
+      "url": "https://x.com/aleabitoreddit/status/2037878120745931051",
+      "author": "Serenity",
+      "created_at": "2026-03-28T13:03:00.000Z",
+      "text": "SpaceX Supply Chain ahead of IPO list: \n\nThere's way too many companies LOL, need to go through each one. check out financials, verify DD, then see if TAM is big enough for revenue drivers\n\nDoing DD into\n\n$ATRO\n - testing\n\n$DCO\n - subassemblies\n\n$HEI\n\n\n$ATI\n - titanium sponge,",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEf_Q_YaIAAsgqX?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:23.469153+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2037723375154667896",
+      "url": "https://x.com/aleabitoreddit/status/2037723375154667896",
+      "author": "Serenity",
+      "created_at": "2026-03-28T02:48:06.000Z",
+      "text": "So some thoughts on Iran/Trade:\n\nI messed up and underestimated Trump decisive strikes like Venezuela. \n\nThis war could lead to a potential blowup on the AI trade if this gets dragged out. \n\nSince a lot of Middle East (Dubai) are funding the hyperscalers/OpenAI etc AI buildout.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:26.794644+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2037364885051613475",
+      "url": "https://x.com/aleabitoreddit/status/2037364885051613475",
+      "author": "Serenity",
+      "created_at": "2026-03-27T03:03:35.000Z",
+      "text": "So first long position:\n\nWin Semi - $4B MC. I keep talking about this name over and over…\n\nEspecially as the $SIVE foundry. And \n$LITE\n foundry.\n\nAnd SpaceX supply chains too.\n\nI genuinely thought it was a lot larger than $4B since it sits in every chokepoint. Strategically one of",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEYsj2obYAAoIQl?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:29.709160+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2037222572891529689",
+      "url": "https://x.com/aleabitoreddit/status/2037222572891529689",
+      "author": "Serenity",
+      "created_at": "2026-03-26T17:38:05.000Z",
+      "text": "Yeah… think markets are pricing a ground invasion (no TACO) and potential oil shock, hence all the selloffs.\n\nDon’t think US would start deploying thousands of troops if it weren’t escalation. Probably just a takeover of Kharg Island?\n\nI’d stay long, but not use margin (I",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEWrIWIbYAAF-LS?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HEWrIWJakAAhmJx?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:32.650207+00:00",
+      "is_article": false,
+      "char_count": 272
+    },
+    {
+      "tweet_id": "2037040684675280936",
+      "url": "https://x.com/aleabitoreddit/status/2037040684675280936",
+      "author": "Serenity",
+      "created_at": "2026-03-26T05:35:20.000Z",
+      "text": "List of highest quality profitable compounders: \n$MRVL\n, \n$TSEM\n, \n$TSM\n, \n$RDDT\n, \n$ARM\n, SK Hynix, and \n$AVGO\n are excellent. \n\nAs anchors are very strong in case you don't like higher beta stuff like $SIVE. \n\nHard to see them underperforming in any environment unless hyperscaler capex",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:35.630822+00:00",
+      "is_article": false,
+      "char_count": 288
+    },
+    {
+      "tweet_id": "2036742051820404790",
+      "url": "https://x.com/aleabitoreddit/status/2036742051820404790",
+      "author": "Serenity",
+      "created_at": "2026-03-25T09:48:40.000Z",
+      "text": "Two new two long positions this week, both large cap. \n\nI'm feel kinda stupid for not going long on these yet? \n\nKinda hiding in plain sight. Not popular retail longs but incredibly important like \n$TSEM",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:38.728400+00:00",
+      "is_article": false,
+      "char_count": 203
+    },
+    {
+      "tweet_id": "2036652451139551556",
+      "url": "https://x.com/aleabitoreddit/status/2036652451139551556",
+      "author": "Serenity",
+      "created_at": "2026-03-25T03:52:38.000Z",
+      "text": "Looking into two names for optical transceivers PCBs  bottleneck right now: \n\nWUS Printed Circuit and FIC Global prob the two winners I've identified. \n\nFew of the other winners were : Unimicron, Zhen Ding Tech,  Gold Circuit Electronics, \n$TTMI\n, and \n$SANM\n. \n\n\"Both Taiwanese and",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:42.228595+00:00",
+      "is_article": false,
+      "char_count": 282
+    },
+    {
+      "tweet_id": "2036357950063984908",
+      "url": "https://x.com/aleabitoreddit/status/2036357950063984908",
+      "author": "Serenity",
+      "created_at": "2026-03-24T08:22:23.000Z",
+      "text": "yep backchannel deal ofc... this is why you can't just react to media headlines.\n\nneed to find derivative breadcrumbs to frontrun algorithms.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEKYd4QbUAAF0La?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:45.058886+00:00",
+      "is_article": false,
+      "char_count": 141
+    },
+    {
+      "tweet_id": "2036277476691943621",
+      "url": "https://x.com/aleabitoreddit/status/2036277476691943621",
+      "author": "Serenity",
+      "created_at": "2026-03-24T03:02:37.000Z",
+      "text": "$TSM\n COUPE supplier was ~$300m valuation or so before Apollo bought it out.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEJPbaMbAAAtTiU?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:47.956732+00:00",
+      "is_article": false,
+      "char_count": 76
+    },
+    {
+      "tweet_id": "2036276507954520258",
+      "url": "https://x.com/aleabitoreddit/status/2036276507954520258",
+      "author": "Serenity",
+      "created_at": "2026-03-24T02:58:46.000Z",
+      "text": "WHAT ARE THE CHANCES????? NOOOOOO",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEJOrl6aAAAXWP4?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:36:51.036397+00:00",
+      "is_article": false,
+      "char_count": 33
+    },
+    {
+      "tweet_id": "2036275783942152202",
+      "url": "https://x.com/aleabitoreddit/status/2036275783942152202",
+      "author": "Serenity",
+      "created_at": "2026-03-24T02:55:53.000Z",
+      "text": "Nvm they got acquired by \n$APO\n. Fk",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:53.878962+00:00",
+      "is_article": false,
+      "char_count": 35
+    },
+    {
+      "tweet_id": "2036251029029921145",
+      "url": "https://x.com/aleabitoreddit/status/2036251029029921145",
+      "author": "Serenity",
+      "created_at": "2026-03-24T01:17:31.000Z",
+      "text": "Found a <$400M \n$TSM\n foundry supplier. Not \n$HIMX\n. \n\nLike 70% sure, still doing research on it.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:36:58.141277+00:00",
+      "is_article": true,
+      "char_count": 97
+    },
+    {
+      "tweet_id": "2036230922908156256",
+      "url": "https://x.com/aleabitoreddit/status/2036230922908156256",
+      "author": "Serenity",
+      "created_at": "2026-03-23T23:57:38.000Z",
+      "text": "-> 1.5b in \n$SPY\n futures and $580M oil futures were placed before the actual X post.\n\nI’m sure people found out through derivatives like the quote… or the us treasury shorting oil was probably the main signal too.\n\nAnyway tons of profit to be made off trades like these if you can",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HEIlOrEaIAAtjh6?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:02.237736+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2036072395841413493",
+      "url": "https://x.com/aleabitoreddit/status/2036072395841413493",
+      "author": "Serenity",
+      "created_at": "2026-03-23T13:27:42.000Z",
+      "text": "Just a thought on Iran vs. US:\n\nAnyone know if there’s a way to track insurance eg. UK for the Strait? \n\nIf rates go down -> there’s likely backchannel deals?",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:05.108465+00:00",
+      "is_article": false,
+      "char_count": 158
+    },
+    {
+      "tweet_id": "2035924342438285459",
+      "url": "https://x.com/aleabitoreddit/status/2035924342438285459",
+      "author": "Serenity",
+      "created_at": "2026-03-23T03:39:23.000Z",
+      "text": "So Enablence ( \n$ENA.V\n ) / NxN Star Coupler after I mentioned them with $SIVE. \n\nAnd if it's a good long given O-NET. \n\nFor me personally, if you go into finances, the amount of  debt ($55m+) is more than their entire marketcap. \n\nSo there's $29.M convertibles.. and more debt",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:08.143457+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2035523660275233258",
+      "url": "https://x.com/aleabitoreddit/status/2035523660275233258",
+      "author": "Serenity",
+      "created_at": "2026-03-22T01:07:13.000Z",
+      "text": "The War in Iran threw a huge knife into the trade for \n$XLU\n …\n\nWe went from 3 est. rate cuts this year to 0.\n\nIt’s good for companies like \n$CRCL\n that do better in higher interest rate environments.\n\nBut bad for utilities. At this point I genuinely don’t know how the War ends up",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HD-h-l7bcAEigme?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:11.139205+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2035385673163874671",
+      "url": "https://x.com/aleabitoreddit/status/2035385673163874671",
+      "author": "Serenity",
+      "created_at": "2026-03-21T15:58:54.000Z",
+      "text": "Some other random niche photonics companies im looking at:\n\n$SGCG - SiC and TaC susceptors for epitaxy\n$VGO - kinda like $IQE?\nNippon Carbon Co. (TYO: 5302) - Isotropic Graphite Supply\nIntelliEPI - epiwafers like $IQE\n\n$CVV\n - Custom MOCVD/HVPE hardware like $AIXA, idk too much about it yet, extremely small cap.  \n\nI just kinda go through tens of these. \n\nLike they all sound \"good\" but there's a difference between being a chokepoint to actually being the winner in the space. \n\nSo takes time to go through financials, supply chain mapping of each.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:14.166602+00:00",
+      "is_article": true,
+      "char_count": 551
+    },
+    {
+      "tweet_id": "2035382362071289959",
+      "url": "https://x.com/aleabitoreddit/status/2035382362071289959",
+      "author": "Serenity",
+      "created_at": "2026-03-21T15:45:45.000Z",
+      "text": "Feels like one of the most important company is in the West is prob goes to...\n\n5N Plus? People kinda know which is why it's up 441% 1Y. \n\nBut if you're looking for Western \n$AXTI\n? This is definitely it. Don't own it yet (i've talked about it a few times) but just putting it out",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:17.073035+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2035375536525246649",
+      "url": "https://x.com/aleabitoreddit/status/2035375536525246649",
+      "author": "Serenity",
+      "created_at": "2026-03-21T15:18:38.000Z",
+      "text": "Looking in Hamamatsu photonics rn, apparently monopoly in some optical components, but here's just my personal list of random suppliers I'm looking at:\n\n\n$COHR\n\n\n$LITE\n\nMitsubishi Electric\nSumitomo Electric\nFurukawa Electric\nNokia\nDenseLight\n\n$MTSI\n\n\n$AAOI\n\n$SIVE\nSource Photonics",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:19.960240+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2035349144110518552",
+      "url": "https://x.com/aleabitoreddit/status/2035349144110518552",
+      "author": "Serenity",
+      "created_at": "2026-03-21T13:33:45.000Z",
+      "text": "Well sht, I’m scared to post some of upstream bottlenecks since geopolitical adversaries can read this. \n\nThen export control hyperscaler supply chains… \n\nI’m pretty sure they just don’t know yet.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:23.072902+00:00",
+      "is_article": false,
+      "char_count": 196
+    },
+    {
+      "tweet_id": "2035219791339004270",
+      "url": "https://x.com/aleabitoreddit/status/2035219791339004270",
+      "author": "Serenity",
+      "created_at": "2026-03-21T04:59:45.000Z",
+      "text": "Went from chilling in Japan to hanging around \n$TSM\n and semi fabs this week. Air isn’t the best here lol! \n\nI’ve just been hopping country to country, some folks in the semi industry wanted to chat with me!\n\nI normally don’t share my personal life things, but thought it would be",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HD6NilzboAItgJD?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HD6NilyboAMN3lC?format=jpg&name=360x360"
+      ],
+      "scraped_at": "2026-07-07T03:37:26.024419+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2035208580539072713",
+      "url": "https://x.com/aleabitoreddit/status/2035208580539072713",
+      "author": "Serenity",
+      "created_at": "2026-03-21T04:15:12.000Z",
+      "text": "1. TFLN supply chain mapping\n2. SpaceX supply chain mapping before IPO\n3. wrapping up actuator bottleneck research for robotics sector/optimus BOM\n4. glass substrates mapping \n5. Some misc stock shoutouts from followers\n\nFor my short term to do list.\n\nIf anyone else wants",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:28.836421+00:00",
+      "is_article": false,
+      "char_count": 272
+    },
+    {
+      "tweet_id": "2033763395032519112",
+      "url": "https://x.com/aleabitoreddit/status/2033763395032519112",
+      "author": "Serenity",
+      "created_at": "2026-03-17T04:32:33.000Z",
+      "text": "Cycles. Are. Extremely Important. When timing markets. \n\nHere's what I've learned so far over the years:\n\nBasically, I got most of my knowledge from BTC cycles every 4 years since I started off in like 2016?  \n\nYou can frontrun the halving event usually 8-12 months before and it",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:31.851795+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2033675093067636958",
+      "url": "https://x.com/aleabitoreddit/status/2033675093067636958",
+      "author": "Serenity",
+      "created_at": "2026-03-16T22:41:40.000Z",
+      "text": "Still debating Nokia after Infinera since they now have a 6n InP fab for 2026 ramp.\n\nI personally have a tiny bit… but I don’t see their photonics growth strongly hardcarrying their telecom business.\n\nFeels like more concentration in \n$COHR\n and \n$TSEM\n are just better?\n\nDoes anyone",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:34.757925+00:00",
+      "is_article": false,
+      "char_count": 283
+    },
+    {
+      "tweet_id": "2033463897521520947",
+      "url": "https://x.com/aleabitoreddit/status/2033463897521520947",
+      "author": "Serenity",
+      "created_at": "2026-03-16T08:42:27.000Z",
+      "text": "New position TLDR:\n\n$SIVE at $140M MC. \n\nLaser supplier for upcoming CPO/silicon photonics companies.\n\nSimilar to Innolight who buys from \n$LITE\n for current optical transcievers.\n\nFor CPO/Silicon photonics, it's the next \n$LITE\n as they supplier to companies like \n$POET\n / $AYAR. \n\nIf",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDhNRijaUAAwPb2?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:37.628006+00:00",
+      "is_article": false,
+      "char_count": 286
+    },
+    {
+      "tweet_id": "2033150012335722950",
+      "url": "https://x.com/aleabitoreddit/status/2033150012335722950",
+      "author": "Serenity",
+      "created_at": "2026-03-15T11:55:11.000Z",
+      "text": "Okay so basically research list:\n\n\n$MP\n, \n$NEO\n, \n$ATI\n \n$CRS\n are anchors for robotic supply chains. \n\n1. Magnet Metals (Nd, Pr, Dy, Tb, Sm, Gd):\n\n\n$UUUU\n - Processes monazite sand into high-purity Neodymium\n\n$MP\n - Extracting bastnäsite at Mountain Pass and vertically integrating into",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDcgG92b0AAksvq?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:40.868198+00:00",
+      "is_article": false,
+      "char_count": 287
+    },
+    {
+      "tweet_id": "2033129163477950477",
+      "url": "https://x.com/aleabitoreddit/status/2033129163477950477",
+      "author": "Serenity",
+      "created_at": "2026-03-15T10:32:20.000Z",
+      "text": "Since there's no US companies on robotic supply chains:   \n\nLarge reason is prob due to refining of rare earths to get the material costs down a lot.   \n\nSo maybe better to invest in rare earth processing rather than investing in Chinese companies.  \n\n For example:   \n\n-> Going into #1 component of Actuation/Motion Control.   \n\n-> Then finding out what rare earth you need to build it at a cheaper cost.  \n\n robotic joint is a permanent magnet motor, needs neodymium processing supply chains:  \n\n1. Neo Performance Materials - TSX: NEO \n2. \n$MP\n (well known) \n3. \n$UUUU\n - surprisingly processing monazite concentrate into NdPr oxide.  \n\nThat's just my guess on how to get better exposure.   Kinda like substrates for AI photonics\n\nnot as familiar with this, but just publishing as i go.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDcgG92b0AAksvq?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:43.763906+00:00",
+      "is_article": true,
+      "char_count": 789
+    },
+    {
+      "tweet_id": "2033121017598722432",
+      "url": "https://x.com/aleabitoreddit/status/2033121017598722432",
+      "author": "Serenity",
+      "created_at": "2026-03-15T09:59:58.000Z",
+      "text": "For robotic supply chains BOM mapping:\n\nActuation/motion (Frameless torque motors, harmonic reducers, planetary roller screws, motor control units) #1.\n\nSimilar to memory like \n$MU\n in AI clusters bomBOM \n\nThen #2:\n\nPerception & Compute: DRAM/NAND, 3D LiDAR, 4D radar, acoustic",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDcW_VdboAIlBPv?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:37:47.558562+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2032986893026209946",
+      "url": "https://x.com/aleabitoreddit/status/2032986893026209946",
+      "author": "Serenity",
+      "created_at": "2026-03-15T01:07:01.000Z",
+      "text": "Humanoid soldiers are coming, this is super, super cool. Massive shift in trends as ai goes physical.\n\nApparently being tested for live combat in Ukraine.\n\nI’ve already said 4D + world models possible exposure for the physical transition, and listed names like \n$AEVA\n for 4D lidar.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDaezTcaMAI0BHP?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HDaezTbaQAAkBnZ?format=jpg&name=360x360"
+      ],
+      "scraped_at": "2026-07-07T03:37:51.066918+00:00",
+      "is_article": false,
+      "char_count": 282
+    },
+    {
+      "tweet_id": "2032543468829159841",
+      "url": "https://x.com/aleabitoreddit/status/2032543468829159841",
+      "author": "Serenity",
+      "created_at": "2026-03-13T19:45:00.000Z",
+      "text": "Is it jut me or… is \n$EWY\n is no longer a good indicator of how $KOSPI and SK Hynix/Samsung move the next day.\n\nAs intraday movement is too volatile due to all the 10x leveraged instruments and hedging. \n\nA lot of the former arbitrage opportunities are unreliable since it started",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:54.138967+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2032223765426553178",
+      "url": "https://x.com/aleabitoreddit/status/2032223765426553178",
+      "author": "Serenity",
+      "created_at": "2026-03-12T22:34:37.000Z",
+      "text": "Just my thoughts on the market from names I've mentioned.\n\n$SOI: as you know from my public posts, already up over 40%+ coming out of smartphone drag, silicon photonics substrate monopoly and gets a boost from both tailwinds at once.\n\n\n$AAOI\n: terrible way to do dilution. Should",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:37:57.449045+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2031517082412876007",
+      "url": "https://x.com/aleabitoreddit/status/2031517082412876007",
+      "author": "Serenity",
+      "created_at": "2026-03-10T23:46:30.000Z",
+      "text": "Just my macro read: US and Trump 1000% does not want Oil prices to stay elevated. \n\nBetter thing to do is look at political and psychological mechanics. Not the fundamentals of supply and demand\n\nIf you see trump tweeting every day about lower oil prices, they'll do everything in",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:00.920268+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2031509079626232210",
+      "url": "https://x.com/aleabitoreddit/status/2031509079626232210",
+      "author": "Serenity",
+      "created_at": "2026-03-10T23:14:42.000Z",
+      "text": "So it looks like:\n\n-reporters were stating mines were placed last few days (news reported it as confirmed but still under investigation)\n\n-Trump giving an off-ramp by saying it’s inactive but destroying all the ships. \n\nIt’s high confidence there’s mines, just don’t want to scare",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HDFevIJb0AAp_Jv?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HDFevINboAATQ3D?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:03.814727+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2031129380131582171",
+      "url": "https://x.com/aleabitoreddit/status/2031129380131582171",
+      "author": "Serenity",
+      "created_at": "2026-03-09T22:05:55.000Z",
+      "text": "IMO just need to pick multiple horses that you think will all go up the most rather than just one. \n\nMy highest concentration and internal PTs: \n\nMemory names: SK Hynix/Samsung (still think both close to double next year maybe ~80%, $700B Sk Hynix, $1.7B Samsung doesn't really",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:06.742907+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2030830224716546276",
+      "url": "https://x.com/aleabitoreddit/status/2030830224716546276",
+      "author": "Serenity",
+      "created_at": "2026-03-09T02:17:11.000Z",
+      "text": "Is it just me or is war a contrarian bull case with social media stocks when it comes time to report earnings?\n\nx recorded record user counts and net engagement boom is likely a tailwind. And it’s likely the same for companies like \n$RDDT\n.\n\neverything sells off together but it",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:09.584506+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2030326784328344047",
+      "url": "https://x.com/aleabitoreddit/status/2030326784328344047",
+      "author": "Serenity",
+      "created_at": "2026-03-07T16:56:41.000Z",
+      "text": "So just thought on current market drop and my personal setup.\n\nMy personal rotation looked like:\n- Cut all Semis/Asian names. But keep coree in two momentum bottlenecks (photonics, memory).\n- Long War Stocks that haven't risen ( \n$BKSY\n, \n$LASR\n, \n$LPTH\n, etc).\n- Hold some other 2Y",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:13.021106+00:00",
+      "is_article": false,
+      "char_count": 282
+    },
+    {
+      "tweet_id": "2030016008656965816",
+      "url": "https://x.com/aleabitoreddit/status/2030016008656965816",
+      "author": "Serenity",
+      "created_at": "2026-03-06T20:21:46.000Z",
+      "text": "Yeah should have just stuck to trading volatility instead of dip buying during these times. Rough day for photonics!\n\nAlready learned my lesson before but couldn’t stick to it ig.\n\nAll my CSP are up a lot but below cost avg on dip buys like on \n$RDDT\n.\n\nProb will recover midterm",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCwQzGxaUAAOrVh?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HCwQzGwa4AAzzTU?format=jpg&name=360x360"
+      ],
+      "scraped_at": "2026-07-07T03:38:15.829390+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2029966060380901548",
+      "url": "https://x.com/aleabitoreddit/status/2029966060380901548",
+      "author": "Serenity",
+      "created_at": "2026-03-06T17:03:18.000Z",
+      "text": "Ended up doing dip buying today mainly around these three:\n\nETH - $1950 (cost averaging)\n\n$TSEM\n on the 5% drop\n\n$AEHR\n on the 5% drop back to $38\n\nTower semi is a new position, wanted an entry earlier but never got one until 21% drop.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCvjXp0aUAMuaQ2?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HCvjXpxbEAA5kXz?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:18.627711+00:00",
+      "is_article": false,
+      "char_count": 235
+    },
+    {
+      "tweet_id": "2029140316121645522",
+      "url": "https://x.com/aleabitoreddit/status/2029140316121645522",
+      "author": "Serenity",
+      "created_at": "2026-03-04T10:22:05.000Z",
+      "text": "Looks like the sell America trade is over sooner than expected.\n\nsome thoughts, looks like a huge capital rotation back into America and Bitcoin from Korea/Japan. \n\nI said earlier I took a ton of short term capital gains profits on a lot of semis/bottlenecks from Asia just for",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:21.547400+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2028906136087478295",
+      "url": "https://x.com/aleabitoreddit/status/2028906136087478295",
+      "author": "Serenity",
+      "created_at": "2026-03-03T18:51:32.000Z",
+      "text": "Lazy day today. Just ended up buying \n$INTC\n on the 5% drop, and \n$SE\n on the 18% drop just thought ER was overreaction.\n\nThen sold a bunch of CSPs on \n$AAOI\n, \n$AXTI\n, \n$NBIS\n, and a few others. And bought SK Hynix on drop to 510 euros. (Hy9h).",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:24.726647+00:00",
+      "is_article": false,
+      "char_count": 245
+    },
+    {
+      "tweet_id": "2028751667718664456",
+      "url": "https://x.com/aleabitoreddit/status/2028751667718664456",
+      "author": "Serenity",
+      "created_at": "2026-03-03T08:37:44.000Z",
+      "text": "I wonder if landmark is an early indicator how photonics will do in US trading?\n\nLast time it went up 10%, the other day whole photonics sector boomed.\n\nWill need to test track this over time.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCeS4u6a4AABVbY?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:27.526180+00:00",
+      "is_article": false,
+      "char_count": 192
+    },
+    {
+      "tweet_id": "2028448613400014958",
+      "url": "https://x.com/aleabitoreddit/status/2028448613400014958",
+      "author": "Serenity",
+      "created_at": "2026-03-02T12:33:30.000Z",
+      "text": "Not too many niche players, major winner was SpektreWorks and Anduril from what I've found. \n\nBig defense players were mainly involved this time:\n\n$NOC\n - b2 stealth bombers\n\n$LMT\n + \n$BA\n - strike fighters ( F-35C, F/A-18E/F, F-22 Raptor)\nAttack Drones - SpektreWorks for LUCAS\nMissile",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:30.338536+00:00",
+      "is_article": false,
+      "char_count": 286
+    },
+    {
+      "tweet_id": "2028409133763043738",
+      "url": "https://x.com/aleabitoreddit/status/2028409133763043738",
+      "author": "Serenity",
+      "created_at": "2026-03-02T09:56:38.000Z",
+      "text": "Markets are extremely chaotic right now.\n\nIran conflict might be extended rather than the one-hit wonder in Venezulea so might reposition into wartime portfolio.\n\nPersonally:\n\n-> upping concentration in smaller defense sector stocks that haven’t followed the big defense",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:33.141295+00:00",
+      "is_article": false,
+      "char_count": 270
+    },
+    {
+      "tweet_id": "2027502331684855834",
+      "url": "https://x.com/aleabitoreddit/status/2027502331684855834",
+      "author": "Serenity",
+      "created_at": "2026-02-27T21:53:19.000Z",
+      "text": "Basically added a decent amount of \n$AAOI\n today. \n\nIdk if management is BSing or not but if it’s true, seems possible to rerate to $30B+ mid 2027 or higher if they project more ramp into 2028.\n\nThey do have 3 hyperscaler clients now and 1 more coming I think. So reminds me of a",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:36.008254+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2027498440972980226",
+      "url": "https://x.com/aleabitoreddit/status/2027498440972980226",
+      "author": "Serenity",
+      "created_at": "2026-02-27T21:37:52.000Z",
+      "text": "SpaceX probably listing in June and filing march. \n\nProb single biggest catalyst for space stocks if it’s being valued at $1.5-$1.7T.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCMfFcybEAAG-5H?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:39.392043+00:00",
+      "is_article": false,
+      "char_count": 133
+    },
+    {
+      "tweet_id": "2027470604597895297",
+      "url": "https://x.com/aleabitoreddit/status/2027470604597895297",
+      "author": "Serenity",
+      "created_at": "2026-02-27T19:47:15.000Z",
+      "text": "Prob gonna do research into photonic hardware companies like \n$ASML\n types \n\nApparently Oxford instruments (LSE ~$1.9B) supplies to \n$AAOI\n too but not familiar with them.\n\nWill do more DD but I’d assume a lot of capital will go to more niche transceiver supply chains upstream",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCMFxCWagAA0Ly1?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:42.205608+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2027414467173343566",
+      "url": "https://x.com/aleabitoreddit/status/2027414467173343566",
+      "author": "Serenity",
+      "created_at": "2026-02-27T16:04:11.000Z",
+      "text": "Prob don’t copy trade but just an example, wanted to scale back into \n$RKLB\n positions.\n\nEnded up writing low $60 CSP (puts). I get assigned if it drops another 10%. If not, I make like 4.6% percent anyways. \n\nI did want positions and CSP writing is good to scale back into things",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCLSta3aIAAadYp?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:45.037659+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2027019986980729141",
+      "url": "https://x.com/aleabitoreddit/status/2027019986980729141",
+      "author": "Serenity",
+      "created_at": "2026-02-26T13:56:39.000Z",
+      "text": "I’ve been holding \n$AEHR\n but it looks like they’ve hit the inflection point from the \n$POET\n stage to actual orders\n\nReminds me of early Teradyne. Still a great long low $1B MC imo.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HCFr7vRbkAEQsKV?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/HCFr7vVbAAIKUaQ?format=jpg&name=900x900"
+      ],
+      "scraped_at": "2026-07-07T03:38:47.820287+00:00",
+      "is_article": false,
+      "char_count": 182
+    },
+    {
+      "tweet_id": "2026605341090422800",
+      "url": "https://x.com/aleabitoreddit/status/2026605341090422800",
+      "author": "Serenity",
+      "created_at": "2026-02-25T10:29:00.000Z",
+      "text": "A lot of this insight earlier was just feels.\n\nFinally looked into quantitative evidence for this:\n\nBasically found capital rotation was short US/China -> Korea, Taiwan, Japan. \n\nBasically: South Korea (Est. 35% of Asian Tech/Developed Inflows)\n\n- foreigners were net buyers of",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HB_w-dPaMAE9rW8?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HB_xqrVboAELOG4?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:50.596486+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2026517225155506620",
+      "url": "https://x.com/aleabitoreddit/status/2026517225155506620",
+      "author": "Serenity",
+      "created_at": "2026-02-25T04:38:52.000Z",
+      "text": "Large rotation into foreign counties like Korea, Taiwan, Japan rn. \n\nStarting to think it wouldn’t be a bad idea to allocate a small % into low IV calls on each in like \n$EWJ\n case the historical rally extends.\n\n(Taiwan up 42% 1Y, Japan up 32% 1Y is considered historical). And",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:53.379297+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2026131902852444303",
+      "url": "https://x.com/aleabitoreddit/status/2026131902852444303",
+      "author": "Serenity",
+      "created_at": "2026-02-24T03:07:44.000Z",
+      "text": "$MSFT\n forward p/e ~23.1 again. \n\nIt’s definitely a lot more attractive valuation at $380 after 3.5% drop than $500 so ended up picking some up personally.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HB5EOZ7aEAA6nHR?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:38:56.230566+00:00",
+      "is_article": false,
+      "char_count": 155
+    },
+    {
+      "tweet_id": "2025515248741150952",
+      "url": "https://x.com/aleabitoreddit/status/2025515248741150952",
+      "author": "Serenity",
+      "created_at": "2026-02-22T10:17:22.000Z",
+      "text": "Shower thought posts about my top bottleneck momentum longs rn and trade timelines\n\n1. Memory (likely structural, memory persists into 2028. Maybe be cautious q2 2027? Or if hyperscalers cut capex expectations. We’re mid cycle but if you look at nvidia it just keeps going.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:38:59.036735+00:00",
+      "is_article": false,
+      "char_count": 273
+    },
+    {
+      "tweet_id": "2024826282492743948",
+      "url": "https://x.com/aleabitoreddit/status/2024826282492743948",
+      "author": "Serenity",
+      "created_at": "2026-02-20T12:39:39.000Z",
+      "text": "Changed my mind about \n$EWY\n IV, could head to 50-55%+. \n$MRVL\n and \n$AVGO\n sits around there but the SK index is much more volatile. \n\nIntroducing 10x leverage + if that takes off introduces a huge amount of new volatility for Samsung/sk individually, which in turn affects \n$EWY",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBl9biiaQAA8K_Z?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:01.793501+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2024787743805440375",
+      "url": "https://x.com/aleabitoreddit/status/2024787743805440375",
+      "author": "Serenity",
+      "created_at": "2026-02-20T10:06:31.000Z",
+      "text": "Good news to the IV traders on \n$EWY\n. \n\nVolatility looks like it's about to shoot through the roof.  \n\nLooks like the degen 10x leverage Sk Hynix/Samsung onchain is taking off. Being the MM counterparty and hedging 10x those equities would be an absolute nightmare + would make",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBl9biiaQAA8K_Z?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:04.581554+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2024548235122278874",
+      "url": "https://x.com/aleabitoreddit/status/2024548235122278874",
+      "author": "Serenity",
+      "created_at": "2026-02-19T18:14:48.000Z",
+      "text": "It’s actually down in price, but this is IV expansion from volatility. Same thing happened with \n$EWY\n. \n\nStock barely moves but made majority of its move first month of the year. I’d assume MMs priced in IV based on historical data. \n\nI’d expect this to be more volatile than the",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:07.965892+00:00",
+      "is_article": false,
+      "char_count": 280
+    },
+    {
+      "tweet_id": "2024177684524519505",
+      "url": "https://x.com/aleabitoreddit/status/2024177684524519505",
+      "author": "Serenity",
+      "created_at": "2026-02-18T17:42:22.000Z",
+      "text": "Upped concentration in defense like \n$AVAV\n and oil like \n$CVX\n in case of war personally.\n\nStill researching more second order effects if us full scale invades but just doing basics for now",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBcfNsyaEAAE4Pf?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:10.787402+00:00",
+      "is_article": false,
+      "char_count": 190
+    },
+    {
+      "tweet_id": "2024142313061298408",
+      "url": "https://x.com/aleabitoreddit/status/2024142313061298408",
+      "author": "Serenity",
+      "created_at": "2026-02-18T15:21:48.000Z",
+      "text": "Ended up taking \n$SIMO\n positions for NAND controllers, and trimmed other misc semi concentration to up stake. \n\nFeels like \n$MU\n just took off just now, so I'd expect the others to play catchup was my guess.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:13.621350+00:00",
+      "is_article": false,
+      "char_count": 208
+    },
+    {
+      "tweet_id": "2024138512254009533",
+      "url": "https://x.com/aleabitoreddit/status/2024138512254009533",
+      "author": "Serenity",
+      "created_at": "2026-02-18T15:06:42.000Z",
+      "text": "also cost averaging in case it drops back down to $10. previously hype names like \n$POET\n that are now depressed present better risk-opportunities imo. This is just my first entr.y",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:16.613076+00:00",
+      "is_article": false,
+      "char_count": 180
+    },
+    {
+      "tweet_id": "2024129994721554675",
+      "url": "https://x.com/aleabitoreddit/status/2024129994721554675",
+      "author": "Serenity",
+      "created_at": "2026-02-18T14:32:51.000Z",
+      "text": "Trimmed 1/3rd $RPI (still holding majority just risk management).\n\nEnded up entering \n$INFQ\n at $15.5\n\none of the few legitimate quantum stocks in my view. huge catalyst from ticker change imo unless war starts.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:19.544186+00:00",
+      "is_article": false,
+      "char_count": 211
+    },
+    {
+      "tweet_id": "2024120884169208298",
+      "url": "https://x.com/aleabitoreddit/status/2024120884169208298",
+      "author": "Serenity",
+      "created_at": "2026-02-18T13:56:39.000Z",
+      "text": "Increased volatility if Iran and US end up in a military conflict.\n\nMight reposition into defense/oil and hedge a tad. \n\nDoing more research right now.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBcfNsyaEAAE4Pf?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:22.812747+00:00",
+      "is_article": true,
+      "char_count": 151
+    },
+    {
+      "tweet_id": "2023797996903952641",
+      "url": "https://x.com/aleabitoreddit/status/2023797996903952641",
+      "author": "Serenity",
+      "created_at": "2026-02-17T16:33:37.000Z",
+      "text": "Also treat this more like a higher likelihood lottery ticket in case index goes up 30% based on AI DC usage for inference. Size accordingly though if you’re buying options since it’s inherently risky too (and might reverse gains from this year in the meantime, so same downside gets magnified)\n\nThis is just my guess that this might be a unique breakout year.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:26.010797+00:00",
+      "is_article": true,
+      "char_count": 359
+    },
+    {
+      "tweet_id": "2023608942472159360",
+      "url": "https://x.com/aleabitoreddit/status/2023608942472159360",
+      "author": "Serenity",
+      "created_at": "2026-02-17T04:02:23.000Z",
+      "text": "Ended up going long again on \n$ALAB\n at $127.\n\nNew add TLDR are \n$RDDT\n (software), \n$ALAB\n, \n$AMKR\n, \n$ACMR\n, and $RPI. \n\nReddit/Astera recovery. \n$AMKR\n long term US advanced packaging supply chain, great long at $11B.\n\n\n$ACMR\n on foreign memory. And raspberry as you know momentum trade for",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBVNmqWbcAAeVeB?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:29.566850+00:00",
+      "is_article": false,
+      "char_count": 293
+    },
+    {
+      "tweet_id": "2023460374939566447",
+      "url": "https://x.com/aleabitoreddit/status/2023460374939566447",
+      "author": "Serenity",
+      "created_at": "2026-02-16T18:12:02.000Z",
+      "text": "Honestly new long idea might be just legacy computers, no joke. \n\nKind of how legacy memory got expensive. \n\n\n$IRM\n for example, just gets components from decommissioned enterprise hardware. Then had a huge profit spike.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:33.144284+00:00",
+      "is_article": true,
+      "char_count": 220
+    },
+    {
+      "tweet_id": "2023311401792774296",
+      "url": "https://x.com/aleabitoreddit/status/2023311401792774296",
+      "author": "Serenity",
+      "created_at": "2026-02-16T08:20:04.000Z",
+      "text": "TLDR: people were buying one or two for educational use cases but all of a sudden companies and individuals are buying tens to hundreds to run isolated instances for picoclaw/openclaw.  \n\nClose to all time low now, healthy balance sheet.\n\nStrong catalyst going forward for low",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBQ-_pLaYAAiH6s?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:36.679989+00:00",
+      "is_article": false,
+      "char_count": 276
+    },
+    {
+      "tweet_id": "2023310624194015560",
+      "url": "https://x.com/aleabitoreddit/status/2023310624194015560",
+      "author": "Serenity",
+      "created_at": "2026-02-16T08:16:58.000Z",
+      "text": "First trade idea is Raspberry Pi.\n\nCautious positions given it’s a $640m MC. Cost averaging over this week\n\nI modeled 45-55% growth rate where analysts projected 14%. \n\nBasically thesis is people are buying out Mac Minis, and I’m starting to see raspberry pi 5 and low end pi",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HBQ-SW5asAAO3dU?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:39.860804+00:00",
+      "is_article": false,
+      "char_count": 275
+    },
+    {
+      "tweet_id": "2023244196711166231",
+      "url": "https://x.com/aleabitoreddit/status/2023244196711166231",
+      "author": "Serenity",
+      "created_at": "2026-02-16T03:53:01.000Z",
+      "text": "2 new banger ideas this week.\n\nI’ll post the hardware consumer one to public. This one is probably decent re-rating but not as much compared to latter: \n\nfound a low IV etf that could be 10x return that I’ll post here, don’t want the trade to be too crowded.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:43.493313+00:00",
+      "is_article": false,
+      "char_count": 258
+    },
+    {
+      "tweet_id": "2022971621351592030",
+      "url": "https://x.com/aleabitoreddit/status/2022971621351592030",
+      "author": "Serenity",
+      "created_at": "2026-02-15T09:49:54.000Z",
+      "text": "Went through a lot of tickers. These were the extremely promising ones I’ve found out of the bunch.\n\nI need to do more DD into them though:\n\n\n$TTMI\n -PCIbs\n\n$NVT\n- liquid cooling\n$PSTG - flash array storage\n\n$SIMO\n - prob most interesting for SSD/NAND controllers likely taking",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:46.379032+00:00",
+      "is_article": false,
+      "char_count": 277
+    },
+    {
+      "tweet_id": "2022617082924617836",
+      "url": "https://x.com/aleabitoreddit/status/2022617082924617836",
+      "author": "Serenity",
+      "created_at": "2026-02-14T10:21:05.000Z",
+      "text": "Wow found some pretty insane alpha that hasn’t been priced in yet on the downstream supplier side.  \n\nAnalysts were projecting like 10% revenue growth but it probably might be  triple digits. \n\nNo movement yet, still doing more DD into financials. Will post on Monday.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:50.253808+00:00",
+      "is_article": true,
+      "char_count": 268
+    },
+    {
+      "tweet_id": "2022393074643832982",
+      "url": "https://x.com/aleabitoreddit/status/2022393074643832982",
+      "author": "Serenity",
+      "created_at": "2026-02-13T19:30:57.000Z",
+      "text": "Nothing too much for me today. Main thing was adding \n$AMKR\n on the 6.6% drop. I didn’t see any news aside from 10m share sale by institutions. Same with happened with \n$SNDK\n on the drop to $530 and now it’s back in the $600s\n\nAdded some \n$ACMR\n and \n$INTC\n as well since I wanted more positions. Some off some crypto positions.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:39:53.553343+00:00",
+      "is_article": true,
+      "char_count": 329
+    },
+    {
+      "tweet_id": "2021852431584571729",
+      "url": "https://x.com/aleabitoreddit/status/2021852431584571729",
+      "author": "Serenity",
+      "created_at": "2026-02-12T07:42:38.000Z",
+      "text": "I still think IV is mispriced given \n$EWY\n moves like 4-7% a day now. \n\nThat being said, my covered calls are looking rough. I have a lot of regrets.",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HA8QEYDbsAAk5lt?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HA8QEXcaQAAjBPg?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:39:56.563132+00:00",
+      "is_article": false,
+      "char_count": 149
+    },
+    {
+      "tweet_id": "2021776390006448352",
+      "url": "https://x.com/aleabitoreddit/status/2021776390006448352",
+      "author": "Serenity",
+      "created_at": "2026-02-12T02:40:28.000Z",
+      "text": "Random thoughts: getting  a lot of FOMO, up 4.24% this week while semis are soaring green (eg. \n$TSM\n up 15.8% 1W, even \n$AEHR\n up 45%+, \n$LITE\n up 31.29%, and \n$MU\n back up 10%+).\n\nBut down really heavily yesterday from software/crypto.\n\nDream scenario is everything green, but one",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:00.155470+00:00",
+      "is_article": false,
+      "char_count": 282
+    },
+    {
+      "tweet_id": "2021659619190616109",
+      "url": "https://x.com/aleabitoreddit/status/2021659619190616109",
+      "author": "Serenity",
+      "created_at": "2026-02-11T18:54:45.000Z",
+      "text": "Ended up buying \n$AIRO\n back at 8 high and \n$AVAV\n back in $240s. \n\nJust feels like the entire stock market is collapsing aside from AI stocks lol",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:03.774572+00:00",
+      "is_article": true,
+      "char_count": 146
+    },
+    {
+      "tweet_id": "2021659188276109414",
+      "url": "https://x.com/aleabitoreddit/status/2021659188276109414",
+      "author": "Serenity",
+      "created_at": "2026-02-11T18:54:45.000Z",
+      "text": "Ended up buying \n$AIRO\n back at 8 high and \n$AVAV\n back in $240s. \n\nJust feels like the entire stock market is collapsing aside from AI stocks lol",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:07.494754+00:00",
+      "is_article": false,
+      "char_count": 146
+    },
+    {
+      "tweet_id": "2021638255956111436",
+      "url": "https://x.com/aleabitoreddit/status/2021638255956111436",
+      "author": "Serenity",
+      "created_at": "2026-02-11T17:31:35.000Z",
+      "text": "I'm testing out a potential opportunity with price lag between Sk Hynix EUR and \n$EWY\n.  \n\n\n$EWY\n is basically Korean futures (mainly Samsung + Sk Hynix) and is up 3.66%.  \n\n But SK Hynix on EUR is basically flat today at 510.   \n\nIf my prediction is correct SK Hynix EUR will go",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HA5NODZaEAAX0A_?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HA5NODlbsAERcgv?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:11.086141+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2021512130688946272",
+      "url": "https://x.com/aleabitoreddit/status/2021512130688946272",
+      "author": "Serenity",
+      "created_at": "2026-02-11T09:10:24.000Z",
+      "text": "$RDDT\n still way too cheap at $150. Ended up adding a lot more ON. Trimmed stuff like \n$CIFR\n completely earlier and trimmed some concentration in Bitcoin/altcoins for more shares . \n\nAI doesn’t disrupt anything with Reddit, if anything there’s just more bots trying to interact with",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:14.746316+00:00",
+      "is_article": false,
+      "char_count": 283
+    },
+    {
+      "tweet_id": "2021354465086013947",
+      "url": "https://x.com/aleabitoreddit/status/2021354465086013947",
+      "author": "Serenity",
+      "created_at": "2026-02-10T22:43:54.000Z",
+      "text": "Ended up adding more \n$SNDK\n on 7% drop, I like it a lot more at $540 than $$690\n\nDidn’t like \n$HOOD\n earnings at $80, looks like the start of revenue deceleration, ended up moving those positions over to stuff like \n$RDDT\n. \n\nOtherwise just sitting on positions",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:17.654355+00:00",
+      "is_article": false,
+      "char_count": 262
+    },
+    {
+      "tweet_id": "2021187512824176936",
+      "url": "https://x.com/aleabitoreddit/status/2021187512824176936",
+      "author": "Serenity",
+      "created_at": "2026-02-10T10:37:04.000Z",
+      "text": "$HIMS\n probably overvalued without glp-1.\n\nWithout that their p/e goes to 55-60 and they’re growing 25-30% y/y.\n\n$630m cash on hand, ~$140m in liabilities. \n\nSo a settlement would hurt a lot too.\n\nProbably low chance of recovery, makes sense why it’s 34% short interest.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:21.193595+00:00",
+      "is_article": true,
+      "char_count": 270
+    },
+    {
+      "tweet_id": "2021171551270277521",
+      "url": "https://x.com/aleabitoreddit/status/2021171551270277521",
+      "author": "Serenity",
+      "created_at": "2026-02-10T10:37:04.000Z",
+      "text": "$HIMS\n probably overvalued without glp-1.\n\nWithout that their p/e goes to 55-60 and they’re growing 25-30% y/y.\n\n$630m cash on hand, ~$140m in liabilities. \n\nSo a settlement would hurt a lot too.\n\nProbably low chance of recovery, makes sense why it’s 34% short interest.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:24.616831+00:00",
+      "is_article": false,
+      "char_count": 270
+    },
+    {
+      "tweet_id": "2020959064667443587",
+      "url": "https://x.com/aleabitoreddit/status/2020959064667443587",
+      "author": "Serenity",
+      "created_at": "2026-02-09T20:32:43.000Z",
+      "text": "So today was just position rotation day. Portfolio is up 3.77%.\n\nIt’s funny like I said premarket if there’s no material news and \n$SPY\n is down randomly I get more bullish. Retail usually are the ones to panic sell premarket when volume is low so I take advantage of low liquidity",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAvjjgqbcAAREFk?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HAvjjgmaoAExZl6?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:27.543947+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2020913963345772606",
+      "url": "https://x.com/aleabitoreddit/status/2020913963345772606",
+      "author": "Serenity",
+      "created_at": "2026-02-09T17:33:30.000Z",
+      "text": "Sold breakeven lol",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:31.276026+00:00",
+      "is_article": false,
+      "char_count": 18
+    },
+    {
+      "tweet_id": "2020813008377700654",
+      "url": "https://x.com/aleabitoreddit/status/2020813008377700654",
+      "author": "Serenity",
+      "created_at": "2026-02-09T10:52:20.000Z",
+      "text": "Idk if it’s just me but I get more bullish if premarket is very red cause it flips most of the time.\n\nEnded up buying \n$MU\n on the 3.5% drop to $380 and more \n$RDDT\n at $139 (only 1% drop but wanted to enter more positions)",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAtet6cbgAAgxvN?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HAtet6dbsAAeK0c?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:35.390649+00:00",
+      "is_article": true,
+      "char_count": 223
+    },
+    {
+      "tweet_id": "2020289518902079830",
+      "url": "https://x.com/aleabitoreddit/status/2020289518902079830",
+      "author": "Serenity",
+      "created_at": "2026-02-08T00:12:11.000Z",
+      "text": "So TLDR of my active recovery/swing trades that I’m doing , just to give ideas.\n\n\n$RDDT\n, $140 - 70% growth, strong ER balance sheet. Ai not disrupting it. I’ll post a thesis in main timeline. \n\n\n$CRDO\n, $110 - still being used, just loses that defacto leader status\n\n\n$GLXY\n, $17 - ER",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:39.645450+00:00",
+      "is_article": false,
+      "char_count": 285
+    },
+    {
+      "tweet_id": "2019919586796400986",
+      "url": "https://x.com/aleabitoreddit/status/2019919586796400986",
+      "author": "Serenity",
+      "created_at": "2026-02-06T23:42:12.000Z",
+      "text": "Sorry defensive* not defense. Stuff that didn’t crash like some semis -> rotated into stuff that did basically.",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:40:43.218340+00:00",
+      "is_article": false,
+      "char_count": 111
+    },
+    {
+      "tweet_id": "2019864754186252798",
+      "url": "https://x.com/aleabitoreddit/status/2019864754186252798",
+      "author": "Serenity",
+      "created_at": "2026-02-06T20:04:19.000Z",
+      "text": "I’m long \n$RDDT\n here at $141.\n\nER was good. Probably option related selloff Friday.\n\nSo buying shares and waiting it out",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAgASVea4AAlrxa?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:46.257147+00:00",
+      "is_article": false,
+      "char_count": 121
+    },
+    {
+      "tweet_id": "2019335233934618766",
+      "url": "https://x.com/aleabitoreddit/status/2019335233934618766",
+      "author": "Serenity",
+      "created_at": "2026-02-05T09:00:11.000Z",
+      "text": "So my from my research from supply chain leaks, TLDR guess from leaks this week:\n\n-  \n$VPG\n got replaced for mass production Optimus by Chinese firms\n\n- \n$VPG\n might still be used for high-precision Optimus versions, maybe initial factory to prototyping Optimus. \n\n- Nonzero chance",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAYbUw8a0AEm0Bd?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HAYTqaXacAI9bY6?format=jpg&name=240x240"
+      ],
+      "scraped_at": "2026-07-07T03:40:50.002399+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2019323112140263520",
+      "url": "https://x.com/aleabitoreddit/status/2019323112140263520",
+      "author": "Serenity",
+      "created_at": "2026-02-05T08:12:01.000Z",
+      "text": "Don’t want to bear post \n$VPG\n but new news 2 days ago might link China suppliers to Optimus 3 (while they were used in Optimus 2).\n\nNot 100% sure though, so it’s good to derisk a tiny bit. Still a moonshot if they’re in Optimus 3 will get more news on earnings but it’s a coin flip. \n\nTesla has already selected some Chinese suppliers for Optimus mass production, including Zhejiang Huazheng (thermal control), Ningbo TuoFu (actuators), and Everwin (sensors). The SCMP noted, “Suppliers have delivered small batches of samples while receiving feedback from Tesla,” adding, “Manufacturing partners are now competing to secure positions in this supply chain to win more orders.”\n\nStill doing more research.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAYTqaXacAI9bY6?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:53.725102+00:00",
+      "is_article": true,
+      "char_count": 705
+    },
+    {
+      "tweet_id": "2019223739783868785",
+      "url": "https://x.com/aleabitoreddit/status/2019223739783868785",
+      "author": "Serenity",
+      "created_at": "2026-02-05T01:37:09.000Z",
+      "text": "Best example I can give is \n$TSM\n. Priced like $APPL iv at like 31% IV back in $150s last year.\n\nLeaps increased to 44% IV. So profit both on IV increase and price increase.\n\nThis is Vega expansion on upside for IV increase from sk Hynix Samsung derivatives.\n\nJust checked again",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAW5SU8bUAAqtM0?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HAW5SVJakAAalDM?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:40:56.876903+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2019219732302577690",
+      "url": "https://x.com/aleabitoreddit/status/2019219732302577690",
+      "author": "Serenity",
+      "created_at": "2026-02-05T01:16:16.000Z",
+      "text": "Also, this isn't really something market makers can short out of money like with US stocks since this is National Korea index. \n\nAnd shorting it doesn't really do anything like \n$MSTR\n since it just tracks NAV of Korea Sk Hynix, Samsung E, and Hyundai (Boston Dynamics)\n\nYou can see \n$EWY\n moving up/down 3-4% a day this year, so volatility isn't priced correctly. \n\nindividually SK Hynix/Samsung IV would likely be volatile. \n\nBut still don't really recommend options cause of risk but this is option chains for Samsung/Sk Hynix derivatives are an interesting angle.\n\n$EWY 2028 option chain looks messed up. 2027 option chain starting to get priced in with 36-37% IV. \n\nDidn't want to post this publicly since it would influence market too much. \n\nIV Is 33% or so (priced in like Apple), even though half if it is Samsung / SK Hynix that moves up",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:00.369271+00:00",
+      "is_article": false,
+      "char_count": 847
+    },
+    {
+      "tweet_id": "2019218485705073090",
+      "url": "https://x.com/aleabitoreddit/status/2019218485705073090",
+      "author": "Serenity",
+      "created_at": "2026-02-05T01:16:16.000Z",
+      "text": "$EWY\n 2028 option chain looks messed up. 2027 option chain starting to get priced in with 36-37% IV. \n\nDidn't want to post this publicly since it would influence market too much. \n\nIV Is 33% or so (priced in like Apple), even though half if it is Samsung / SK Hynix that moves up",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:03.995420+00:00",
+      "is_article": false,
+      "char_count": 279
+    },
+    {
+      "tweet_id": "2019185173909360991",
+      "url": "https://x.com/aleabitoreddit/status/2019185173909360991",
+      "author": "Serenity",
+      "created_at": "2026-02-04T23:03:54.000Z",
+      "text": "lol \n$AVGO\n and the rest of the AI buildout + TPU ecosystem is certainly happy post \n$GOOGL\n earnings.\n\nAgain dont see anything related to AI capex slowing down.\n\nFor memory look for \n-> NAND/DRAM price decreases.\n\nfor stuff like ASIC supply chains\n-> capex from hyperscalers",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:07.284249+00:00",
+      "is_article": false,
+      "char_count": 275
+    },
+    {
+      "tweet_id": "2019142708812739037",
+      "url": "https://x.com/aleabitoreddit/status/2019142708812739037",
+      "author": "Serenity",
+      "created_at": "2026-02-04T20:15:10.000Z",
+      "text": "Ended up only adding SK Hynix today on 7% drop. Just because projected p/e ~4 is way too low.\n\nJust waiting for another potential drop with \n$MU\n and \n$SNDK\n if there is one",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:10.277122+00:00",
+      "is_article": false,
+      "char_count": 173
+    },
+    {
+      "tweet_id": "2019125433137262721",
+      "url": "https://x.com/aleabitoreddit/status/2019125433137262721",
+      "author": "Serenity",
+      "created_at": "2026-02-04T19:06:31.000Z",
+      "text": "Ended up selling \n$ENPH\n 12% gain (maybe it goes higher), but just wanted more capital for some dip buys.\n\nMarket looks like a crime scene, even Solana is back at $92, which is a pretty good indicator usually of rough times ahead (I usually look to Solana/Ethereum).\n\nLooking at different opportunities right now.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:14.590065+00:00",
+      "is_article": true,
+      "char_count": 313
+    },
+    {
+      "tweet_id": "2018803711053856858",
+      "url": "https://x.com/aleabitoreddit/status/2018803711053856858",
+      "author": "Serenity",
+      "created_at": "2026-02-03T21:48:06.000Z",
+      "text": "So ended up doing more research into \n$CRCL\n Clarity act. \n\nThis is primary valuation overhang for Circle. (Earnings should be good, but if this passes, it's basically a nuke on their business model).\n\nThis is the biggest loophole for generating interest and keeping deposits in",
+      "is_subscriber_only": false,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAQ6ZU3boAANCU6?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:41:18.051313+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2018712072163307802",
+      "url": "https://x.com/aleabitoreddit/status/2018712072163307802",
+      "author": "Serenity",
+      "created_at": "2026-02-03T15:43:58.000Z",
+      "text": "Started positions in \n$AVGO\n at $315 high on -4.6% drop and \n$CRDO\n on -7.12% drop.    \n\nAnd I really dont like adding all at once cause there's always more downside risk.   \n\nBut don't think there's any material news recently so looks like a buying opportunity for me.",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAPn6AoacAAy8Aa?format=jpg&name=small",
+        "https://pbs.twimg.com/media/HAPn6AubgAE46hl?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:41:21.654255+00:00",
+      "is_article": true,
+      "char_count": 269
+    },
+    {
+      "tweet_id": "2018646766535807399",
+      "url": "https://x.com/aleabitoreddit/status/2018646766535807399",
+      "author": "Serenity",
+      "created_at": "2026-02-03T11:24:28.000Z",
+      "text": "Also idk if this is vodoo or not but I personally don't buy ON/premarket when things are green.\n\nRecent data has shown that most gains happen ON and best time so the best time to buy is middle of day/EOD. It takes a lot of will not to yolo into a green open. \n\nBut if it's heavy",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:24.667753+00:00",
+      "is_article": false,
+      "char_count": 278
+    },
+    {
+      "tweet_id": "2018635254169538781",
+      "url": "https://x.com/aleabitoreddit/status/2018635254169538781",
+      "author": "Serenity",
+      "created_at": "2026-02-03T10:38:43.000Z",
+      "text": "Also noticing a huge rotation into photonics recently. Like \n$LITE\n, \n$COHR\n, \n$AAOI\n etc. (ATHs)\n\nMight be good to look at photonic catchup stuff like \n$POET\n at ~$6 type names that are not ATHs and are still down.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:28.693972+00:00",
+      "is_article": true,
+      "char_count": 215
+    },
+    {
+      "tweet_id": "2018631376065753239",
+      "url": "https://x.com/aleabitoreddit/status/2018631376065753239",
+      "author": "Serenity",
+      "created_at": "2026-02-03T10:23:19.000Z",
+      "text": "To me sk hynix just feels like free real estate, it's a large part of my portfolio. \n\nround ~4.7 forward p/e 2026 right now, even after a 9%+ rise today. Probably short window of opportunity here before it gets repriced.\n\nfor a safer portfolio put selling \n$SNDK\n for premium and long sk hynix. IV for Sandisk is ridiculous so you have so much buffer.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:32.381216+00:00",
+      "is_article": true,
+      "char_count": 351
+    },
+    {
+      "tweet_id": "2018562908205232230",
+      "url": "https://x.com/aleabitoreddit/status/2018562908205232230",
+      "author": "Serenity",
+      "created_at": "2026-02-03T05:51:15.000Z",
+      "text": "out of some of the thesis posts i've made so far, I'm most bullish on   \n\n\n$AXTI\n - for photonics.\n\nValuation is a bit stretched but well deserved given their critical role for photonics buildout for 2027-2028.   \n\nThey have the ability to hike prices like the big 3 memory players, it's moreso markets pricing it in if they end up doing it.  \n\n\n$VPG\n - for robotics. biggest risk was tesla engineering away them. But in the meantime looks like they're included for the next gen of optimus since they wouldnt have been prototyping the past few years.   \n\n_\n\nStuff like \n$AIRO\n is more of a moonshot that they become like \n$ONDS\n, probably my next fav out of the bunch. \n\n\n$OSS\n already got re-rerated up 100% or so recently, so it's just a management waiting game 4 next contract. \n\n\n$VLN\n 0 clue why it's priced like this, genuine market inefficiency. IDK anymore with stocks from Israel. \n\nStuff like \n$DPRO\n, extremely extreme tiny positions just for fun if it ends up like a \n$RKLB\n. Same with \n$CPSH\n in the event it's used for thermal bottleneck. \n\n\n$LPTH\n I've gotten less bullish on bc of cheaper germanium, also the scaleup is a lot slower as people move off the supply chain compared to the immediate bottleneck \n$AXTI\n has.",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:36.348443+00:00",
+      "is_article": true,
+      "char_count": 1234
+    },
+    {
+      "tweet_id": "2018521264164577711",
+      "url": "https://x.com/aleabitoreddit/status/2018521264164577711",
+      "author": "Serenity",
+      "created_at": "2026-02-03T03:05:46.000Z",
+      "text": "Also for earnings, with extra balance looking for CC opportunities on \n$IREN\n because IV is extremely high.\n\nOthers kinda look like a trap like \n$RDDT\n IV is way too low (147%).\n\nBut given it dropped already a lot back to $180, I’ll probably nibble a bit.\n\nEnded up writing deep puts on \n$SMCI\n for tomorrow. $25 put seems safe ( I hope)",
+      "is_subscriber_only": true,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:40.392507+00:00",
+      "is_article": true,
+      "char_count": 337
+    },
+    {
+      "tweet_id": "2018497641278235103",
+      "url": "https://x.com/aleabitoreddit/status/2018497641278235103",
+      "author": "Serenity",
+      "created_at": "2026-02-03T01:31:54.000Z",
+      "text": "Random thoughts: extremely long memory trade for 2 quarters\n\nKR benefits the most from disconnect\n\n- Sk Hynix, Samsung electronics ( \n$EWY\n / Sk Hynix on margin) \n\nThen long Sandisk\n\n- 6-7 forward p/e. CSP weekly to enter positions since high IV\n\n- shares cause IV on calls way too",
+      "is_subscriber_only": false,
+      "media_urls": [],
+      "scraped_at": "2026-07-07T03:41:43.985784+00:00",
+      "is_article": false,
+      "char_count": 281
+    },
+    {
+      "tweet_id": "2018465253282185404",
+      "url": "https://x.com/aleabitoreddit/status/2018465253282185404",
+      "author": "Serenity",
+      "created_at": "2026-02-02T23:23:12.000Z",
+      "text": "lol I made this by accident. But I guess I’ll make it worth your while",
+      "is_subscriber_only": true,
+      "media_urls": [
+        "https://pbs.twimg.com/media/HAMHcsKaMAAlSUX?format=jpg&name=small"
+      ],
+      "scraped_at": "2026-07-07T03:41:47.520276+00:00",
+      "is_article": true,
+      "char_count": 70
+    }
+  ]
+}
