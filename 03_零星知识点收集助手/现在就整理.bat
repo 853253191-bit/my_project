@@ -1,0 +1,16 @@
+@echo off
+chcp 65001 >nul
+cd /d "%~dp0runtime"
+echo === 现在就整理知识点 ===
+echo.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0runtime\run_digest_wrapper.ps1"
+set EXITCODE=%ERRORLEVEL%
+echo.
+if %EXITCODE%==0 (
+  echo 完成。若暂存有内容，已整理并清空；若无内容则已跳过。
+) else (
+  echo 失败，退出码 %EXITCODE%。暂存不会被清空，请查看 runtime\logs 日志。
+)
+echo.
+pause
+exit /b %EXITCODE%

@@ -1,0 +1,10 @@
+qwen-agent>=0.0.23
+openai>=1.0.0
+requests>=2.31.0
+tiktoken
+json5
+jsonlines
+jsonschema
+pydantic>=2.3.0
+dashscope>=1.11.0
+soundfile
