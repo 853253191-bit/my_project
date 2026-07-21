@@ -1,4 +1,4 @@
-# Digest wrapper: load DASHSCOPE_API_KEY then run run_digest.py
+# Digest wrapper: load DASHSCOPE_API_KEY then run run_nightly.py
 # Used by scheduled task DailyKnowledgeDigest and 现在就整理.bat
 
 $ErrorActionPreference = "Stop"
@@ -48,6 +48,6 @@ if (-not $py) {
     exit 1
 }
 
-$script = Join-Path $RuntimeDir "run_digest.py"
+$script = Join-Path $RuntimeDir "run_nightly.py"
 & $py.Exe @($py.Args + @($script))
 exit $LASTEXITCODE

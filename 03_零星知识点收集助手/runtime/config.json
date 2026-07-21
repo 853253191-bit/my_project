@@ -1,9 +1,0 @@
-{
-  "model": "qwen-flash",
-  "model_server": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-  "api_key_env": "DASHSCOPE_API_KEY",
-  "timeout_minutes": 45,
-  "inbox_path": "C:\\Users\\85325\\Desktop\\想法暂存.txt",
-  "output_dir": "D:\\陈总的ob仓库\\04_每日知识点整理",
-  "skill_path": "C:\\Users\\85325\\Desktop\\零星知识点收集助手\\SKILL.md"
-}

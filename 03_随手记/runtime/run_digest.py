@@ -32,9 +32,16 @@ DEFAULT_CONFIG = {
     "model_server": "https://dashscope.aliyuncs.com/compatible-mode/v1",
     "api_key_env": "DASHSCOPE_API_KEY",
     "timeout_minutes": 45,
-    "inbox_path": r"C:\Users\85325\Desktop\想法暂存.txt",
+    "staging_dir": str(PROJECT_DIR / "暂存文件"),
+    "vault_dir": r"D:\陈总的ob仓库",
+    "digest_folder": "04_每日知识点整理",
+    "digest_inbox": "想法暂存.txt",
+    "diary_folder": "11_小陈日记",
+    "diary_inbox": "日记暂存.txt",
+    "inbox_path": str(PROJECT_DIR / "暂存文件" / "04_每日知识点整理" / "想法暂存.txt"),
     "output_dir": r"D:\陈总的ob仓库\04_每日知识点整理",
-    "skill_path": str(PROJECT_DIR / "SKILL.md"),
+    "skill_path": str(PROJECT_DIR / "skills" / "SKILL.md"),
+    "archive_skill_path": str(PROJECT_DIR / "skills" / "SKILL-archive.md"),
 }
 
 
@@ -83,7 +90,7 @@ def _register_tools(inbox_path: str, output_dir: str) -> list:
 
     @register_tool("read_inbox", allow_overwrite=True)
     class ReadInbox(BaseTool):
-        description = "读取桌面想法暂存.txt 的全部 UTF-8 内容。"
+        description = "读取想法暂存.txt 的全部 UTF-8 内容。"
         parameters = {
             "type": "object",
             "properties": {

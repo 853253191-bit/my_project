@@ -1,6 +1,6 @@
 # 知识点自动采集与每日整理
 
-白天用热键把零星想法存进桌面暂存；晚上 10 点（或手动）调用通义千问整理成 Obsidian 笔记，成功后清空暂存。
+白天用热键把零星想法存进项目暂存文件；登录启动或晚上 10 点（或手动）调用通义千问整理成 Obsidian 笔记，成功后清空/删除暂存文档。
 
 ## 你需要什么
 
@@ -18,20 +18,29 @@ D:\python3.11\python.exe -m pip install -r runtime\requirements.txt
 
 | 操作 | 做法 |
 |------|------|
-| 第一次 / 开机后挂上热键与定时任务 | 双击 **`一键启动.bat`** |
+| 第一次 / 开机后挂上热键与定时任务 | 双击 **`一键启动.bat`**（同时会检查暂存并归档） |
 | 采集知识点 | 选中文字 → **`Ctrl+Alt+K`**（成功会弹窗） |
+| 采集日记 | 选中文字 → **`Ctrl+Alt+J`** |
 | 马上整理，不等晚上 | 双击 **`现在就整理.bat`** |
+| 登录自动检查 | 开机登录后自动：热键 + 同步新目录 + 归档待处理 txt |
 | 自动整理 | 每天 **22:00**（任务名 `DailyKnowledgeDigest`） |
 
-整理成功后会清空桌面 `想法暂存.txt`；暂存为空则跳过；失败不清空。
+整理成功后会清空 `暂存文件\04_每日知识点整理\想法暂存.txt`；暂存为空则跳过；失败不清空。
+
+其它分类文件夹（如 `05_后端知识`、`06_全栈知识`、`07_前端知识`）请自行把内容复制成 txt 放进去；**登录启动**或 **22:00** 会：
+1. 同步暂存里新增的文件夹到 `D:\陈总的ob仓库`（只建目录，不删仓库内容）
+2. 将非空 txt 改写成 md 归档到对应目录，成功后**删除 txt**，**保留文件夹**
+3. `11_小陈日记` 仍保留 txt（日记暂存只清当天内容）
 
 ## 路径说明
 
 | 用途 | 路径 |
 |------|------|
-| 暂存 | `C:\Users\85325\Desktop\想法暂存.txt` |
-| 输出笔记 | `D:\陈总的ob仓库\04_每日知识点整理\YYYY-MM-DD-知识点整理.md` |
-| 整理规则 | `SKILL.md` |
+| 知识点暂存 | `暂存文件\04_每日知识点整理\想法暂存.txt`（`Ctrl+Alt+K`） |
+| 日记暂存 | `暂存文件\11_小陈日记\日记暂存.txt`（`Ctrl+Alt+J`） |
+| 分类笔记暂存 | `暂存文件\<分类>\*.txt`（如 `05_后端知识`、`06_全栈知识`、`07_前端知识`，手动放入） |
+| 输出仓库 | `D:\陈总的ob仓库\<同名分类>\*.md` |
+| 整理规则 | `skills\SKILL.md`、`skills\SKILL-archive.md` |
 | 运行配置 | `runtime\config.json` |
 | 日志 | `runtime\logs\YYYY-MM-DD.log` |
 
@@ -50,16 +59,31 @@ D:\python3.11\python.exe -m pip install -r runtime\requirements.txt
 ## 文件结构
 
 ```text
-零星知识点收集助手\
+随手记\
   一键启动.bat          # 挂热键 + 注册 22:00 任务
   现在就整理.bat        # 立刻整理
-  SKILL.md              # 整理规范（给大模型看）
+  skills\
+    SKILL.md              # 每日知识点整理规范
+    SKILL-archive.md      # 普通 txt 归档改写规范
   SPEC.md               # 设计说明
   README.md             # 本说明
+  暂存文件\
+    04_每日知识点整理\
+      想法暂存.txt      # Ctrl+Alt+K，整理后清空
+    05_后端知识\
+      *.txt             # 手动放入，归档后删除
+    06_全栈知识\
+      *.txt             # 手动放入，归档后删除
+    07_前端知识\
+      *.txt             # 手动放入，归档后删除
+    11_小陈日记\
+      日记暂存.txt      # Ctrl+Alt+J，归档后仅清当天内容
   runtime\
-    capture-idea.ahk    # Ctrl+Alt+K 采集
+    capture-idea.ahk    # Ctrl+Alt+K / Ctrl+Alt+J 采集
+    startup.ps1         # 登录启动：热键 + 后台归档检查
     bootstrap.ps1       # 一键启动实际逻辑
     run_digest.py       # 整理入口（Qwen-Agent）
+    run_archive.py      # 目录同步 + txt 归档
     run_digest_wrapper.ps1
     config.json
     requirements.txt

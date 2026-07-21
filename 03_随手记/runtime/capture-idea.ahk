@@ -1,22 +1,27 @@
-; 全局热键 Ctrl+Alt+K：将当前选中文字追加到桌面「想法暂存.txt」
+; 全局热键采集：Ctrl+Alt+K 想法暂存，Ctrl+Alt+J 日记暂存
 ; 需要 AutoHotkey v2
 
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 Persistent
 
-InboxPath := EnvGet("USERPROFILE") "\Desktop\想法暂存.txt"
+IdeaInboxPath := A_ScriptDir "\..\暂存文件\04_每日知识点整理\想法暂存.txt"
+DiaryInboxPath := A_ScriptDir "\..\暂存文件\11_小陈日记\日记暂存.txt"
 LogPath := A_ScriptDir "\logs\ahk-capture.log"
 
-; Ctrl+Alt+K
+; Ctrl+Alt+K：知识点
 ^!k:: {
-    CaptureSelection()
+    CaptureSelection(IdeaInboxPath, "想法暂存", "知识点采集")
 }
 
-CaptureSelection() {
-    global InboxPath, LogPath
+; Ctrl+Alt+J：日记
+^!j:: {
+    CaptureSelection(DiaryInboxPath, "日记暂存", "日记采集")
+}
 
-    ; 备份剪贴板，避免长期污染用户剪贴板
+CaptureSelection(inboxPath, inboxKeyword, title) {
+    global LogPath
+
     clipBackup := ClipboardAll()
     A_Clipboard := ""
 
@@ -38,11 +43,9 @@ CaptureSelection() {
 
     Loop 3 {
         try {
-            ; 追加后立即 Close，内容已落盘（无需再点「保存」）
-            AppendInbox(block)
-            ; 关掉仍开着该文件的记事本旧窗口，避免脏缓冲弹出「是否保存」
-            DiscardOpenInboxEditors()
-            ShowSaveOk(text)
+            AppendInbox(inboxPath, block)
+            DiscardOpenInboxEditors(inboxKeyword)
+            ShowSaveOk(text, title)
             return
         } catch as err {
             Sleep(150)
@@ -58,13 +61,13 @@ CaptureSelection() {
             "UTF-8-RAW"
         )
     }
-    MsgBox("保存失败，请稍后重试。", "知识点采集", "IconX T2")
+    MsgBox("保存失败，请稍后重试。", title, "IconX T2")
 }
 
-; 追加写入并强制关闭文件句柄（= 已保存到磁盘）
-AppendInbox(block) {
-    global InboxPath
-    f := FileOpen(InboxPath, "a", "UTF-8-RAW")
+AppendInbox(inboxPath, block) {
+    parentDir := RegExReplace(inboxPath, "\\[^\\]+$")
+    DirCreate(parentDir)
+    f := FileOpen(inboxPath, "a", "UTF-8-RAW")
     if !IsObject(f) {
         throw Error("无法打开暂存文件")
     }
@@ -76,23 +79,21 @@ AppendInbox(block) {
     }
 }
 
-; 关闭标题含「想法暂存」的记事本窗口（丢弃未保存缓冲，磁盘内容为准）
-DiscardOpenInboxEditors() {
+DiscardOpenInboxEditors(inboxKeyword) {
     for hwnd in WinGetList("ahk_exe notepad.exe") {
         try {
             title := WinGetTitle("ahk_id " hwnd)
-            if InStr(title, "想法暂存") {
+            if InStr(title, inboxKeyword) {
                 WinKill("ahk_id " hwnd)
             }
         }
     }
 }
 
-; 保存成功弹窗：展示摘要，约 1.5 秒后自动关闭
-ShowSaveOk(text) {
+ShowSaveOk(text, title) {
     preview := text
     if (StrLen(preview) > 80) {
         preview := SubStr(preview, 1, 80) "..."
     }
-    MsgBox("已保存到磁盘`n`n" preview, "知识点采集", "Iconi T1.5")
+    MsgBox("已保存到磁盘`n`n" preview, title, "Iconi T1.5")
 }

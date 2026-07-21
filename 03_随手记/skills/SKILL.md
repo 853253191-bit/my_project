@@ -1,7 +1,7 @@
 ---
 name: daily-knowledge-digest
 description: >-
-  Reads desktop inbox 想法暂存.txt, deduplicates knowledge points, web-searches
+  Reads project inbox 想法暂存.txt, deduplicates knowledge points, web-searches
   explanations, writes one dated Markdown overview into the Obsidian folder
   04_每日知识点整理, then clears the inbox. Use when the user asks to整理知识点、
   消化想法暂存、每日知识点整理、daily knowledge digest, or to process staged ideas.
@@ -9,7 +9,7 @@ description: >-
 
 # 每日知识点整理
 
-将桌面暂存的零星知识点整理成当天一篇 Obsidian 笔记。只做本 Skill 规定的路径与步骤，不要改动其他功能或目录。
+将项目暂存文件中的零星知识点整理成当天一篇 Obsidian 笔记。只做本 Skill 规定的路径与步骤，不要改动其他功能或目录。
 
 也可由 `runtime\run_digest.py`（任务计划每日 22:00）无人值守调用。
 
@@ -17,7 +17,7 @@ description: >-
 
 | 用途 | 路径 |
 |------|------|
-| 输入暂存 | `C:\Users\85325\Desktop\想法暂存.txt` |
+| 输入暂存 | `C:\Users\85325\Desktop\随手记\暂存文件\04_每日知识点整理\想法暂存.txt` |
 | 输出目录 | `D:\陈总的ob仓库\04_每日知识点整理` |
 | 输出文件 | `YYYY-MM-DD-知识点整理.md`（日期为整理当天，本地时区） |
 
@@ -114,7 +114,7 @@ description: >-
 
 ### 5. 清空暂存
 
-- MD 成功写入后，将 `C:\Users\85325\Desktop\想法暂存.txt` **清空**（写入空文件或清空内容）。
+- MD 成功写入后，将 `C:\Users\85325\Desktop\随手记\暂存文件\04_每日知识点整理\想法暂存.txt` **清空**（写入空文件或清空内容）。
 - **不要**创建 `.bak` 或其它备份。
 - 若写出 MD 失败，**不要**清空暂存，并说明失败原因。
 

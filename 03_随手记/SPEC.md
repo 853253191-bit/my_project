@@ -2,7 +2,7 @@
 
 > 状态：已按本仓库 `runtime\` 实现  
 > 目标：开机后采集热键自动可用；每天 22:00 自动整理，无需打开 Cursor 对话手动触发。  
-> 关联 Skill：本目录 `SKILL.md`（可由 `runtime\run_digest.py` 无人值守调用）
+> 关联 Skill：`skills\SKILL.md`（可由 `runtime\run_digest.py` 无人值守调用）
 
 ---
 
@@ -18,10 +18,10 @@
 
 ### 1.2 成功标准（验收）
 
-1. 登录 Windows 后，无需手动操作即可使用 `Ctrl+Alt+K` 追加知识点到桌面暂存。
+1. 登录 Windows 后，无需手动操作即可使用 `Ctrl+Alt+K` 追加知识点到项目暂存文件。
 2. 每天 22:00（本机时区），若电脑处于开机且已登录状态，自动执行整理。
 3. 整理结果写入 `D:\陈总的ob仓库\04_每日知识点整理\YYYY-MM-DD-知识点整理.md`。
-4. 成功写出后清空 `C:\Users\85325\Desktop\想法暂存.txt`；无内容则不写 MD、不清空失败现场。
+4. 成功写出后清空 `C:\Users\85325\Desktop\随手记\暂存文件\04_每日知识点整理\想法暂存.txt`；无内容则不写 MD、不清空失败现场。
 5. 全程不需要用户打开 Cursor 聊天窗口发指令。
 
 ### 1.3 明确不做
@@ -43,7 +43,7 @@
   └─ 注册任务计划 22:00
 
 [常驻] AutoHotkey
-   Ctrl+Alt+K → 追加 → 桌面\想法暂存.txt
+   Ctrl+Alt+K → 追加 → 暂存文件\04_每日知识点整理\想法暂存.txt
                               │
                               ▼
 [定时] DailyKnowledgeDigest → run_digest_wrapper.ps1 → run_digest.py
@@ -71,13 +71,13 @@
 
 | 项 | 值 |
 |----|-----|
-| 暂存文件 | `C:\Users\85325\Desktop\想法暂存.txt` |
+| 暂存文件 | `C:\Users\85325\Desktop\随手记\暂存文件\04_每日知识点整理\想法暂存.txt` |
 | Obsidian 输出目录 | `D:\陈总的ob仓库\04_每日知识点整理` |
 | 输出文件名 | `YYYY-MM-DD-知识点整理.md` |
 | 热键 | `Ctrl+Alt+K` |
 | 定时 | 每天 `22:00`，本机本地时区 |
-| Skill 路径 | `C:\Users\85325\Desktop\零星知识点收集助手\SKILL.md` |
-| 工作目录 | `C:\Users\85325\Desktop\零星知识点收集助手\runtime\` |
+| Skill 路径 | `C:\Users\85325\Desktop\随手记\skills\SKILL.md` |
+| 工作目录 | `C:\Users\85325\Desktop\随手记\runtime\` |
 | 日志目录 | `runtime\logs\` |
 | 编码 | 全部 UTF-8 |
 | API Key | 环境变量 `DASHSCOPE_API_KEY` |
@@ -214,7 +214,7 @@ main:
 ### 阶段 0：准备
 
 1. 确认 Obsidian 目录 `D:\陈总的ob仓库\04_每日知识点整理` 存在（或允许脚本创建）。
-2. 确认桌面可写。
+2. 确认暂存目录 `暂存文件\04_每日知识点整理` 可写。
 3. 用户环境变量设置 `DASHSCOPE_API_KEY`。
 4. 安装 Python 3；在 `runtime\` 执行 `pip install -r requirements.txt`。
 5. 安装 AutoHotkey v2（若未装）。
@@ -267,8 +267,10 @@ schtasks /Run /TN DailyKnowledgeDigest
 ## 11. 产出物清单
 
 ```text
-C:\Users\85325\Desktop\零星知识点收集助手\
-  SKILL.md
+C:\Users\85325\Desktop\随手记\
+  skills\
+    SKILL.md
+    SKILL-archive.md
   SPEC.md
   runtime\
     capture-idea.ahk

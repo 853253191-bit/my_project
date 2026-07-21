@@ -48,22 +48,41 @@ function Start-CaptureAhk([string]$AhkExe) {
         return
     }
     Start-Process -FilePath $AhkExe -ArgumentList ('"{0}"' -f $AhkScript)
-    Write-Info "started capture-idea.ahk (Ctrl+Alt+K)"
+    Write-Info "started capture-idea.ahk (Ctrl+Alt+K ideas, Ctrl+Alt+J diary)"
 }
 
-function Install-StartupShortcut([string]$AhkExe) {
+function Install-StartupShortcut {
+    $StartupScript = Join-Path $RuntimeDir "startup.ps1"
+    if (-not (Test-Path -LiteralPath $StartupScript)) {
+        throw ("missing file: {0}" -f $StartupScript)
+    }
     if (-not (Test-Path -LiteralPath $StartupDir)) {
         New-Item -ItemType Directory -Path $StartupDir -Force | Out-Null
     }
+    $psExe = Join-Path $env:SystemRoot "System32\WindowsPowerShell\v1.0\powershell.exe"
     $wsh = New-Object -ComObject WScript.Shell
     $sc = $wsh.CreateShortcut($ShortcutPath)
-    $sc.TargetPath = $AhkExe
-    $sc.Arguments = ('"{0}"' -f $AhkScript)
+    $sc.TargetPath = $psExe
+    $sc.Arguments = ("-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"{0}`"" -f $StartupScript)
     $sc.WorkingDirectory = $RuntimeDir
     $sc.WindowStyle = 7
-    $sc.Description = "Knowledge capture hotkey Ctrl+Alt+K"
+    $sc.Description = "Knowledge capture + startup archive check"
     $sc.Save()
     Write-Info ("startup shortcut: {0}" -f $ShortcutPath)
+}
+
+function Invoke-StartupArchiveCheck {
+    Write-Info "checking staging folder (sync dirs + archive pending txt)..."
+    try {
+        & $Wrapper
+        if ($LASTEXITCODE -eq 0) {
+            Write-Info "startup archive check finished"
+        } else {
+            Write-Warn ("startup archive check exit={0}, see runtime\logs" -f $LASTEXITCODE)
+        }
+    } catch {
+        Write-Warn ("startup archive check failed: {0}" -f $_.Exception.Message)
+    }
 }
 
 function Register-DigestTask {
@@ -122,16 +141,18 @@ $ahk = Find-AutoHotkey
 if (-not $ahk) {
     Write-Warn "AutoHotkey v2 not found. Install from https://www.autohotkey.com/"
     Write-Warn "Re-run this script after install to enable Ctrl+Alt+K."
+    Install-StartupShortcut
 } else {
     Write-Info ("AutoHotkey: {0}" -f $ahk)
     Start-CaptureAhk $ahk
-    Install-StartupShortcut $ahk
+    Install-StartupShortcut
 }
 
 Register-DigestTask
+Invoke-StartupArchiveCheck
 
 Write-Host ""
-Write-Host "Done. Capture with Ctrl+Alt+K; digest runs daily at 22:00."
+Write-Host "Done. Ctrl+Alt+K=ideas, Ctrl+Alt+J=diary; startup check + nightly archive @ 22:00."
 Write-Host ("Logs: {0}" -f (Join-Path $RuntimeDir "logs"))
 Write-Host ("Stop hotkey: exit AutoHotkey tray, or delete {0}" -f $ShortcutPath)
 Write-Host ("Disable schedule: schtasks /Delete /TN {0} /F" -f $TaskName)
