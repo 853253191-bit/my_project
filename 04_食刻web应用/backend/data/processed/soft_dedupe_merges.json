@@ -1,0 +1,1606 @@
+[
+  {
+    "keeper_id": "douguo_3328177",
+    "keeper_title": "莴笋炒牛肉",
+    "removed": [
+      {
+        "id": "douguo_2465326",
+        "title": "莴笋牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3340138",
+    "keeper_title": "番茄牛肉杯",
+    "removed": [
+      {
+        "id": "douguo_1407021",
+        "title": "西红柿牛肉面"
+      },
+      {
+        "id": "douguo_1463897",
+        "title": "西红柿牛肉"
+      },
+      {
+        "id": "meishi_187497",
+        "title": "西红柿烧牛肉"
+      },
+      {
+        "id": "meishi_162498",
+        "title": "番茄炖牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3338259",
+    "keeper_title": "水煮牛肉",
+    "removed": [
+      {
+        "id": "douguo_3354276",
+        "title": "家常水煮牛肉片"
+      },
+      {
+        "id": "douguo_1504181",
+        "title": "水煮羊肉片"
+      },
+      {
+        "id": "douguo_3354642",
+        "title": "水煮肉片"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3327210",
+    "keeper_title": "西兰花炒牛肉",
+    "removed": [
+      {
+        "id": "douguo_3354382",
+        "title": "西兰花炒卤牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3332902",
+    "keeper_title": "清汤牛肉面",
+    "removed": [
+      {
+        "id": "douguo_3227113",
+        "title": "清汤牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3204994",
+    "keeper_title": "砂锅牛肉",
+    "removed": [
+      {
+        "id": "douguo_3337275",
+        "title": "砂锅焗牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3297306",
+    "keeper_title": "白灼牛肉",
+    "removed": [
+      {
+        "id": "douguo_3327749",
+        "title": "白灼牛肉面"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3348882",
+    "keeper_title": "家常辣椒炒肉",
+    "removed": [
+      {
+        "id": "douguo_3328530",
+        "title": "辣椒炒牛肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1482162",
+    "keeper_title": "莲藕胡萝卜排骨汤",
+    "removed": [
+      {
+        "id": "douguo_1726521",
+        "title": "莲藕胡萝卜玉米排骨汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2388831",
+    "keeper_title": "红烧排骨（大酱日记）",
+    "removed": [
+      {
+        "id": "douguo_1605567",
+        "title": "红烧排骨煲"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2979018",
+    "keeper_title": "芋头蒸排骨",
+    "removed": [
+      {
+        "id": "douguo_2071400",
+        "title": "芋头焖排骨"
+      },
+      {
+        "id": "douguo_3332486",
+        "title": "芋头排骨汤"
+      },
+      {
+        "id": "douguo_2405703",
+        "title": "芋头炖排骨"
+      },
+      {
+        "id": "douguo_1301374",
+        "title": "芋头烧排骨"
+      },
+      {
+        "id": "douguo_3260990",
+        "title": "芋头排骨"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2309953",
+    "keeper_title": "番茄鸡胸肉丸子汤",
+    "removed": [
+      {
+        "id": "douguo_2319345",
+        "title": "番茄鸡肉丸子汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2439564",
+    "keeper_title": "肉末茄子煲",
+    "removed": [
+      {
+        "id": "douguo_1590552",
+        "title": "肉末蒸茄子"
+      },
+      {
+        "id": "douguo_1461528",
+        "title": "肉末烧茄子"
+      },
+      {
+        "id": "douguo_1564497",
+        "title": "肉末茄子"
+      },
+      {
+        "id": "douguo_2318121",
+        "title": "肉末烤茄子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1162397",
+    "keeper_title": "苹果玫瑰",
+    "removed": [
+      {
+        "id": "douguo_1451539",
+        "title": "苹果玫瑰花"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_595659",
+    "keeper_title": "西红柿鸡蛋拌面独家",
+    "removed": [
+      {
+        "id": "douguo_3328284",
+        "title": "西红柿鸡蛋青拌面"
+      },
+      {
+        "id": "douguo_3190979",
+        "title": "西红柿鸡蛋拌面"
+      },
+      {
+        "id": "meishi_595884",
+        "title": "西红柿鸡蛋汤独家"
+      },
+      {
+        "id": "meishi_644499",
+        "title": "西红柿鸡蛋面独家"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3326932",
+    "keeper_title": "西红柿炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_3273543",
+        "title": "西红柿炒蛋"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1655705",
+    "keeper_title": "番茄烧茄子",
+    "removed": [
+      {
+        "id": "douguo_3329182",
+        "title": "西红柿炒茄子"
+      },
+      {
+        "id": "douguo_1205347",
+        "title": "西红柿茄子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1716200",
+    "keeper_title": "西红柿炖豆腐",
+    "removed": [
+      {
+        "id": "douguo_1704053",
+        "title": "西红柿豆腐汤"
+      },
+      {
+        "id": "douguo_2440852",
+        "title": "西红柿豆腐饼"
+      },
+      {
+        "id": "douguo_2532607",
+        "title": "西红柿烧豆腐"
+      },
+      {
+        "id": "douguo_1568556",
+        "title": "西红柿豆腐"
+      },
+      {
+        "id": "douguo_3354046",
+        "title": "番茄豆腐鱼"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2360847",
+    "keeper_title": "西红柿炖牛腩",
+    "removed": [
+      {
+        "id": "douguo_1348947",
+        "title": "西红柿牛腩"
+      },
+      {
+        "id": "douguo_3353692",
+        "title": "番茄牛腩面"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2289982",
+    "keeper_title": "西红柿土豆片",
+    "removed": [
+      {
+        "id": "douguo_3267918",
+        "title": "西红柿土豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1618131",
+    "keeper_title": "西红柿鸡蛋羹",
+    "removed": [
+      {
+        "id": "douguo_1420165",
+        "title": "西红柿蛋羹"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3323846",
+    "keeper_title": "西红柿鸡蛋汤（无豆油）",
+    "removed": [
+      {
+        "id": "douguo_3323466",
+        "title": "番茄蛋花汤"
+      },
+      {
+        "id": "meishi_161414",
+        "title": "西红柿蛋汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_311569",
+    "keeper_title": "【湖南】番茄年糕",
+    "removed": [
+      {
+        "id": "douguo_3121153",
+        "title": "西红柿炒年糕"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3302591",
+    "keeper_title": "番茄芋头汤",
+    "removed": [
+      {
+        "id": "douguo_3314691",
+        "title": "西红柿芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3205272",
+    "keeper_title": "牛腩西红柿",
+    "removed": [
+      {
+        "id": "meishi_154595",
+        "title": "牛腩炆西红柿"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2362812",
+    "keeper_title": "西红柿冻",
+    "removed": [
+      {
+        "id": "douguo_2489500",
+        "title": "西红柿果冻"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_665431",
+    "keeper_title": "西红柿烩饭",
+    "removed": [
+      {
+        "id": "douguo_1397950",
+        "title": "西红柿饭"
+      },
+      {
+        "id": "douguo_3112542",
+        "title": "西红柿焖饭"
+      },
+      {
+        "id": "douguo_1432916",
+        "title": "西红柿烩"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2437189",
+    "keeper_title": "凉拌黄瓜卷",
+    "removed": [
+      {
+        "id": "douguo_2309794",
+        "title": "凉拌黄瓜"
+      },
+      {
+        "id": "douguo_2070813",
+        "title": "凉拌黄瓜丝"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1693301",
+    "keeper_title": "黄瓜梨汁",
+    "removed": [
+      {
+        "id": "douguo_1385037",
+        "title": "黄瓜雪梨汁"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2069229",
+    "keeper_title": "响油黄瓜",
+    "removed": [
+      {
+        "id": "douguo_2288311",
+        "title": "响油黄瓜卷"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2307324",
+    "keeper_title": "黄瓜炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_2061480",
+        "title": "黄瓜炒蛋"
+      },
+      {
+        "id": "douguo_2311509",
+        "title": "黄瓜炒蛋～"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2061259",
+    "keeper_title": "凉拌酸辣黄瓜卷",
+    "removed": [
+      {
+        "id": "douguo_2306598",
+        "title": "凉拌酸辣黄瓜"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1325199",
+    "keeper_title": "黄瓜木耳炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_1370388",
+        "title": "黄瓜木耳炒鸡蛋+"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1727695",
+    "keeper_title": "炝拌黄瓜条",
+    "removed": [
+      {
+        "id": "douguo_2422191",
+        "title": "炝拌黄瓜"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2451363",
+    "keeper_title": "豌豆牛肉",
+    "removed": [
+      {
+        "id": "douguo_2068294",
+        "title": "豌豆炒肉沫"
+      },
+      {
+        "id": "douguo_2311602",
+        "title": "豌豆炒肉丁"
+      },
+      {
+        "id": "douguo_2434057",
+        "title": "豌豆炒腊肉"
+      },
+      {
+        "id": "douguo_2448558",
+        "title": "豌豆肉沫"
+      },
+      {
+        "id": "douguo_1626544",
+        "title": "豌豆牛肉粒"
+      },
+      {
+        "id": "douguo_1469851",
+        "title": "豌豆米炒肉"
+      },
+      {
+        "id": "douguo_1511632",
+        "title": "豌豆炒牛肉"
+      },
+      {
+        "id": "douguo_1259576",
+        "title": "豌豆炒肉"
+      },
+      {
+        "id": "douguo_3330696",
+        "title": "豌豆炒瘦肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1094666",
+    "keeper_title": "豌豆炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_1192991",
+        "title": "豌豆炒鸡"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1349162",
+    "keeper_title": "豌豆虾仁",
+    "removed": [
+      {
+        "id": "douguo_3329849",
+        "title": "豌豆炒虾仁"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1593539",
+    "keeper_title": "豌豆凉粉",
+    "removed": [
+      {
+        "id": "meishi_634802",
+        "title": "豌豆凉粉条"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1315381",
+    "keeper_title": "【腊肉季】腊肉豌豆丁",
+    "removed": [
+      {
+        "id": "douguo_1340673",
+        "title": "腊肉豌豆饭"
+      },
+      {
+        "id": "douguo_1314988",
+        "title": "腊肉豌豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1396177",
+    "keeper_title": "茄子豆角",
+    "removed": [
+      {
+        "id": "douguo_1582935",
+        "title": "茄子炒豆角"
+      },
+      {
+        "id": "douguo_1426295",
+        "title": "茄子烧豆角"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2365053",
+    "keeper_title": "手撕茄子",
+    "removed": [
+      {
+        "id": "douguo_2308644",
+        "title": "手撕烤茄子"
+      },
+      {
+        "id": "douguo_2439926",
+        "title": "手撕蒸茄子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1728908",
+    "keeper_title": "凉拌茄子",
+    "removed": [
+      {
+        "id": "douguo_2351117",
+        "title": "凉拌蒸茄子"
+      },
+      {
+        "id": "douguo_2318461",
+        "title": "凉拌嫩茄子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2452566",
+    "keeper_title": "蒜香茄子",
+    "removed": [
+      {
+        "id": "douguo_2320918",
+        "title": "蒜香茄子条"
+      },
+      {
+        "id": "douguo_1393635",
+        "title": "蒜香烤茄子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1331310",
+    "keeper_title": "珍珠糯米丸子",
+    "removed": [
+      {
+        "id": "douguo_3328661",
+        "title": "珍珠糯米蒸丸子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1106354",
+    "keeper_title": "糯米粉切糕",
+    "removed": [
+      {
+        "id": "douguo_1587417",
+        "title": "糯米切糕"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3296737",
+    "keeper_title": "黄豆粉糯米糍",
+    "removed": [
+      {
+        "id": "douguo_2443149",
+        "title": "黄豆粉糯米糍粑"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2055904",
+    "keeper_title": "糯米餐包",
+    "removed": [
+      {
+        "id": "douguo_2311072",
+        "title": "糯米小餐包"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2996133",
+    "keeper_title": "糯米小南瓜",
+    "removed": [
+      {
+        "id": "douguo_3267937",
+        "title": "糯米南瓜"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1244871",
+    "keeper_title": "糯米排骨",
+    "removed": [
+      {
+        "id": "douguo_2301168",
+        "title": "糯米蒸排骨"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1303164",
+    "keeper_title": "糯米咸蛋",
+    "removed": [
+      {
+        "id": "douguo_1310491",
+        "title": "糯米咸鸭蛋"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_619723",
+    "keeper_title": "糯米丸子",
+    "removed": [
+      {
+        "id": "douguo_2486633",
+        "title": "糯米小丸子"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1042947",
+    "keeper_title": "清炖羊肉",
+    "removed": [
+      {
+        "id": "douguo_2435299",
+        "title": "清炖羊肉汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1481275",
+    "keeper_title": "葱爆羊肉",
+    "removed": [
+      {
+        "id": "douguo_2456038",
+        "title": "葱爆羊肉片"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1485860",
+    "keeper_title": "孜然羊肉片",
+    "removed": [
+      {
+        "id": "douguo_992115",
+        "title": "孜然羊肉"
+      },
+      {
+        "id": "meishi_612349",
+        "title": "孜然羊肉粒（空气炸锅版）"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1537369",
+    "keeper_title": "酸菜羊肉粉丝",
+    "removed": [
+      {
+        "id": "douguo_1472915",
+        "title": "酸菜羊肉粉丝汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_238955",
+    "keeper_title": "葱爆孜然羊肉",
+    "removed": [
+      {
+        "id": "douguo_1297005",
+        "title": "葱爆孜然羊脸肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2071036",
+    "keeper_title": "清炒南瓜",
+    "removed": [
+      {
+        "id": "meishi_232068",
+        "title": "清炒南瓜藤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2356864",
+    "keeper_title": "茭白炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_1309037",
+        "title": "茭白鸡蛋"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2307519",
+    "keeper_title": "清炒茭白丝",
+    "removed": [
+      {
+        "id": "douguo_1466633",
+        "title": "清炒茭白"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1553540",
+    "keeper_title": "茭白肉片",
+    "removed": [
+      {
+        "id": "douguo_1415615",
+        "title": "茭白肉丝"
+      },
+      {
+        "id": "douguo_1369570",
+        "title": "茭白炒牛肉"
+      },
+      {
+        "id": "douguo_1191379",
+        "title": "茭白小炒肉"
+      },
+      {
+        "id": "douguo_1710033",
+        "title": "茭白炒腊肉"
+      },
+      {
+        "id": "douguo_1257695",
+        "title": "茭白炒肉"
+      },
+      {
+        "id": "douguo_1173966",
+        "title": "茭白牛肉"
+      },
+      {
+        "id": "douguo_1454202",
+        "title": "茭白炒肉片"
+      },
+      {
+        "id": "douguo_1571642",
+        "title": "茭白炒肉丝"
+      },
+      {
+        "id": "douguo_3328712",
+        "title": "茭白炒嫩肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1611835",
+    "keeper_title": "蚝油茭白",
+    "removed": [
+      {
+        "id": "douguo_1673552",
+        "title": "蚝油焖茭白"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1613811",
+    "keeper_title": "茭白烧肉",
+    "removed": [
+      {
+        "id": "meishi_609946",
+        "title": "茭白红烧肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3222856",
+    "keeper_title": "酸酸甜甜的山楂糕",
+    "removed": [
+      {
+        "id": "douguo_2999728",
+        "title": "酸酸甜甜山楂糕"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1622331",
+    "keeper_title": "山楂糖雪球",
+    "removed": [
+      {
+        "id": "douguo_3083157",
+        "title": "山楂雪丽球"
+      },
+      {
+        "id": "douguo_2382312",
+        "title": "山楂雪球"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1717383",
+    "keeper_title": "雪花山楂",
+    "removed": [
+      {
+        "id": "douguo_2998999",
+        "title": "雪花山楂球"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1467809",
+    "keeper_title": "自制山楂片",
+    "removed": [
+      {
+        "id": "douguo_1288096",
+        "title": "自制山楂酒"
+      },
+      {
+        "id": "douguo_1691854",
+        "title": "自制山楂"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1729680",
+    "keeper_title": "霜糖山楂球",
+    "removed": [
+      {
+        "id": "douguo_1469329",
+        "title": "霜糖山楂"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2970919",
+    "keeper_title": "山楂酸奶条",
+    "removed": [
+      {
+        "id": "douguo_1540692",
+        "title": "山楂酸奶"
+      },
+      {
+        "id": "douguo_3061387",
+        "title": "山楂酸奶丸"
+      },
+      {
+        "id": "douguo_1208464",
+        "title": "山楂炒酸奶"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1289119",
+    "keeper_title": "山楂糕～山楂卷",
+    "removed": [
+      {
+        "id": "douguo_3002298",
+        "title": "山楂糕山楂卷"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1728626",
+    "keeper_title": "山楂罐头",
+    "removed": [
+      {
+        "id": "douguo_1464597",
+        "title": "山楂梨罐头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1451585",
+    "keeper_title": "麻辣毛豆",
+    "removed": [
+      {
+        "id": "douguo_1561947",
+        "title": "麻辣卤毛豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1401522",
+    "keeper_title": "毛豆炒虾仁",
+    "removed": [
+      {
+        "id": "douguo_1597586",
+        "title": "毛豆虾仁"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1563072",
+    "keeper_title": "盐水毛豆",
+    "removed": [
+      {
+        "id": "douguo_2319026",
+        "title": "盐水煮毛豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2336676",
+    "keeper_title": "毛豆炒鸡蛋",
+    "removed": [
+      {
+        "id": "douguo_2305203",
+        "title": "毛豆炒蛋"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1397655",
+    "keeper_title": "清蒸毛豆",
+    "removed": [
+      {
+        "id": "douguo_1258496",
+        "title": "清蒸毛豆米"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1224428",
+    "keeper_title": "丝瓜毛豆",
+    "removed": [
+      {
+        "id": "douguo_2310891",
+        "title": "丝瓜烩毛豆"
+      },
+      {
+        "id": "douguo_1456134",
+        "title": "丝瓜炒毛豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1563509",
+    "keeper_title": "毛豆烧鸡",
+    "removed": [
+      {
+        "id": "douguo_3338577",
+        "title": "毛豆子烧鸡"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3354073",
+    "keeper_title": "毛豆炒肉",
+    "removed": [
+      {
+        "id": "douguo_1257606",
+        "title": "毛豆炒肉末"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3324398",
+    "keeper_title": "腊肉芋头夹",
+    "removed": [
+      {
+        "id": "douguo_1345609",
+        "title": "腊肉芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1261147",
+    "keeper_title": "凉拌芋头",
+    "removed": [
+      {
+        "id": "douguo_3328645",
+        "title": "凉拌芋头粉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2353946",
+    "keeper_title": "香煎芋头糕",
+    "removed": [
+      {
+        "id": "douguo_3275671",
+        "title": "香煎芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2060908",
+    "keeper_title": "芋头扣肉",
+    "removed": [
+      {
+        "id": "douguo_1524203",
+        "title": "芋头扣腊肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3286234",
+    "keeper_title": "香酥芋头",
+    "removed": [
+      {
+        "id": "douguo_3297232",
+        "title": "香酥芋头糕"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2310349",
+    "keeper_title": "芋头蒸肉",
+    "removed": [
+      {
+        "id": "douguo_2532139",
+        "title": "芋头粉蒸肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2965504",
+    "keeper_title": "剁椒芋头",
+    "removed": [
+      {
+        "id": "douguo_3272093",
+        "title": "剁椒芋头片"
+      },
+      {
+        "id": "douguo_1264150",
+        "title": "剁椒烧芋头"
+      },
+      {
+        "id": "douguo_1609560",
+        "title": "剁椒蒸芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_181593",
+    "keeper_title": "家乡炒芋头",
+    "removed": [
+      {
+        "id": "douguo_2998944",
+        "title": "家乡芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3298866",
+    "keeper_title": "芋头焖牛肉",
+    "removed": [
+      {
+        "id": "douguo_2363151",
+        "title": "芋头焖肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3050230",
+    "keeper_title": "芋头炖腊肉",
+    "removed": [
+      {
+        "id": "douguo_1436458",
+        "title": "芋头炖肉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3136623",
+    "keeper_title": "芋头烧鸭腿",
+    "removed": [
+      {
+        "id": "douguo_2517467",
+        "title": "芋头烧鸭"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3230278",
+    "keeper_title": "肉末芋头",
+    "removed": [
+      {
+        "id": "douguo_2067511",
+        "title": "肉末蒸芋头"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1685931",
+    "keeper_title": "芋头咸干饭",
+    "removed": [
+      {
+        "id": "douguo_1273043",
+        "title": "芋头咸饭"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1537687",
+    "keeper_title": "狼牙土豆（免油炸更健康）",
+    "removed": [
+      {
+        "id": "douguo_2389949",
+        "title": "狼牙土豆条"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1587898",
+    "keeper_title": "土豆丸子",
+    "removed": [
+      {
+        "id": "douguo_1715439",
+        "title": "土豆丸子汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1138034",
+    "keeper_title": "青椒土豆丝",
+    "removed": [
+      {
+        "id": "douguo_2307271",
+        "title": "青椒土豆片"
+      },
+      {
+        "id": "douguo_2299614",
+        "title": "青椒土豆"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1399960",
+    "keeper_title": "孜然土豆",
+    "removed": [
+      {
+        "id": "douguo_2418709",
+        "title": "孜然土豆片"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1381710",
+    "keeper_title": "椒盐小土豆",
+    "removed": [
+      {
+        "id": "douguo_2421839",
+        "title": "椒盐土豆(家庭版)"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1101781",
+    "keeper_title": "红烧土豆",
+    "removed": [
+      {
+        "id": "douguo_3354139",
+        "title": "红烧土豆鱼"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1716368",
+    "keeper_title": "经典土豆沙拉",
+    "removed": [
+      {
+        "id": "douguo_1480157",
+        "title": "土豆泥沙拉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1538114",
+    "keeper_title": "日式土豆沙拉",
+    "removed": [
+      {
+        "id": "meishi_615230",
+        "title": "日式土豆泥沙拉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3339987",
+    "keeper_title": "快手早餐饼",
+    "removed": [
+      {
+        "id": "douguo_1665241",
+        "title": "快手早餐"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3339009",
+    "keeper_title": "丝瓜蛋汤",
+    "removed": [
+      {
+        "id": "douguo_3355144",
+        "title": "丝瓜鸡蛋汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3155213",
+    "keeper_title": "虾仁滑蛋",
+    "removed": [
+      {
+        "id": "douguo_3329706",
+        "title": "虾仁滑蛋饭"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3324947",
+    "keeper_title": "酸辣鸡爪",
+    "removed": [
+      {
+        "id": "douguo_3328696",
+        "title": "酸辣耙鸡爪"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3114909",
+    "keeper_title": "经典下午茶：华夫饼",
+    "removed": [
+      {
+        "id": "douguo_1345852",
+        "title": "下午茶 华夫饼"
+      },
+      {
+        "id": "douguo_2513951",
+        "title": "下午茶之华夫饼"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2392376",
+    "keeper_title": "下午茶之抹茶曲奇",
+    "removed": [
+      {
+        "id": "douguo_2388203",
+        "title": "下午茶之红茶曲奇"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_667448",
+    "keeper_title": "冬瓜虾皮汤",
+    "removed": [
+      {
+        "id": "douguo_3332114",
+        "title": "冬瓜虾汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3328060",
+    "keeper_title": "菠菜蛋汤",
+    "removed": [
+      {
+        "id": "douguo_3328442",
+        "title": "菠菜鸡蛋汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_667226",
+    "keeper_title": "拉花古早蛋糕",
+    "removed": [
+      {
+        "id": "douguo_3340290",
+        "title": "拉花古早小蛋糕"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2519577",
+    "keeper_title": "桃子饮品",
+    "removed": [
+      {
+        "id": "douguo_3121545",
+        "title": "桃子饮品。"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_1412551",
+    "keeper_title": "自制夏日饮品～",
+    "removed": [
+      {
+        "id": "douguo_2300076",
+        "title": "自制夏日饮品"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3323143",
+    "keeper_title": "芝士小火锅",
+    "removed": [
+      {
+        "id": "douguo_3324083",
+        "title": "芝士火锅"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3345463",
+    "keeper_title": "红酸汤肥牛小火锅",
+    "removed": [
+      {
+        "id": "douguo_3345032",
+        "title": "红酸汤肥牛火锅"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_2384145",
+    "keeper_title": "肥肠火锅",
+    "removed": [
+      {
+        "id": "douguo_3324146",
+        "title": "肥肠火锅面"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3345474",
+    "keeper_title": "糟粕醋海鲜火锅",
+    "removed": [
+      {
+        "id": "douguo_3345678",
+        "title": "糟粕醋海鲜小火锅"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_567121",
+    "keeper_title": "番茄火锅",
+    "removed": [
+      {
+        "id": "douguo_3201757",
+        "title": "番茄火锅鸡"
+      }
+    ]
+  },
+  {
+    "keeper_id": "douguo_3148287",
+    "keeper_title": "韩式部队火锅",
+    "removed": [
+      {
+        "id": "meishi_615158",
+        "title": "韩式部队素火锅"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_442379",
+    "keeper_title": "糖醋里脊首发",
+    "removed": [
+      {
+        "id": "meishi_371013",
+        "title": "糖醋里脊肉首发"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_586117",
+    "keeper_title": "糖醋里脊肉",
+    "removed": [
+      {
+        "id": "meishi_236444",
+        "title": "糖醋里脊"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_273523",
+    "keeper_title": "津味小八件点心之梅花酥（清真可食）",
+    "removed": [
+      {
+        "id": "meishi_273534",
+        "title": "津味小八件点心之芝麻酥（清真可食）"
+      },
+      {
+        "id": "meishi_273528",
+        "title": "津味小八件点心之佛手酥（清真可食）"
+      },
+      {
+        "id": "meishi_273522",
+        "title": "津味小八件点心之荷包酥（清真可食）"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_273539",
+    "keeper_title": "津味小八件点心之寿桃饼（清真可食）",
+    "removed": [
+      {
+        "id": "meishi_273536",
+        "title": "津味小八件点心之喜字饼（清真可食）"
+      },
+      {
+        "id": "meishi_273537",
+        "title": "津味小八件点心之寿字饼（清真可食）"
+      },
+      {
+        "id": "meishi_273543",
+        "title": "津味小八件点心之莲叶饼（清真可食）"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_369315",
+    "keeper_title": "南昌炒粉",
+    "removed": [
+      {
+        "id": "meishi_33665",
+        "title": "南昌炒米粉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_662765",
+    "keeper_title": "自制冰棍",
+    "removed": [
+      {
+        "id": "meishi_652760",
+        "title": "自制老冰棍"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_649863",
+    "keeper_title": "自制酸奶",
+    "removed": [
+      {
+        "id": "meishi_102010",
+        "title": "自制酸奶油"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_220769",
+    "keeper_title": "冰糖雪梨",
+    "removed": [
+      {
+        "id": "meishi_143000",
+        "title": "冰糖雪梨汤"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_666498",
+    "keeper_title": "广式肠粉",
+    "removed": [
+      {
+        "id": "meishi_538583",
+        "title": "广式蒸肠粉"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_171880",
+    "keeper_title": "韭黄炒鸡蛋",
+    "removed": [
+      {
+        "id": "meishi_622558",
+        "title": "韭黄炒蛋"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_232354",
+    "keeper_title": "宫保豆腐",
+    "removed": [
+      {
+        "id": "meishi_103154",
+        "title": "宫保豆腐丁"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_547492",
+    "keeper_title": "玫瑰花饼",
+    "removed": [
+      {
+        "id": "meishi_180720",
+        "title": "玫瑰鲜花饼"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_666658",
+    "keeper_title": "浙醋萝卜",
+    "removed": [
+      {
+        "id": "meishi_666694",
+        "title": "浙醋萝卜片"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_506056",
+    "keeper_title": "红枣莲子银耳羹独家",
+    "removed": [
+      {
+        "id": "meishi_613178",
+        "title": "红枣桂圆莲子银耳羹独家"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_662888",
+    "keeper_title": "羊肉水煎饺独家",
+    "removed": [
+      {
+        "id": "meishi_662794",
+        "title": "羊肉水饺独家"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_575251",
+    "keeper_title": "羊肉汤泡馍独家",
+    "removed": [
+      {
+        "id": "meishi_568140",
+        "title": "家常羊肉泡馍独家"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_651392",
+    "keeper_title": "芒果酸奶沙冰独家",
+    "removed": [
+      {
+        "id": "meishi_649130",
+        "title": "芒果酸奶冰棍独家"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_628196",
+    "keeper_title": "百香果凤梨酱",
+    "removed": [
+      {
+        "id": "meishi_630350",
+        "title": "百香果凤梨果酱"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_201983",
+    "keeper_title": "红糖姜枣茶（面包机版）",
+    "removed": [
+      {
+        "id": "meishi_11414",
+        "title": "红糖姜茶"
+      }
+    ]
+  },
+  {
+    "keeper_id": "meishi_652065",
+    "keeper_title": "芒果花果盘",
+    "removed": [
+      {
+        "id": "meishi_658777",
+        "title": "芒果花盘"
+      }
+    ]
+  }
+]

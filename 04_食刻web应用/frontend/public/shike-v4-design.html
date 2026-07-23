@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>食刻 — 智能饮食决策 · V4.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== 设计令牌 ===== */
+:root {
+  --bg: #FCF8F2;
+  --card: #FFFFFF;
+  --accent: #E67E22;
+  --accent-light: #FDF0E6;
+  --title: #3D2E22;
+  --body: #5C4A3E;
+  --secondary: #9B8B7D;
+  --divider: #EDE5D9;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 30px rgba(160, 120, 80, 0.08);
+  --shadow-hover: 0 12px 40px rgba(160, 120, 80, 0.14);
+  --font-title: 'Noto Serif SC', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== 导航栏 ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(252, 248, 242, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--divider);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E67E22, #F39C12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== 主容器 ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--title);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ===== 今日推荐横向滚动 ===== */
+.today-section {
+  margin-bottom: 36px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--title);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-hint {
+  font-size: 13px;
+  color: var(--secondary);
+}
+
+.today-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.today-scroll::-webkit-scrollbar { height: 6px; }
+.today-scroll::-webkit-scrollbar-track { background: var(--divider); border-radius: 3px; }
+.today-scroll::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 3px; opacity: 0.4; }
+
+.today-card {
+  flex-shrink: 0;
+  width: 176px;
+  background: var(--card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.today-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.today-card-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.today-card-body {
+  padding: 10px 12px 12px;
+}
+
+.today-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--title);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.today-card-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.today-card-tag {
+  font-size: 11px;
+  color: var(--secondary);
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ===== 对话交互区（视觉焦点） ===== */
+.chat-section {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.chat-title {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--title);
+  margin-bottom: 8px;
+}
+
+.chat-hint {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 18px;
+}
+
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.ai {
+  align-self: flex-start;
+  background: var(--accent-light);
+  color: var(--body);
+  border: 1px solid rgba(230, 126, 34, 0.2);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.ai strong {
+  color: var(--title);
+}
+
+/* 输入框区域 */
+.chat-input {
+  width: 100%;
+  min-height: 56px;
+  max-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--body);
+  background: var(--bg);
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.chat-input:focus {
+  border-color: var(--accent);
+}
+
+.chat-input::placeholder {
+  color: var(--secondary);
+}
+
+.chat-button-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.btn-send {
+  flex: 1;
+  height: 44px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.25);
+}
+
+.btn-send:hover {
+  background: #D35400;
+}
+
+.btn-send:active {
+  transform: scale(0.98);
+}
+
+.btn-spark {
+  flex: 1;
+  height: 44px;
+  background: var(--bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s, transform 0.1s;
+}
+
+.btn-spark:hover {
+  background: var(--accent-light);
+}
+
+.btn-spark:active {
+  transform: scale(0.98);
+}
+
+/* ===== 已识别标签展示区（紧凑单行） ===== */
+.recognized-tags {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: var(--accent-light);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(230, 126, 34, 0.15);
+  font-size: 13px;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+.recognized-tags .label {
+  font-weight: 600;
+}
+
+.recognized-tags .tag {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.recognized-tags .tag:hover {
+  opacity: 0.7;
+}
+
+.recognized-tags .hint {
+  color: var(--secondary);
+  font-size: 12px;
+}
+
+/* ===== 快速筛选折叠入口 ===== */
+.filter-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  color: var(--body);
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.filter-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.filter-toggle .left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-toggle .icon {
+  color: var(--accent);
+}
+
+.filter-toggle .summary {
+  color: var(--secondary);
+}
+
+.filter-toggle .arrow {
+  color: var(--secondary);
+  transition: transform 0.3s;
+  font-size: 12px;
+}
+
+.filter-toggle.expanded .arrow {
+  transform: rotate(180deg);
+}
+
+/* ===== 筛选表单（默认收起） ===== */
+.filter-form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, margin-top 0.3s;
+  margin-top: 0;
+}
+
+.filter-form.expanded {
+  max-height: 2000px;
+  margin-top: 16px;
+}
+
+.filter-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.filter-card:last-child {
+  margin-bottom: 0;
+}
+
+.filter-card-title {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--title);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-row:last-child {
+  margin-bottom: 0;
+}
+
+.filter-tag {
+  padding: 6px 14px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--body);
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  font-family: var(--font-body);
+  user-select: none;
+}
+
+.filter-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-tag.selected {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.filter-label {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.filter-divider {
+  height: 1px;
+  background: var(--divider);
+  margin: 14px 0;
+}
+
+/* 辣度 / 烹饪时间 行内组 */
+.filter-inline-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-inline-group .filter-label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* 油盐偏好 + 烹饪时间 并排 */
+.filter-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .filter-two-col { grid-template-columns: 1fr; }
+}
+
+/* 城市输入 */
+.city-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.city-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--body);
+  background: var(--bg);
+  outline: none;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+}
+
+.city-input:focus {
+  border-color: var(--accent);
+}
+
+.city-icon {
+  color: var(--secondary);
+  font-size: 16px;
+}
+
+/* 食材输入 */
+.ingredients-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--body);
+  background: var(--bg);
+  outline: none;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+}
+
+.ingredients-input:focus {
+  border-color: var(--accent);
+}
+
+.ingredients-hint {
+  font-size: 12px;
+  color: var(--secondary);
+  margin-top: 6px;
+}
+
+/* ===== 推荐结果区（单列宽卡片） ===== */
+.results-section {
+  margin-top: 36px;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.results-count {
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.result-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  gap: 20px;
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.result-card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.result-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.result-card-name {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--title);
+}
+
+.result-card-desc {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.6;
+}
+
+.result-card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.result-card-meta span {
+  font-size: 12px;
+  color: var(--secondary);
+  background: var(--bg);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.result-card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btn-change {
+  padding: 8px 18px;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--body);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-change:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-detail {
+  padding: 8px 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-detail:hover {
+  background: #D35400;
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  margin-top: 60px;
+  padding: 24px 0;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  font-size: 13px;
+  color: var(--secondary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.btn-reset {
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.btn-reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ===== 工具类 ===== */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ===== 导航栏 ===== -->
+<nav class="nav">
+  <div class="nav-logo">食<span>刻</span></div>
+  <div class="nav-links">
+    <a href="#" class="active">首页</a>
+    <a href="#">我的食谱</a>
+    <a href="#">食材库</a>
+    <a href="#">关于</a>
+  </div>
+  <div class="nav-avatar">大</div>
+</nav>
+
+<!-- ===== 主内容 ===== -->
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>💬 今天吃什么？</h1>
+    <p>直接聊聊，让食刻为你选一道菜</p>
+  </div>
+
+  <!-- ===== 今日推荐横向滚动 ===== -->
+  <div class="today-section">
+    <div class="section-header">
+      <div class="section-title">🔥 今日推荐</div>
+      <div class="section-hint">点击卡片直接搜索 →</div>
+    </div>
+    <div class="today-scroll" id="todayScroll">
+      <button class="today-card" onclick="fillInput('我想吃番茄蛋花汤')">
+        <img class="today-card-img" src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=200&h=140&fit=crop" alt="番茄蛋花汤">
+        <div class="today-card-body">
+          <div class="today-card-name">番茄蛋花汤</div>
+          <div class="today-card-tags">
+            <span class="today-card-tag">10分钟</span>
+            <span class="today-card-tag">家常</span>
+          </div>
+        </div>
+      </button>
+      <button class="today-card" onclick="fillInput('我想吃红烧肉')">
+        <img class="today-card-img" src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=200&h=140&fit=crop" alt="红烧肉">
+        <div class="today-card-body">
+          <div class="today-card-name">红烧肉</div>
+          <div class="today-card-tags">
+            <span class="today-card-tag">1小时</span>
+            <span class="today-card-tag">酱香</span>
+          </div>
+        </div>
+      </button>
+      <button class="today-card" onclick="fillInput('我想吃蒜蓉西兰花')">
+        <img class="today-card-img" src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=200&h=140&fit=crop" alt="蒜蓉西兰花">
+        <div class="today-card-body">
+          <div class="today-card-name">蒜蓉西兰花</div>
+          <div class="today-card-tags">
+            <span class="today-card-tag">10分钟</span>
+            <span class="today-card-tag">蒜香</span>
+          </div>
+        </div>
+      </button>
+      <button class="today-card" onclick="fillInput('我想吃麻婆豆腐')">
+        <img class="today-card-img" src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=200&h=140&fit=crop" alt="麻婆豆腐">
+        <div class="today-card-body">
+          <div class="today-card-name">麻婆豆腐</div>
+          <div class="today-card-tags">
+            <span class="today-card-tag">20分钟</span>
+            <span class="today-card-tag">麻辣</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== 对话交互区（视觉焦点） ===== -->
+  <div class="chat-section">
+    <div class="chat-title">💬 直接告诉我你想吃什么</div>
+    <div class="chat-hint">描述你的状态，我会自动识别并填好下方筛选条件</div>
+
+    <!-- 对话历史 -->
+    <div class="chat-history" id="chatHistory">
+      <div class="chat-bubble user">今天好累，冰箱有鸡蛋和番茄，想喝点热汤</div>
+      <div class="chat-bubble ai">
+        收到！已识别：<strong>疲惫</strong>、想吃<strong>热汤</strong>、食材有<strong>鸡蛋</strong>和<strong>番茄</strong>。
+      </div>
+    </div>
+
+    <!-- 输入框 -->
+    <textarea class="chat-input" id="chatInput" placeholder="今天好累，冰箱有鸡蛋和番茄，想喝点热汤…" rows="1"></textarea>
+
+    <!-- 按钮行 -->
+    <div class="chat-button-row">
+      <button class="btn-send" onclick="handleSend()">发送</button>
+      <button class="btn-spark" onclick="handleSpark()">
+        <span>🎲</span>
+        <span>灵光一现</span>
+      </button>
+    </div>
+
+    <!-- 已识别标签展示区（紧凑单行） -->
+    <div class="recognized-tags" id="recognizedTags">
+      <span class="label">📋 已识别：</span>
+      <span class="tag" onclick="removeTag(this)">心情·疲惫 ✕</span>
+      <span> | </span>
+      <span class="tag" onclick="removeTag(this)">食材·鸡蛋、番茄 ✕</span>
+      <span> | </span>
+      <span class="tag" onclick="removeTag(this)">口味·咸鲜 ✕</span>
+      <span class="hint">（点击 ✕ 可移除）</span>
+    </div>
+
+    <!-- 快速筛选折叠入口 -->
+    <button class="filter-toggle" id="filterToggle" onclick="toggleFilters()">
+      <span class="left">
+        <span class="icon">📋</span>
+        <span>快速筛选</span>
+        <span class="summary">（已识别：疲惫 | 鸡蛋、番茄）</span>
+      </span>
+      <span class="arrow" id="filterArrow">展开全部条件 →</span>
+    </button>
+
+    <!-- 筛选表单（默认收起） -->
+    <div class="filter-form" id="filterForm">
+
+      <!-- 心情卡片 -->
+      <div class="filter-card">
+        <div class="filter-card-title">😊 今天心情</div>
+        <div class="filter-row">
+          <span class="filter-tag selected" onclick="toggleTag(this)">疲惫</span>
+          <span class="filter-tag" onclick="toggleTag(this)">开心</span>
+          <span class="filter-tag" onclick="toggleTag(this)">焦虑</span>
+          <span class="filter-tag" onclick="toggleTag(this)">平静</span>
+          <span class="filter-tag" onclick="toggleTag(this)">馋了</span>
+          <span class="filter-tag" onclick="toggleTag(this)">慵懒</span>
+        </div>
+      </div>
+
+      <!-- 口味偏好卡片 -->
+      <div class="filter-card">
+        <div class="filter-card-title">👅 口味偏好</div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">咸鲜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">酸甜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">麻辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">酸辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">蒜香</span>
+        </div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">酱香</span>
+          <span class="filter-tag" onclick="toggleTag(this)">咖喱</span>
+          <span class="filter-tag" onclick="toggleTag(this)">葱香</span>
+          <span class="filter-tag" onclick="toggleTag(this)">香辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">清香</span>
+        </div>
+        <div class="filter-divider"></div>
+        <div class="filter-inline-group">
+          <span class="filter-label">辣度：</span>
+          <span class="filter-tag" onclick="toggleTag(this)">不辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">微辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">中辣</span>
+          <span class="filter-tag" onclick="toggleTag(this)">重辣</span>
+        </div>
+      </div>
+
+      <!-- 烹饪条件卡片 -->
+      <div class="filter-card">
+        <div class="filter-card-title">🍳 烹饪条件</div>
+        <div class="filter-label">菜系 / 做法</div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">家常</span>
+          <span class="filter-tag" onclick="toggleTag(this)">川菜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">粤菜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">湘菜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">江浙</span>
+          <span class="filter-tag" onclick="toggleTag(this)">日料</span>
+          <span class="filter-tag" onclick="toggleTag(this)">西餐</span>
+        </div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">炒</span>
+          <span class="filter-tag" onclick="toggleTag(this)">炖</span>
+          <span class="filter-tag" onclick="toggleTag(this)">蒸</span>
+          <span class="filter-tag" onclick="toggleTag(this)">凉拌</span>
+        </div>
+        <div class="filter-divider"></div>
+        <div class="filter-two-col">
+          <div>
+            <div class="filter-label">油盐偏好</div>
+            <div class="filter-row">
+              <span class="filter-tag" onclick="toggleTag(this)">少油</span>
+              <span class="filter-tag" onclick="toggleTag(this)">少盐</span>
+              <span class="filter-tag" onclick="toggleTag(this)">正常</span>
+              <span class="filter-tag selected" onclick="toggleTag(this)">清淡</span>
+            </div>
+          </div>
+          <div>
+            <div class="filter-label">烹饪时间</div>
+            <div class="filter-row">
+              <span class="filter-tag" onclick="toggleTag(this)">15分钟</span>
+              <span class="filter-tag" onclick="toggleTag(this)">30分钟</span>
+              <span class="filter-tag" onclick="toggleTag(this)">1小时</span>
+              <span class="filter-tag selected" onclick="toggleTag(this)">不限</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 健康目标 + 忌口卡片 -->
+      <div class="filter-card">
+        <div class="filter-card-title">💊 健康目标</div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">减脂</span>
+          <span class="filter-tag" onclick="toggleTag(this)">增肌</span>
+          <span class="filter-tag" onclick="toggleTag(this)">控糖</span>
+          <span class="filter-tag" onclick="toggleTag(this)">养胃</span>
+        </div>
+        <div class="filter-divider"></div>
+        <div class="filter-label">🚫 忌口 / 过敏</div>
+        <div class="filter-row">
+          <span class="filter-tag" onclick="toggleTag(this)">花生</span>
+          <span class="filter-tag" onclick="toggleTag(this)">海鲜</span>
+          <span class="filter-tag" onclick="toggleTag(this)">蛋奶</span>
+          <span class="filter-tag" onclick="toggleTag(this)">大豆</span>
+          <span class="filter-tag" onclick="toggleTag(this)">坚果</span>
+          <span class="filter-tag selected" onclick="toggleTag(this)">无</span>
+        </div>
+      </div>
+
+      <!-- 食材 + 城市卡片 -->
+      <div class="filter-card">
+        <div class="filter-card-title">🥬 食材 & 城市</div>
+        <div class="filter-label">现有食材</div>
+        <input class="ingredients-input" type="text" placeholder="如：鸡蛋、番茄、豆腐…" value="鸡蛋、番茄">
+        <div class="ingredients-hint">💡 食材越全，推荐越准</div>
+
+        <div class="filter-divider"></div>
+
+        <div class="filter-label">📍 城市</div>
+        <div class="city-input-wrapper">
+          <span class="city-icon">📍</span>
+          <input class="city-input" type="text" value="苏州" placeholder="自动定位 / 手动修改">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 推荐结果（单列宽卡片） ===== -->
+  <div class="results-section">
+    <div class="results-header">
+      <div class="section-title">🍳 推荐结果</div>
+      <div class="results-count" id="resultsCount">共 1 道菜 · 基于你的筛选条件</div>
+    </div>
+    <div class="result-card" id="resultCard">
+      <img class="result-card-img" src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=240&h=240&fit=crop" alt="番茄蛋花汤">
+      <div class="result-card-body">
+        <div class="result-card-name">番茄蛋花汤</div>
+        <div class="result-card-desc">基于你「疲惫想喝热汤」的需求，15分钟搞定暖胃汤。</div>
+        <div class="result-card-meta">
+          <span>🏠 家常</span>
+          <span>⏱ 15min</span>
+          <span>🌶 不辣</span>
+          <span>👥 2人份</span>
+        </div>
+        <div class="result-card-actions">
+          <button class="btn-change" onclick="changeOne()">🔄 换一个</button>
+          <button class="btn-detail">查看详情 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 页脚 ===== -->
+  <div class="footer">
+    <div class="footer-left">食刻 · 让每一顿都有道理</div>
+    <div class="footer-links">
+      <a href="#">隐私政策</a>
+      <a href="#">使用条款</a>
+      <button class="btn-reset" onclick="resetAll()">重置筛选</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// 折叠/展开筛选表单
+function toggleFilters() {
+  const form = document.getElementById('filterForm');
+  const arrow = document.getElementById('filterArrow');
+  form.classList.toggle('expanded');
+  if (form.classList.contains('expanded')) {
+    arrow.textContent = '收起 ↑';
+  } else {
+    arrow.textContent = '展开全部条件 →';
+  }
+}
+
+// 标签选中/取消
+function toggleTag(el) {
+  const parent = el.parentElement;
+  const text = el.textContent.trim();
+
+  // 辣度组：单选
+  if (parent.classList.contains('filter-inline-group')) {
+    parent.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+  } else if (text === '无') {
+    // 忌口"无"是单选
+    parent.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+  } else {
+    // 多选
+    const noTag = parent.querySelector('.filter-tag:last-child');
+    if (noTag && noTag.textContent.trim() === '无') {
+      noTag.classList.remove('selected');
+    }
+    el.classList.toggle('selected');
+  }
+}
+
+// 移除已识别标签
+function removeTag(el) {
+  el.style.transition = 'opacity 0.2s';
+  el.style.opacity = '0';
+  setTimeout(() => el.remove(), 200);
+}
+
+// 点击今日推荐 → 填入输入框 + 自动检索
+function fillInput(text) {
+  const input = document.getElementById('chatInput');
+  input.value = text;
+  input.focus();
+  input.style.height = 'auto';
+  input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+  // 自动执行检索
+  handleSend();
+}
+
+// 发送
+function handleSend() {
+  const input = document.getElementById('chatInput');
+  const history = document.getElementById('chatHistory');
+
+  if (!input.value.trim()) {
+    handleSpark();
+    return;
+  }
+
+  // 添加用户消息
+  const userBubble = document.createElement('div');
+  userBubble.className = 'chat-bubble user';
+  userBubble.textContent = input.value;
+  history.appendChild(userBubble);
+
+  // 模拟 AI 回复
+  setTimeout(() => {
+    const aiBubble = document.createElement('div');
+    aiBubble.className = 'chat-bubble ai';
+    aiBubble.innerHTML = '正在为你搜索…已识别你的需求，推荐结果已更新 👇';
+    history.appendChild(aiBubble);
+    history.scrollTop = history.scrollHeight;
+  }, 500);
+
+  input.value = '';
+  input.style.height = 'auto';
+}
+
+// 灵光一现
+function handleSpark() {
+  const history = document.getElementById('chatHistory');
+  const sparkMessages = [
+    '换个口味？试试今天隐藏的惊喜推荐！',
+    '根据今天的心情，来点酸辣开胃的怎么样？',
+    '检测到你最近常吃家常菜，要不要试试日式料理？'
+  ];
+  const aiBubble = document.createElement('div');
+  aiBubble.className = 'chat-bubble ai';
+  aiBubble.textContent = sparkMessages[Math.floor(Math.random() * sparkMessages.length)];
+  history.appendChild(aiBubble);
+  history.scrollTop = history.scrollHeight;
+}
+
+// 换一个
+const swapDishes = [
+  { name: '番茄牛腩', desc: '慢炖入味，酸甜浓郁，暖胃又下饭。', time: '1小时', taste: '酸甜', spicy: '微辣', img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=240&h=240&fit=crop' },
+  { name: '滑蛋虾仁', desc: '嫩滑鲜美，高蛋白低脂肪，适合疲惫的一天。', time: '15分钟', taste: '清香', spicy: '不辣', img: 'https://images.unsplash.com/photo-1604908554007-1b90b2b6c6b9e?w=240&h=240&fit=crop' },
+  { name: '番茄龙利鱼', desc: '无刺方便，酸甜下饭，清淡不油腻。', time: '20分钟', taste: '酸甜', spicy: '不辣', img: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=240&h=240&fit=crop' },
+  { name: '蛋包饭', desc: '日式经典，蛋皮包裹番茄炒饭，一口满足。', time: '20分钟', taste: '酸甜', spicy: '不辣', img: 'https://images.unsplash.com/photo-1605393488857-1b0b9b6c6b9e?w=240&h=240&fit=crop' },
+  { name: '番茄意面', desc: '西式快手，浓郁酱汁，15分钟上桌。', time: '15分钟', taste: '酸甜', spicy: '不辣', img: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=240&h=240&fit=crop' },
+  { name: '韭菜炒蛋', desc: '家常经典，香气扑鼻，快手下饭。', time: '10分钟', taste: '咸鲜', spicy: '不辣', img: 'https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=240&h=240&fit=crop' },
+];
+
+function changeOne() {
+  const card = document.getElementById('resultCard');
+  const dish = swapDishes[Math.floor(Math.random() * swapDishes.length)];
+  card.querySelector('.result-card-img').src = dish.img;
+  card.querySelector('.result-card-name').textContent = dish.name;
+  card.querySelector('.result-card-desc').textContent = dish.desc;
+  const metas = card.querySelectorAll('.result-card-meta span');
+  metas[1].textContent = '⏱ ' + dish.time;
+  metas[2].textContent = '🌶 ' + dish.spicy;
+  card.style.transform = 'scale(0.98)';
+  setTimeout(() => { card.style.transform = ''; }, 200);
+}
+
+// 重置
+function resetAll() {
+  document.querySelectorAll('.filter-tag.selected').forEach(t => t.classList.remove('selected'));
+  document.getElementById('chatInput').value = '';
+  alert('已重置所有筛选条件');
+}
+
+// 输入框自适应高度
+const chatInput = document.getElementById('chatInput');
+chatInput.addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+});
+
+// 回车发送（Shift+Enter 换行）
+chatInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    handleSend();
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2445 @@
+[
+  {
+    "id": "douguo_3355241",
+    "title": "番茄腐竹烧牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "烧"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "软糯",
+          "柔韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "大豆"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "酸甜开胃家常硬菜"
+    }
+  },
+  {
+    "id": "douguo_3354979",
+    "title": "牛肉炒泡豇豆",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜",
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "酸香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "开胃下饭的酸香小炒"
+    }
+  },
+  {
+    "id": "douguo_3354972",
+    "title": "洋葱牛肉炒面",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "早餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "柔嫩",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "能量满满的应援早餐"
+    }
+  },
+  {
+    "id": "douguo_3331211",
+    "title": "白水牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "卤"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 1,
+        "greasiness": 2,
+        "texture": [
+          "软烂"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日露营暖胃卤味"
+    }
+  },
+  {
+    "id": "douguo_3355121",
+    "title": "‼️汤汁浓郁的番茄土豆炖牛肉✅拌饭一绝",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "绵密"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "酸甜开胃的暖炖佳肴"
+    }
+  },
+  {
+    "id": "douguo_3354965",
+    "title": "芦笋炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "清爽下饭的快手小炒"
+    }
+  },
+  {
+    "id": "douguo_3350843",
+    "title": "韭黄小炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "微辣"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "海鲜"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "下饭快手小炒"
+    }
+  },
+  {
+    "id": "douguo_3340251",
+    "title": "罐焖牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "焖",
+          "烤",
+          "蒸"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "绵密"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": [
+          "乳制品",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 120,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "中秋团圆暖焖牛肉"
+    }
+  },
+  {
+    "id": "douguo_3340467",
+    "title": "原油牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜",
+          "清真菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "家宴"
+        ],
+        "cooking_method": [
+          "炖",
+          "蒸"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "醇厚"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "酥香"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 120,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "中秋团圆暖香扣碗"
+    }
+  },
+  {
+    "id": "douguo_3323639",
+    "title": "卤牛肉腊味炒饭",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "粤菜",
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香浓"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "粒粒分明",
+          "酥香"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": [
+          "蛋",
+          "猪肉"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "腊味卤香的快手炒饭"
+    }
+  },
+  {
+    "id": "douguo_3328855",
+    "title": "秋葵炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手高蛋白家常小炒"
+    }
+  },
+  {
+    "id": "douguo_3354523",
+    "title": "好吃到飞起的牛肉炒面~郫县豆瓣酱版",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜",
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香辣"
+        ],
+        "spicy_level": 3,
+        "greasiness": 4,
+        "texture": [
+          "劲道",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "大豆",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "川香牛肉炒面"
+    }
+  },
+  {
+    "id": "douguo_3347570",
+    "title": "咖喱牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香浓"
+        ],
+        "spicy_level": 1,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "绵密"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "暖胃下饭的咖喱炖肉"
+    }
+  },
+  {
+    "id": "douguo_3330683",
+    "title": "咖喱牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香浓"
+        ],
+        "spicy_level": 1,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "绵密"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日露营暖心主食"
+    }
+  },
+  {
+    "id": "douguo_3333319",
+    "title": "红烧牛肉面",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香辣"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "爽滑"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "暖心暖胃的家常面"
+    }
+  },
+  {
+    "id": "douguo_3334696",
+    "title": "藤椒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "麻香四溢的快手川味"
+    }
+  },
+  {
+    "id": "douguo_3331277",
+    "title": "牛肉炒蒲瓜",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "清脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "家常快手下饭菜"
+    }
+  },
+  {
+    "id": "douguo_3328177",
+    "title": "莴笋炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "清爽下饭的快手小炒"
+    }
+  },
+  {
+    "id": "douguo_3329792",
+    "title": "酸菜牛肉烧年糕",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "烧"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "酸香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "软糯",
+          "Q弹"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "酸香软糯暖胃主食"
+    }
+  },
+  {
+    "id": "douguo_3334726",
+    "title": "凉拌牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜",
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "炒",
+          "凉拌"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "麻香",
+          "微辣"
+        ],
+        "spicy_level": 3,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "芝麻"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "麻香开胃的凉拌牛肉"
+    }
+  },
+  {
+    "id": "douguo_3355187",
+    "title": "腐竹炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 1,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "柔韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手家常下饭菜"
+    }
+  },
+  {
+    "id": "douguo_3327713",
+    "title": "自制牛肉脆皮肠，一口爆汁",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "早餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "灌肠",
+          "煮",
+          "煎"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "微甜"
+        ],
+        "spicy_level": 1,
+        "greasiness": 3,
+        "texture": [
+          "酥脆",
+          "多汁",
+          "弹嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "猪肉",
+          "牛肉"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "爆汁酥脆的自制香肠"
+    }
+  },
+  {
+    "id": "douguo_3328120",
+    "title": "黑橄榄春意沙拉 & 番茄橄榄牛肉粒",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "凉拌",
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "清爽",
+          "绵软",
+          "多汁"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "减脂",
+          "高蛋白"
+        ],
+        "allergens": [
+          "乳制品",
+          "牛肉"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日轻盈一荤一素"
+    }
+  },
+  {
+    "id": "douguo_3353714",
+    "title": "红梅香辣海鲜捞汁-凉拌牛肉片",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐",
+          "夜宵"
+        ],
+        "cooking_method": [
+          "凉拌"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜"
+        ],
+        "spicy_level": 4,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "爽口"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "海鲜"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "香辣开胃快手凉菜"
+    }
+  },
+  {
+    "id": "douguo_3340138",
+    "title": "番茄牛肉杯",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "家宴"
+        ],
+        "cooking_method": [
+          "炒",
+          "烤"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "多汁",
+          "软嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "中秋创意家宴菜"
+    }
+  },
+  {
+    "id": "douguo_3331058",
+    "title": "番茄烧牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软嫩",
+          "沙糯"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日暖胃家常炖"
+    }
+  },
+  {
+    "id": "douguo_3331434",
+    "title": "牛肉堡（附牛肉饼做法）",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "煎"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "多汁",
+          "紧实"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "少油少盐"
+        ],
+        "allergens": [
+          "鸡蛋",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "家常版高蛋白牛肉堡"
+    }
+  },
+  {
+    "id": "douguo_3330300",
+    "title": "鸡蛋炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "软香"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日露营快手小炒"
+    }
+  },
+  {
+    "id": "douguo_3327801",
+    "title": "牙签牛肉，嫩又入味，孩子很爱吃",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香辣",
+          "孜然香"
+        ],
+        "spicy_level": 3,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "略韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "香辣嫩滑的快手牛肉"
+    }
+  },
+  {
+    "id": "douguo_3339842",
+    "title": "Bite-size烤牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "加餐",
+          "夜宵"
+        ],
+        "cooking_method": [
+          "煎",
+          "焖",
+          "烤"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "外酥里嫩",
+          "绵软"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "中秋治愈小食"
+    }
+  },
+  {
+    "id": "douguo_3335648",
+    "title": "凉拌牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "凉拌"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "麻香"
+        ],
+        "spicy_level": 2,
+        "greasiness": 2,
+        "texture": [
+          "柔韧",
+          "爽滑"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "夏日开胃凉拌肉"
+    }
+  },
+  {
+    "id": "douguo_3329121",
+    "title": "川香红烧海带牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "高压锅"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香辣"
+        ],
+        "spicy_level": 3,
+        "greasiness": 4,
+        "texture": [
+          "软烂",
+          "入味"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "川味浓香炖牛肉"
+    }
+  },
+  {
+    "id": "douguo_3331276",
+    "title": "菜椒炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手家常下饭菜"
+    }
+  },
+  {
+    "id": "douguo_3354276",
+    "title": "家常水煮牛肉片",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "下饭菜"
+        ],
+        "cooking_method": [
+          "煮",
+          "炒",
+          "淋油"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "鸡蛋",
+          "大豆"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "疲惫时的麻辣暖胃"
+    }
+  },
+  {
+    "id": "douguo_3350972",
+    "title": "凉拌牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "凉拌",
+          "煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸辣",
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 2,
+        "texture": [
+          "软嫩",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "低脂"
+        ],
+        "allergens": [
+          "芝麻"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "夏日开胃凉菜"
+    }
+  },
+  {
+    "id": "douguo_3354043",
+    "title": "捞汁牛肉米线",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "夜宵",
+          "加餐"
+        ],
+        "cooking_method": [
+          "凉拌",
+          "煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜"
+        ],
+        "spicy_level": 4,
+        "greasiness": 3,
+        "texture": [
+          "爽滑",
+          "柔嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": [
+          "海鲜",
+          "大豆",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "夏日开胃凉拌米线"
+    }
+  },
+  {
+    "id": "douguo_3333166",
+    "title": "尖椒牛肉丝",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手下饭家常小炒"
+    }
+  },
+  {
+    "id": "douguo_3330721",
+    "title": "煎蛋牛肉面",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "煮",
+          "煎"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "滑嫩",
+          "筋道",
+          "酥香"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "鸡蛋",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "春日暖胃家常面"
+    }
+  },
+  {
+    "id": "douguo_3334620",
+    "title": "冷酷(凉拌牛肉)居家",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜",
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "加餐"
+        ],
+        "cooking_method": [
+          "凉拌"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜",
+          "酸甜"
+        ],
+        "spicy_level": 4,
+        "greasiness": 3,
+        "texture": [
+          "爽滑",
+          "柔韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "大豆",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "麻香开胃的快手凉菜"
+    }
+  },
+  {
+    "id": "douguo_3327762",
+    "title": "不够吃超下饭 小炒黄牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "下饭快手小炒"
+    }
+  },
+  {
+    "id": "douguo_3327941",
+    "title": "丝瓜炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "粤菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "清脆",
+          "嫩滑"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "家常",
+          "清热"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "清甜嫩滑的粤式小炒"
+    }
+  },
+  {
+    "id": "douguo_3354382",
+    "title": "西兰花炒卤牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆爽",
+          "有嚼劲"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "高蛋白家常快手菜"
+    }
+  },
+  {
+    "id": "douguo_3323860",
+    "title": "番茄腐竹牛肉煲",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "煲",
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "软嫩",
+          "滑润",
+          "柔韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "大豆"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "疲惫时的暖胃煲菜"
+    }
+  },
+  {
+    "id": "douguo_3326889",
+    "title": "豆芽炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手高蛋白小炒"
+    }
+  },
+  {
+    "id": "douguo_3327847",
+    "title": "低卡牛肉青菜拌饭",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒",
+          "煎"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "爽脆",
+          "软嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "低卡",
+          "高蛋白",
+          "低脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "清爽饱腹的减脂餐"
+    }
+  },
+  {
+    "id": "douguo_3342586",
+    "title": "百香果酸汤跳跳牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "煮",
+          "炖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸辣",
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "Q弹",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "低脂",
+          "高蛋白"
+        ],
+        "allergens": [
+          "海鲜（蚝油）"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "酸辣开胃的夏日暖汤"
+    }
+  },
+  {
+    "id": "douguo_3328474",
+    "title": "低卡低脂菜苔牛肉拌饭❗️减重主食午餐",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐"
+        ],
+        "cooking_method": [
+          "炒",
+          "焯水"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "香脆",
+          "软糯"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "低卡",
+          "低脂",
+          "减脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "清爽减脂拌饭"
+    }
+  },
+  {
+    "id": "douguo_3324233",
+    "title": "芝士牛肉汉堡",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "煎",
+          "焖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 4,
+        "texture": [
+          "松软",
+          "厚实",
+          "拉丝"
+        ]
+      },
+      "health": {
+        "diet_labels": [],
+        "allergens": [
+          "乳制品",
+          "鸡蛋",
+          "小麦"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手满足汉堡"
+    }
+  },
+  {
+    "id": "douguo_3323136",
+    "title": "冷酷优豪美水煮牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "川菜"
+        ],
+        "meal_type": [
+          "晚餐",
+          "夜宵"
+        ],
+        "cooking_method": [
+          "煮",
+          "炒",
+          "淋油"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜",
+          "香浓"
+        ],
+        "spicy_level": 4,
+        "greasiness": 3,
+        "texture": [
+          "滑嫩",
+          "酥麻",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "川味爆辣滑嫩水煮牛肉"
+    }
+  },
+  {
+    "id": "douguo_3354160",
+    "title": "红烧牛肉面",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "早餐"
+        ],
+        "cooking_method": [
+          "炖",
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 1,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "筋道"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "观赛能量暖面"
+    }
+  },
+  {
+    "id": "douguo_3325262",
+    "title": "爆炒牛肉片",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "大豆",
+          "鸡蛋"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "新年硬菜烟火气"
+    }
+  },
+  {
+    "id": "douguo_3354079",
+    "title": "香菜拌牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "加餐",
+          "夜宵"
+        ],
+        "cooking_method": [
+          "凉拌",
+          "煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "麻辣",
+          "咸鲜"
+        ],
+        "spicy_level": 3,
+        "greasiness": 2,
+        "texture": [
+          "软嫩",
+          "爽脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "海鲜"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "夏日开胃下酒菜"
+    }
+  },
+  {
+    "id": "douguo_3328029",
+    "title": "低脂低卡银芽牛肉拌饭❗️减重主食",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐"
+        ],
+        "cooking_method": [
+          "炒",
+          "拌"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 1,
+        "greasiness": 2,
+        "texture": [
+          "爽脆",
+          "软嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "低脂",
+          "低卡",
+          "减脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "轻盈饱腹的减脂餐"
+    }
+  },
+  {
+    "id": "douguo_3354333",
+    "title": "番茄南瓜炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软嫩",
+          "绵软"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "酸甜开胃家常小炒"
+    }
+  },
+  {
+    "id": "douguo_3329186",
+    "title": "芹菜炒牛肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "家常菜"
+        ],
+        "meal_type": [
+          "午餐",
+          "晚餐"
+        ],
+        "cooking_method": [
+          "炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "鲜嫩",
+          "脆爽"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "快手高蛋白家常小炒"
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[server]
+host = "0.0.0.0"
+port = 8000
+cors_origins = ["http://localhost:5173", "http://127.0.0.1:5173"]
+
+[llm]
+model = "qwen-plus"
+api_key = ""
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+temperature = 0.3
+max_tokens = 4096
+
+[embedding]
+model = "text-embedding-v3"
+api_key = ""
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+[rerank]
+model = "gte-rerank"
+enabled = true
+
+[rag]
+store_path = "data/chroma"
+collection = "recipes"
+top_k = 20
+rerank_top_n = 5
+max_context_chars = 8000
+
+[data]
+sqlite_path = "data/sqlite/recipes.db"
+raw_dir = "data/raw"
+processed_dir = "data/processed"
+
+[weather]
+provider = "amap"
+api_key = ""
+
+[session]
+max_history = 10
+ttl_hours = 24

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+data/sqlite/*.db
+data/chroma/
+data/processed/*.json
+.venv/
+*.egg-info/

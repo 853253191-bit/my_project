@@ -8,3 +8,24 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# 食刻部署相关忽略
+04_食刻web应用/.workbuddy/
+04_食刻web应用/backend/data/raw/
+04_食刻web应用/backend/data/chroma/
+04_食刻web应用/frontend/dist/
+04_食刻web应用/**/__pycache__/
+
+# 食刻：本地数据与密钥（勿入库）
+04_食刻web应用/.env
+04_食刻web应用/.workbuddy/
+04_食刻web应用/backend/data/raw/
+04_食刻web应用/backend/data/chroma/
+04_食刻web应用/backend/data/chroma_recipes/
+04_食刻web应用/backend/data/sqlite/*.db
+04_食刻web应用/backend/data/sqlite/*.db.*
+04_食刻web应用/backend/data/sqlite/*.bak*
+04_食刻web应用/frontend/dist/
+04_食刻web应用/frontend/node_modules/
+04_食刻web应用/**/__pycache__/
+04_食刻web应用/**/*.pyc

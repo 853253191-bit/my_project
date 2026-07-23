@@ -1,0 +1,919 @@
+[
+  {
+    "id": "douguo_1042947",
+    "title": "清炖羊肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西北菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "汤菜"
+        ],
+        "cooking_method": [
+          "炖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "葱香",
+          "清香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "清润"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "减脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "秋冬驱寒暖身的家常炖汤"
+    }
+  },
+  {
+    "id": "douguo_1084143",
+    "title": "威灵顿羊排",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西式"
+        ],
+        "meal_type": [
+          "主菜",
+          "节日餐"
+        ],
+        "cooking_method": [
+          "煎",
+          "烤",
+          "包酥"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "香辣",
+          "酱香"
+        ],
+        "spicy_level": 1,
+        "greasiness": 4,
+        "texture": [
+          "外酥内嫩",
+          "绵软包裹感"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "麸质",
+          "蛋",
+          "乳制品"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "圣诞夜精致主菜"
+    }
+  },
+  {
+    "id": "douguo_1059216",
+    "title": "新疆羊肉串",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西北菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "小吃"
+        ],
+        "cooking_method": [
+          "烤",
+          "空气炸"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "香辣",
+          "孜然香",
+          "酱香"
+        ],
+        "spicy_level": 3,
+        "greasiness": 3,
+        "texture": [
+          "外焦里嫩",
+          "弹牙"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": [
+          "花生"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "宵夜摊风味的快手烧烤"
+    }
+  },
+  {
+    "id": "douguo_1060893",
+    "title": "黑椒小肥羊",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西北菜"
+        ],
+        "meal_type": [
+          "主菜"
+        ],
+        "cooking_method": [
+          "快炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "黑椒",
+          "咸鲜",
+          "蒜香"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "微韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 10,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日暖身的快手主菜"
+    }
+  },
+  {
+    "id": "douguo_1061067",
+    "title": "羊肉萝卜汤",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "鲁菜",
+          "西北菜"
+        ],
+        "meal_type": [
+          "汤"
+        ],
+        "cooking_method": [
+          "炖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "清香",
+          "酱香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "清润"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "温补",
+          "低脂（去浮油后）"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日暖身驱寒的滋补汤"
+    }
+  },
+  {
+    "id": "douguo_1070759",
+    "title": "包菜羊肉卷一锅鲜",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西北菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "火锅类"
+        ],
+        "cooking_method": [
+          "涮煮",
+          "快煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "葱香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "嫩滑",
+          "清脆"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "低糖"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日暖身的快手涮煮菜"
+    }
+  },
+  {
+    "id": "douguo_1082476",
+    "title": "东北菜之酸菜羊肉卷",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "东北菜"
+        ],
+        "meal_type": [
+          "主菜"
+        ],
+        "cooking_method": [
+          "快炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸鲜",
+          "咸香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "软嫩",
+          "微韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日暖身的快手家常菜"
+    }
+  },
+  {
+    "id": "douguo_1088112",
+    "title": "之大葱孜然羊肉",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西北菜"
+        ],
+        "meal_type": [
+          "主菜"
+        ],
+        "cooking_method": [
+          "快炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "孜然香",
+          "咸鲜",
+          "葱香"
+        ],
+        "spicy_level": 2,
+        "greasiness": 3,
+        "texture": [
+          "嫩滑",
+          "微韧",
+          "焦香葱段"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "冬夜暖身下饭的快手炒肉"
+    }
+  },
+  {
+    "id": "douguo_1080233",
+    "title": "清炖羊肉汤--冬季暖身",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "鲁菜"
+        ],
+        "meal_type": [
+          "汤"
+        ],
+        "cooking_method": [
+          "炖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "清香",
+          "酱香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "清润"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "低糖"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 90,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日清晨暖胃的滋补汤"
+    }
+  },
+  {
+    "id": "douguo_1093433",
+    "title": "南瓜饭",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "粤菜"
+        ],
+        "meal_type": [
+          "主食",
+          "正餐"
+        ],
+        "cooking_method": [
+          "焖煮",
+          "炒制"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "甜香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软糯",
+          "绵密"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高纤维",
+          "低脂（相对）"
+        ],
+        "allergens": [
+          "大豆",
+          "甲壳类"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "秋日暖胃的咸甜主食"
+    }
+  },
+  {
+    "id": "douguo_1090884",
+    "title": "豉香南瓜",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "粤菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "素菜"
+        ],
+        "cooking_method": [
+          "爆炒",
+          "焖"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "豉香",
+          "咸鲜",
+          "蒜香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "软糯",
+          "微韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "素食",
+          "低脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "秋日家常下饭菜"
+    }
+  },
+  {
+    "id": "douguo_1094413",
+    "title": "【南瓜吐司】——很黄很“暴力”的蔬菜吐司",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "其他"
+        ],
+        "meal_type": [
+          "早餐",
+          "点心"
+        ],
+        "cooking_method": [
+          "烘焙"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "甜香",
+          "奶香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "松软",
+          "微韧"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高碳水"
+        ],
+        "allergens": [
+          "麸质",
+          "蛋",
+          "乳制品"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "晨间暖胃的南瓜甜吐司"
+    }
+  },
+  {
+    "id": "douguo_1095413",
+    "title": "宫廷南瓜甜点",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "其他"
+        ],
+        "meal_type": [
+          "甜点",
+          "小吃"
+        ],
+        "cooking_method": [
+          "蒸"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "甜香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 1,
+        "texture": [
+          "软糯",
+          "Q弹"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "素食",
+          "无麸质"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "秋日暖身的软糯甜点"
+    }
+  },
+  {
+    "id": "douguo_1093349",
+    "title": "椒香什锦时蔬",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "粤菜"
+        ],
+        "meal_type": [
+          "配菜",
+          "素食"
+        ],
+        "cooking_method": [
+          "快炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "蒜香",
+          "葱香",
+          "酱香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "爽口"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "低脂",
+          "素食友好"
+        ],
+        "allergens": [
+          "大豆"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 15,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "清淡下饭的快手素菜"
+    }
+  },
+  {
+    "id": "douguo_1096425",
+    "title": "肉末炒毛豆【Mosquito私家小厨】",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "鲁菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "下饭菜"
+        ],
+        "cooking_method": [
+          "快炒",
+          "焖煮"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "咸鲜",
+          "葱香",
+          "蒜香"
+        ],
+        "spicy_level": 2,
+        "greasiness": 2,
+        "texture": [
+          "脆嫩",
+          "颗粒感"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "低脂"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "easy",
+        "serving_size": 2
+      },
+      "decision_summary": "夏日清爽下饭的快手小炒"
+    }
+  },
+  {
+    "id": "douguo_1095267",
+    "title": "番茄牛尾汤",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "东北菜",
+          "西北菜"
+        ],
+        "meal_type": [
+          "汤"
+        ],
+        "cooking_method": [
+          "炖",
+          "高压锅"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "酱香",
+          "清香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "软烂",
+          "浓稠"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高蛋白",
+          "暖身"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "冬日暖胃滋补的慢炖汤"
+    }
+  },
+  {
+    "id": "douguo_1094533",
+    "title": "糖醋土豆",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "鲁菜"
+        ],
+        "meal_type": [
+          "主菜",
+          "下饭菜"
+        ],
+        "cooking_method": [
+          "炸",
+          "烧",
+          "收汁"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "酸甜",
+          "酱香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 4,
+        "texture": [
+          "外脆里糯",
+          "微黏汁"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "素食可选"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "周末解馋的酥香小菜"
+    }
+  },
+  {
+    "id": "douguo_1096562",
+    "title": "奶香味炸薯条",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西式"
+        ],
+        "meal_type": [
+          "小吃",
+          "零食"
+        ],
+        "cooking_method": [
+          "油炸",
+          "煎炒"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "奶香",
+          "咸鲜"
+        ],
+        "spicy_level": 0,
+        "greasiness": 4,
+        "texture": [
+          "外脆内软",
+          "酥香"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高热量",
+          "高脂肪"
+        ],
+        "allergens": [
+          "乳制品"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "周末下午茶解馋小食"
+    }
+  },
+  {
+    "id": "douguo_1092300",
+    "title": "新鲜出炉下午茶_蛋挞",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "西式"
+        ],
+        "meal_type": [
+          "下午茶",
+          "甜点"
+        ],
+        "cooking_method": [
+          "烘烤"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "奶香",
+          "甜香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 3,
+        "texture": [
+          "酥脆",
+          "绵软",
+          "滑嫩"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "高糖",
+          "含乳制品"
+        ],
+        "allergens": [
+          "蛋",
+          "乳制品",
+          "麸质"
+        ]
+      },
+      "logistics": {
+        "estimated_time_minutes": 30,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "午后放松的自制甜点"
+    }
+  },
+  {
+    "id": "douguo_1094222",
+    "title": "风靡日本的糙米乳（糙米牛奶）！一种代替牛奶的饮品",
+    "source_site": "douguo",
+    "ai_tags": {
+      "meta": {
+        "cuisine": [
+          "日式"
+        ],
+        "meal_type": [
+          "饮品",
+          "早餐"
+        ],
+        "cooking_method": [
+          "煮",
+          "搅拌",
+          "过滤"
+        ]
+      },
+      "sensory": {
+        "taste_profiles": [
+          "甜香",
+          "清香"
+        ],
+        "spicy_level": 0,
+        "greasiness": 1,
+        "texture": [
+          "顺滑",
+          "微粉感"
+        ]
+      },
+      "health": {
+        "diet_labels": [
+          "无乳糖",
+          "植物基",
+          "低脂",
+          "无胆固醇"
+        ],
+        "allergens": []
+      },
+      "logistics": {
+        "estimated_time_minutes": 60,
+        "difficulty": "medium",
+        "serving_size": 2
+      },
+      "decision_summary": "晨间温和代餐饮品"
+    }
+  }
+]
