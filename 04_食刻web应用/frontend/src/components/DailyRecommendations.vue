@@ -50,11 +50,14 @@ function shuffleFallback(limit = 5): DailyItem[] {
   return copy.slice(0, limit)
 }
 
-async function loadDaily() {
+async function loadDaily(excludeCurrent = false) {
   if (loading.value) return
   loading.value = true
   try {
-    const resp = await getDailyRecommendations(5)
+    const excludeIds = excludeCurrent
+      ? items.value.map((x) => x.id).filter((id) => id && !String(id).startsWith('secret_'))
+      : []
+    const resp = await getDailyRecommendations(5, excludeIds)
     items.value = resp.items?.length ? resp.items : shuffleFallback(5)
   } catch {
     items.value = shuffleFallback(5)
@@ -83,7 +86,8 @@ async function handleRefresh() {
   if (refreshClicks.value > 0 && refreshClicks.value % 5 === 0) {
     triggerParty()
   }
-  await loadDaily()
+  // 换一批：排除当前展示，强制重新取样
+  await loadDaily(true)
 }
 
 function handleClick(item: DailyItem) {

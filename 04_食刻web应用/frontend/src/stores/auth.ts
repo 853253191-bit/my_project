@@ -112,7 +112,6 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     accessToken,
-    refreshToken,
     user,
     loading,
     isLoggedIn,

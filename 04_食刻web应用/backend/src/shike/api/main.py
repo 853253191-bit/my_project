@@ -28,6 +28,7 @@ from shike.api.schemas import (
     HealthResponse,
     IntentResponse,
     RecommendResponse,
+    RecipeDetailResponse,
     RecipeItem,
     SearchRecipesResponse,
 )
@@ -46,7 +47,8 @@ from shike.models.schemas import (
 )
 from shike.services.generator import RecipeGenerator
 from shike.services.intent import parse_user_intent
-from shike.services.recommend import HybridRecommender, _ingredient_names, merge_user_preferences
+from shike.services.recipe_format import format_recipe_markdown, ingredient_names
+from shike.services.recommend import HybridRecommender, merge_user_preferences
 from shike.services.session import SessionManager
 from shike.services.weather import WeatherService
 
@@ -281,7 +283,7 @@ def create_app() -> FastAPI:
             "ai_tags": recipe.get("ai_tags"),
             "image_url": recipe.get("image_url"),
             "source_url": recipe.get("source_url"),
-            "ingredients": _ingredient_names(recipe.get("ingredients")),
+            "ingredients": ingredient_names(recipe.get("ingredients")),
         }
 
     @app.get(
@@ -291,13 +293,21 @@ def create_app() -> FastAPI:
     )
     async def daily_recommendations(
         limit: int = Query(5, ge=1, le=20),
+        exclude_ids: str | None = Query(
+            None, description="逗号分隔的菜谱 ID，换一批时排除当前展示"
+        ),
     ) -> Response:
-        """每日推荐：从 Chroma 取样并回 SQLite 补全。"""
+        """每日推荐：SQLite 随机取样；换一批需排除已展示 ID，禁止浏览器缓存。"""
         try:
-            data = _get_recommender().daily_recommendations(limit=limit)
+            excluded = [
+                x.strip() for x in (exclude_ids or "").split(",") if x.strip()
+            ]
+            data = _get_recommender().daily_recommendations(
+                limit=limit, exclude_ids=excluded or None
+            )
             return JSONResponse(
                 content=data,
-                headers={"Cache-Control": "public, max-age=3600"},
+                headers={"Cache-Control": "no-store"},
             )
         except Exception as exc:  # noqa: BLE001
             raise HTTPException(500, f"每日推荐失败: {exc}") from exc
@@ -356,6 +366,44 @@ def create_app() -> FastAPI:
                 "source_url": r.get("source_url"),
             })
         return {"count": len(items), "items": items}
+
+    @app.get(
+        "/api/recipes/{recipe_id}",
+        response_model=RecipeDetailResponse,
+        tags=["菜谱"],
+    )
+    async def get_recipe_detail(recipe_id: str) -> dict[str, Any]:
+        """按 ID 直出库内详情（含 Markdown），并创建可微调会话；不调 LLM。"""
+        recipe = _get_repo().get_by_id(recipe_id)
+        if not recipe:
+            raise HTTPException(404, "菜谱不存在")
+
+        content = format_recipe_markdown(recipe)
+        sources = [{
+            "id": str(recipe.get("id") or recipe_id),
+            "title": str(recipe.get("title") or ""),
+            "source_url": str(recipe.get("source_url") or ""),
+        }]
+        session = _get_sessions().create(
+            form_context={"free_text": recipe.get("title") or ""}
+        )
+        _get_sessions().add_message(session.session_id, "assistant", content)
+        _get_sessions().update_recipe(session.session_id, content, sources)
+
+        return {
+            "id": str(recipe.get("id") or recipe_id),
+            "title": recipe.get("title") or "",
+            "content": content,
+            "session_id": session.session_id,
+            "decision_summary": recipe.get("decision_summary"),
+            "cuisine_main": recipe.get("cuisine_main") or recipe.get("cuisine"),
+            "estimated_time": recipe.get("estimated_time") or recipe.get("cook_minutes"),
+            "ai_difficulty": recipe.get("ai_difficulty") or recipe.get("difficulty"),
+            "image_url": recipe.get("image_url"),
+            "source_url": recipe.get("source_url"),
+            "ingredients": ingredient_names(recipe.get("ingredients")),
+            "steps": recipe.get("steps") or [],
+        }
 
     @app.post("/api/recipes/generate", tags=["对话"])
     async def generate_recipe(req: GenerateRequest):

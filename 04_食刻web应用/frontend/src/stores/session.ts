@@ -15,7 +15,6 @@ export const useSessionStore = defineStore('session', () => {
   const sessionId = ref('')
   const recipeContent = ref('')
   const sources = ref<import('../api/client').RecipeSource[]>([])
-  const isGenerating = ref(false)
 
   // ===== V4.0 对话+推荐相关 =====
   const lastIntentText = ref('')           // 用户最近一次输入的原文
@@ -93,7 +92,6 @@ export const useSessionStore = defineStore('session', () => {
     sessionId.value = ''
     recipeContent.value = ''
     sources.value = []
-    isGenerating.value = false
   }
 
   function setSession(id: string) {
@@ -106,10 +104,6 @@ export const useSessionStore = defineStore('session', () => {
 
   function setSources(s: import('../api/client').RecipeSource[]) {
     sources.value = s
-  }
-
-  function setFormData(data: Partial<GenerateRequest>) {
-    filterForm.value = { ...filterForm.value, ...data }
   }
 
   /** 从 parse_intent 结果更新全部状态 */
@@ -205,7 +199,6 @@ export const useSessionStore = defineStore('session', () => {
     sessionId,
     recipeContent,
     sources,
-    isGenerating,
     // V4.0
     lastIntentText,
     queryText,
@@ -224,9 +217,7 @@ export const useSessionStore = defineStore('session', () => {
     setSession,
     appendContent,
     setSources,
-    setFormData,
     applyParsedIntent,
-    rebuildRecognizedTags,
     removeTag,
     setRecommendations,
     addExcludedId,

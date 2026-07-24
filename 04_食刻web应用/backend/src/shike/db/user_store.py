@@ -16,22 +16,7 @@ from shike.db.models import (
     CREATE_USERS_INDEXES,
     CREATE_USERS_TABLE,
 )
-
-
-def _ingredient_names(ingredients: Any) -> list[str]:
-    names: list[str] = []
-    if not isinstance(ingredients, list):
-        return names
-    for item in ingredients:
-        if isinstance(item, str):
-            name = item.strip()
-        elif isinstance(item, dict):
-            name = str(item.get("name") or item.get("ingredient") or "").strip()
-        else:
-            name = ""
-        if name and name not in names:
-            names.append(name)
-    return names
+from shike.services.recipe_format import ingredient_names
 
 
 class UserStore:
@@ -199,7 +184,7 @@ class UserStore:
             ingredients = []
             if row["ingredients"]:
                 try:
-                    ingredients = _ingredient_names(json.loads(row["ingredients"]))
+                    ingredients = ingredient_names(json.loads(row["ingredients"]))
                 except Exception:  # noqa: BLE001
                     ingredients = []
             items.append({
@@ -259,7 +244,7 @@ class UserStore:
             ingredients = []
             if row["ingredients"]:
                 try:
-                    ingredients = _ingredient_names(json.loads(row["ingredients"]))
+                    ingredients = ingredient_names(json.loads(row["ingredients"]))
                 except Exception:  # noqa: BLE001
                     ingredients = []
             items.append({

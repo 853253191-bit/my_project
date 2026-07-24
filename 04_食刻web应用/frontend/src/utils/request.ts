@@ -1,4 +1,4 @@
-/** 请求工具：带鉴权的 fetch、防抖、并行加载。 */
+/** 请求工具：带鉴权的 fetch。 */
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || ''
 
@@ -94,26 +94,4 @@ async function tryRefresh(): Promise<boolean> {
     clearTokens()
   }
   return false
-}
-
-/** 防抖 */
-export function debounce<T extends (...args: never[]) => void>(fn: T, wait = 500): T {
-  let timer: ReturnType<typeof setTimeout> | null = null
-  return ((...args: Parameters<T>) => {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(() => fn(...args), wait)
-  }) as T
-}
-
-/** 首页并行请求示例 */
-export async function loadHomeParallel(city?: string) {
-  const tasks: Promise<unknown>[] = [
-    apiFetch('/api/daily_recommendations?limit=5', { auth: false }),
-  ]
-  if (city) {
-    tasks.push(
-      apiFetch(`/api/weather?city=${encodeURIComponent(city)}`, { auth: false }),
-    )
-  }
-  return Promise.all(tasks)
 }

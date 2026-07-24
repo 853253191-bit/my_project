@@ -17,9 +17,3 @@ html {
   font-display: swap;
   src: local("Noto Serif SC"), local("Songti SC"), local("STSong");
 }
-
-/* 食材图标字号：保证清晰 */
-.food-emoji {
-  font-size: 56px;
-  line-height: 1;
-}

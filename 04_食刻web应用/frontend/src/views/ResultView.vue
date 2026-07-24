@@ -15,6 +15,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { fetchSession } from '../api/client'
 import { useSessionStore } from '../stores/session'
+import { simpleMarkdown } from '../utils/markdown'
 import ChatPanel from '../components/ChatPanel.vue'
 import RecipeCard from '../components/RecipeCard.vue'
 
@@ -25,17 +26,6 @@ const props = defineProps<{
 const store = useSessionStore()
 const content = ref(store.recipeContent)
 const sources = ref(store.sources)
-
-function simpleMarkdown(text: string): string {
-  return text
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
-    .replace(/\n/g, '<br>')
-}
 
 const renderedContent = computed(() => simpleMarkdown(content.value))
 

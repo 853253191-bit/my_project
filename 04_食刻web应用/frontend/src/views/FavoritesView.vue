@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { apiFetch } from '../utils/request'
-import { generateRecipe } from '../api/client'
+import { generateRecipe, getRecipeDetail } from '../api/client'
+import { simpleMarkdown } from '../utils/markdown'
 import { useSessionStore } from '../stores/session'
 import FavoriteButton from '../components/FavoriteButton.vue'
 import RecipeFoodIcon from '../components/RecipeFoodIcon.vue'
@@ -79,6 +80,18 @@ async function openDetail(it: FavItem) {
   await recordHistory(it.recipe_id, it.title)
 
   try {
+    if (it.recipe_id) {
+      const detail = await getRecipeDetail(it.recipe_id)
+      store.recipeContent = detail.content || ''
+      if (detail.session_id) store.setSession(detail.session_id)
+      store.setSources([{
+        id: detail.id,
+        title: detail.title,
+        source_url: detail.source_url || '',
+      }])
+      return
+    }
+
     const formData = {
       mood: '',
       taste: [] as string[],
@@ -99,6 +112,7 @@ async function openDetail(it: FavItem) {
         store.setSources(evt.data.recipes as never[])
       }
       if (evt.event === 'recipe_chunk') {
+        if (detailLoading.value) detailLoading.value = false
         store.appendContent(evt.data.content as string)
       }
     }
@@ -112,17 +126,6 @@ async function openDetail(it: FavItem) {
 
 function closeDetail() {
   showDetail.value = false
-}
-
-function simpleMarkdown(text: string): string {
-  return text
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
-    .replace(/\n/g, '<br>')
 }
 
 onMounted(load)
@@ -199,8 +202,8 @@ onMounted(load)
           </div>
         </div>
         <div class="detail-body">
-          <div v-if="detailLoading" class="detail-loading">正在生成食谱…</div>
-          <div v-else class="recipe-content" v-html="simpleMarkdown(store.recipeContent)" />
+          <div v-if="detailLoading && !store.recipeContent" class="detail-loading">正在加载食谱…</div>
+          <div v-if="store.recipeContent" class="recipe-content" v-html="simpleMarkdown(store.recipeContent)" />
           <ChatPanel v-if="store.sessionId && !detailLoading" :session-id="store.sessionId" />
         </div>
       </div>

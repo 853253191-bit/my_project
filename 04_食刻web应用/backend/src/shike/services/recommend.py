@@ -11,26 +11,10 @@ from typing import Any
 from shike.config import AppConfig
 from shike.db.repository import RecipeRepository
 from shike.rag.vector_store import RecipeVectorStore
+from shike.services.recipe_format import ingredient_names
 from shike.services.title_dedupe import dedupe_recipe_items
 
 logger = logging.getLogger(__name__)
-
-
-def _ingredient_names(ingredients: Any) -> list[str]:
-    """从食材列表提取名称（兼容 str / {name: ...}）。"""
-    names: list[str] = []
-    if not isinstance(ingredients, list):
-        return names
-    for item in ingredients:
-        if isinstance(item, str):
-            name = item.strip()
-        elif isinstance(item, dict):
-            name = str(item.get("name") or item.get("ingredient") or "").strip()
-        else:
-            name = ""
-        if name and name not in names:
-            names.append(name)
-    return names
 
 
 def generate_reason(query_text: str, decision_summary: str | None = None) -> str:
@@ -200,7 +184,7 @@ class HybridRecommender:
                 "ai_tags": recipe.get("ai_tags"),
                 "image_url": recipe.get("image_url"),
                 "source_url": recipe.get("source_url"),
-                "ingredients": _ingredient_names(recipe.get("ingredients")),
+                "ingredients": ingredient_names(recipe.get("ingredients")),
                 "distance": hit.get("_distance"),
                 "preference_score": hit.get("_preference_score"),
                 "final_score": hit.get("_final_score"),
@@ -268,7 +252,7 @@ class HybridRecommender:
                 "greasiness": recipe.get("greasiness"),
                 "spicy_level": recipe.get("spicy_level"),
                 "image_url": recipe.get("image_url"),
-                "ingredients": _ingredient_names(recipe.get("ingredients")),
+                "ingredients": ingredient_names(recipe.get("ingredients")),
             })
         return items
 
@@ -385,15 +369,28 @@ class HybridRecommender:
             "recall_level": 3,
         })
 
-    def daily_recommendations(self, limit: int = 5) -> dict[str, Any]:
-        """每日推荐：随机取样 + 菜名语义去重。"""
+    def daily_recommendations(
+        self,
+        limit: int = 5,
+        exclude_ids: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """每日推荐：随机取样 + 菜名语义去重；可排除当前已展示的 ID。"""
         fetch_n = max(limit * 4, limit)
+        excluded = [str(x) for x in (exclude_ids or []) if x]
         raw_items: list[dict[str, Any]] = []
         with self.repo._connect() as conn:
-            rows = conn.execute(
-                "SELECT * FROM recipes ORDER BY RANDOM() LIMIT ?",
-                (fetch_n,),
-            ).fetchall()
+            if excluded:
+                placeholders = ",".join("?" * len(excluded))
+                rows = conn.execute(
+                    f"SELECT * FROM recipes WHERE id NOT IN ({placeholders}) "
+                    f"ORDER BY RANDOM() LIMIT ?",
+                    (*excluded, fetch_n),
+                ).fetchall()
+            else:
+                rows = conn.execute(
+                    "SELECT * FROM recipes ORDER BY RANDOM() LIMIT ?",
+                    (fetch_n,),
+                ).fetchall()
         for row in rows:
             recipe = self.repo._row_to_dict(row)
             summary = recipe.get("decision_summary")
@@ -406,7 +403,7 @@ class HybridRecommender:
                 "estimated_time": recipe.get("estimated_time"),
                 "ai_difficulty": recipe.get("ai_difficulty"),
                 "image_url": recipe.get("image_url"),
-                "ingredients": _ingredient_names(recipe.get("ingredients")),
+                "ingredients": ingredient_names(recipe.get("ingredients")),
             })
 
         items = dedupe_recipe_items(

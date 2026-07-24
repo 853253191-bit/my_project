@@ -128,78 +128,6 @@ a {
   animation: pulse-soft 0.7s ease-in-out infinite;
 }
 
-/* ===== Layout ===== */
-.app-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  height: 64px;
-  background: rgba(252, 248, 242, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--divider);
-}
-
-.app-header .logo {
-  font-family: var(--font-title);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--title);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.app-header .logo span {
-  color: var(--accent);
-}
-
-.app-header nav {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
-.app-header nav a {
-  color: var(--body);
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.app-header nav a:hover,
-.app-header nav a.router-link-active {
-  color: var(--accent);
-}
-
-.app-main {
-  flex: 1;
-  max-width: 1120px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 32px 24px 80px;
-}
-
-.app-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 48px;
-  border-top: 1px solid var(--divider);
-  font-size: 13px;
-  color: var(--secondary);
-}
-
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex;
@@ -261,38 +189,6 @@ a {
   box-shadow: var(--shadow);
 }
 
-/* ===== Chips ===== */
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
-  padding: 6px 14px;
-  border: 1px solid var(--divider);
-  border-radius: var(--radius-sm);
-  background: var(--card);
-  color: var(--body);
-  font-size: 13px;
-  font-family: var(--font-body);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.15s;
-}
-
-.chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.chip.active {
-  background: var(--accent-light);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 500;
-}
-
 /* ===== Form inputs ===== */
 input[type='text'],
 input[type='number'],
@@ -348,12 +244,6 @@ textarea {
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
-  .app-header {
-    padding: 0 16px;
-  }
-  .app-main {
-    padding: 16px 12px 60px;
-  }
   .card {
     padding: 16px;
   }

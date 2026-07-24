@@ -38,13 +38,6 @@ export interface RecommendFilters {
   include_diet_labels?: string[]
 }
 
-/** /api/recommend 请求 */
-export interface RecommendRequest {
-  query_text: string
-  filters: RecommendFilters
-  top_k?: number
-}
-
 /** /api/recommend 或 /api/random 返回的菜品 item */
 export interface RecommendItem {
   id: string
@@ -106,7 +99,7 @@ export interface DailyItem {
 
 // ===== SSE streaming =====
 
-export async function* streamSSE(
+async function* streamSSE(
   url: string,
   body: unknown,
 ): AsyncGenerator<{ event: string; data: Record<string, unknown> }> {
@@ -218,10 +211,43 @@ export async function getRandom(): Promise<RecommendItem> {
   return resp.json()
 }
 
-/** 每日推荐 */
-export async function getDailyRecommendations(limit = 5): Promise<{ count: number; items: DailyItem[] }> {
-  const resp = await fetch(`${API_BASE}/api/daily_recommendations?limit=${limit}`)
+/** 每日推荐；换一批时传入 excludeIds 排除当前卡片，并绕过缓存 */
+export async function getDailyRecommendations(
+  limit = 5,
+  excludeIds: string[] = [],
+): Promise<{ count: number; items: DailyItem[] }> {
+  const params = new URLSearchParams({ limit: String(limit) })
+  if (excludeIds.length) {
+    params.set('exclude_ids', excludeIds.join(','))
+  }
+  // 时间戳防止浏览器/中间层沿用旧响应
+  params.set('_t', String(Date.now()))
+  const resp = await fetch(`${API_BASE}/api/daily_recommendations?${params}`, {
+    cache: 'no-store',
+  })
   if (!resp.ok) throw new Error(`每日推荐失败: ${resp.status}`)
+  return resp.json()
+}
+
+/** 按 ID 直出库内菜谱详情（不调 LLM，秒开） */
+export async function getRecipeDetail(recipeId: string): Promise<{
+  id: string
+  title: string
+  content: string
+  session_id: string
+  decision_summary?: string
+  cuisine_main?: string
+  estimated_time?: number
+  ai_difficulty?: string
+  image_url?: string
+  source_url?: string
+  ingredients?: string[]
+}> {
+  const resp = await fetch(
+    `${API_BASE}/api/recipes/${encodeURIComponent(recipeId)}`,
+    { cache: 'no-store' },
+  )
+  if (!resp.ok) throw new Error(`菜谱详情失败: ${resp.status}`)
   return resp.json()
 }
 

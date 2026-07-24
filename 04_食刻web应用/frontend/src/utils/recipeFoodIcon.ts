@@ -1,6 +1,6 @@
 /** 桌面购入的卡通食物图标（public/icons/food/001.svg ~ 990.svg） */
 
-export const FOOD_ICON_COUNT = 990
+const FOOD_ICON_COUNT = 990
 
 /** 已人工识别的关键词 → 图标编号（1-based） */
 const KEYWORD_ICON_MAP: Array<{ words: string[]; ids: number[] }> = [
@@ -55,7 +55,7 @@ function pickFromIds(ids: number[], seedText: string): number {
 }
 
 /** 返回 1-based 图标编号；优先关键词匹配，否则稳定随机 */
-export function resolveFoodIconId(
+function resolveFoodIconId(
   title?: string | null,
   ingredients?: Array<string | { name?: string }> | null,
 ): number {

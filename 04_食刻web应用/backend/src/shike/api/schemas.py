@@ -126,3 +126,20 @@ class SearchRecipesResponse(BaseModel):
 
     count: int = 0
     items: list[SearchRecipeItem] = Field(default_factory=list)
+
+
+class RecipeDetailResponse(BaseModel):
+    """GET /api/recipes/{id} 详情（库内直出，不调 LLM）。"""
+
+    id: str
+    title: str = ""
+    content: str = ""
+    session_id: str = ""
+    decision_summary: str | None = None
+    cuisine_main: str | None = None
+    estimated_time: int | None = None
+    ai_difficulty: str | None = None
+    image_url: str | None = None
+    source_url: str | None = None
+    ingredients: list[str] = Field(default_factory=list)
+    steps: list[Any] = Field(default_factory=list)

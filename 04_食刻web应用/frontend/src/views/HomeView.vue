@@ -6,8 +6,10 @@ import {
   recommend,
   getRandom,
   generateRecipe,
+  getRecipeDetail,
 } from '../api/client'
 import type { RecommendItem } from '../api/client'
+import { simpleMarkdown } from '../utils/markdown'
 import DailyRecommendations from '../components/DailyRecommendations.vue'
 import MyRecipes from '../components/MyRecipes.vue'
 import RecognizedTags from '../components/RecognizedTags.vue'
@@ -144,7 +146,7 @@ async function handleChangeOne() {
   }
 }
 
-// ===== View detail: SSE generate full recipe =====
+// ===== View detail: 优先库内直出；无 ID 时再走 SSE 生成 =====
 async function handleDetail(item: RecommendItem) {
   detailItem.value = item
   showDetail.value = true
@@ -152,7 +154,21 @@ async function handleDetail(item: RecommendItem) {
   store.recipeContent = ''
   store.sources = []
 
+  const recipeId = item.id && !String(item.id).startsWith('secret_') ? item.id : ''
+
   try {
+    if (recipeId) {
+      const detail = await getRecipeDetail(recipeId)
+      store.recipeContent = detail.content || ''
+      if (detail.session_id) store.setSession(detail.session_id)
+      store.setSources([{
+        id: detail.id,
+        title: detail.title,
+        source_url: detail.source_url || '',
+      }])
+      return
+    }
+
     const formData = {
       mood: store.filterForm.mood || '',
       taste: store.filterForm.taste || [],
@@ -173,11 +189,13 @@ async function handleDetail(item: RecommendItem) {
         store.setSources(evt.data.recipes as never[])
       }
       if (evt.event === 'recipe_chunk') {
+        // 首包到达即展示，边生成边显示
+        if (detailLoading.value) detailLoading.value = false
         store.appendContent(evt.data.content as string)
       }
     }
   } catch (err) {
-    store.recipeContent = '生成失败，请重试 😢'
+    store.recipeContent = '生成失败，请重试'
     console.error(err)
   } finally {
     detailLoading.value = false
@@ -237,18 +255,6 @@ function resetAll() {
   searchedOnce.value = false
   chatHistory.value = []
   inputText.value = ''
-}
-
-// ===== Simple markdown for detail content =====
-function simpleMarkdown(text: string): string {
-  return text
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
-    .replace(/\n/g, '<br>')
 }
 
 // ===== Scroll chat to bottom =====
@@ -372,8 +378,8 @@ watch(chatHistory, () => {
           </div>
         </div>
         <div class="detail-body">
-          <div v-if="detailLoading" class="detail-loading">正在生成食谱…</div>
-          <div v-else class="recipe-content" v-html="simpleMarkdown(store.recipeContent)" />
+          <div v-if="detailLoading && !store.recipeContent" class="detail-loading">正在加载食谱…</div>
+          <div v-if="store.recipeContent" class="recipe-content" v-html="simpleMarkdown(store.recipeContent)" />
 
           <!-- 对话微调面板 -->
           <ChatPanel v-if="store.sessionId && !detailLoading" :session-id="store.sessionId" />
