@@ -20,6 +20,31 @@ import FavoriteButton from '../components/FavoriteButton.vue'
 
 const store = useSessionStore()
 
+/** 今日饮食运势（页面加载时随机一条） */
+const FORTUNE_LINES = [
+  '今日宜清淡，清炒时蔬最合拍',
+  '今日适合一点辣，开胃又提神',
+  '今日宜喝汤，暖胃又舒服',
+  '今日适合快手菜，少折腾多快乐',
+  '今日宜吃点酸甜，心情会变好',
+  '今日适合家常下饭，踏实又治愈',
+  '今日宜少油少盐，身体会谢谢你',
+  '今日适合一锅炖，省心又满足',
+  '今日宜海鲜清蒸，鲜美刚刚好',
+  '今日适合暖乎乎的面食，饱腹又安心',
+]
+
+function greetingByHour(hour: number): string {
+  if (hour >= 5 && hour < 11) return '早安'
+  if (hour >= 11 && hour < 14) return '中午好'
+  if (hour >= 14 && hour < 18) return '傍晚好'
+  if (hour >= 18 && hour < 23) return '深夜好'
+  return '宵夜档'
+}
+
+const greeting = greetingByHour(new Date().getHours())
+const fortuneTag = FORTUNE_LINES[Math.floor(Math.random() * FORTUNE_LINES.length)]
+
 // ===== Chat state =====
 interface ChatMsg { role: 'user' | 'ai'; text: string }
 const chatHistory = ref<ChatMsg[]>([])
@@ -77,7 +102,7 @@ async function handleSend() {
       const guess = tagParts.length
         ? `👀 我猜你想吃：${tagParts.join(' + ')}，对吧？`
         : ''
-      const found = `✨ 为你找到 ${resp.count} 道合拍的小菜`
+      const found = `🔍 为你找到 ${resp.count} 道合拍小菜`
       chatHistory.value.push({
         role: 'ai',
         text: guess ? `${guess}<br>${found}` : found,
@@ -111,12 +136,6 @@ async function handleSpark() {
     sending.value = false
     store.loading = false
   }
-}
-
-// ===== Today card click → fill input + send =====
-function handleTodaySelect(dishName: string) {
-  inputText.value = `我想吃${dishName}`
-  handleSend()
 }
 
 // ===== Change one: exclude current, re-recommend =====
@@ -157,16 +176,21 @@ async function handleDetail(item: RecommendItem) {
   const recipeId = item.id && !String(item.id).startsWith('secret_') ? item.id : ''
 
   try {
+    // 真实菜谱 ID：优先库内直出；失败再走生成
     if (recipeId) {
-      const detail = await getRecipeDetail(recipeId)
-      store.recipeContent = detail.content || ''
-      if (detail.session_id) store.setSession(detail.session_id)
-      store.setSources([{
-        id: detail.id,
-        title: detail.title,
-        source_url: detail.source_url || '',
-      }])
-      return
+      try {
+        const detail = await getRecipeDetail(recipeId)
+        store.recipeContent = detail.content || ''
+        if (detail.session_id) store.setSession(detail.session_id)
+        store.setSources([{
+          id: detail.id,
+          title: detail.title,
+          source_url: detail.source_url || '',
+        }])
+        return
+      } catch {
+        // 库内无记录时继续 LLM 生成
+      }
     }
 
     const formData = {
@@ -271,12 +295,16 @@ watch(chatHistory, () => {
 <template>
   <!-- Hero -->
   <div class="hero">
-    <h1>今天吃什么？</h1>
-    <p>直接聊聊，让食刻陪你挑一道合拍的小菜</p>
+    <div class="hero-meta">
+      <span class="hero-greet">{{ greeting }}</span>
+      <span class="hero-fortune" :title="fortuneTag">今日饮食运势 · {{ fortuneTag }}</span>
+    </div>
+    <h1>今天想吃点啥？🤔</h1>
+    <p>✨ 直接聊聊，让食刻陪你挑一道合拍的小菜</p>
   </div>
 
   <!-- 今日推荐横向滚动 -->
-  <DailyRecommendations @select="handleTodaySelect" />
+  <DailyRecommendations @detail="handleDetail" />
 
   <!-- 我的食谱 -->
   <MyRecipes @detail="handleDetail" />
@@ -300,7 +328,7 @@ watch(chatHistory, () => {
     <!-- 输入框 -->
     <textarea
       ref="inputRef"
-      class="chat-input"
+      class="chat-input input-pulse"
       v-model="inputText"
       placeholder="今天想吃什么呀？告诉我你的状态～"
       rows="1"
@@ -328,7 +356,7 @@ watch(chatHistory, () => {
     <div class="split-main">
       <div v-if="store.hasResults" class="results-section">
         <div class="results-header">
-          <div class="section-title">✨ 为你找到 {{ store.recommendations.length }} 道合拍的小菜</div>
+          <div class="section-title">🔍 为你找到 {{ store.recommendations.length }} 道合拍小菜</div>
           <div v-if="store.recommendMessage" class="results-hint">{{ store.recommendMessage }}</div>
         </div>
         <div v-if="store.loading" class="results-loading">加载中…</div>
@@ -337,7 +365,7 @@ watch(chatHistory, () => {
             v-for="(item, idx) in store.recommendations"
             :key="item.id"
             :item="item"
-            :style="{ animationDelay: `${idx * 0.05}s` }"
+            :anim-index="idx"
             @change="handleChangeOne"
             @detail="handleDetail"
           />
@@ -394,6 +422,34 @@ watch(chatHistory, () => {
 .hero {
   text-align: center;
   margin-bottom: 36px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.hero-greet {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.hero-fortune {
+  max-width: min(420px, 92%);
+  font-size: 13px;
+  color: var(--accent);
+  background: #FFF0E0;
+  border: 1px solid rgba(230, 126, 34, 0.22);
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .hero h1 {
   font-family: var(--font-title);
@@ -473,12 +529,13 @@ watch(chatHistory, () => {
   background: var(--bg);
   resize: none;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   line-height: 1.5;
   margin-bottom: 12px;
 }
 .chat-input:focus {
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.16);
 }
 .chat-input::placeholder {
   color: var(--secondary);

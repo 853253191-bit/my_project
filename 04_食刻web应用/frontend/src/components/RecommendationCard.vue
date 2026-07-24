@@ -8,7 +8,11 @@ import { apiFetch } from '../utils/request'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
 import FavoriteButton from './FavoriteButton.vue'
 
-const props = defineProps<{ item: RecommendItem }>()
+const props = defineProps<{
+  item: RecommendItem
+  /** 列表序号，用于逐个滑入间隔 */
+  animIndex?: number
+}>()
 const emit = defineEmits<{
   (e: 'change'): void
   (e: 'detail', item: RecommendItem): void
@@ -18,6 +22,7 @@ const emit = defineEmits<{
 const store = useSessionStore()
 const auth = useAuthStore()
 const alreadyAdded = computed(() => store.isInMyRecipes(props.item.id))
+const animIndex = computed(() => props.animIndex ?? 0)
 const reasonText = computed(
   () => props.item.reason || props.item.decision_summary || '',
 )
@@ -84,7 +89,10 @@ function metaTags(item: RecommendItem) {
 </script>
 
 <template>
-  <div class="result-card anim-bounce-in">
+  <div
+    class="result-card anim-slide-up"
+    :style="{ animationDelay: `${(animIndex ?? 0) * 0.1}s` }"
+  >
     <div class="result-card-visual">
       <RecipeFoodIcon :title="item.title" :ingredients="item.ingredients" />
     </div>
@@ -139,7 +147,7 @@ function metaTags(item: RecommendItem) {
 
 <style scoped>
 .result-card {
-  background: var(--card);
+  background: #FFFBF5;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;

@@ -101,3 +101,23 @@ CREATE_HISTORY_INDEXES = [
     "CREATE INDEX IF NOT EXISTS idx_history_user_id ON history(user_id);",
     "CREATE INDEX IF NOT EXISTS idx_history_created_at ON history(created_at);",
 ]
+
+# 站点意见反馈（与推荐菜品 feedback 表分离）
+CREATE_SITE_FEEDBACK_TABLE = """
+CREATE TABLE IF NOT EXISTS site_feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT NOT NULL,
+    contact TEXT,
+    category TEXT DEFAULT '建议',
+    user_id TEXT,
+    username TEXT,
+    client_ip TEXT,
+    status TEXT NOT NULL DEFAULT 'pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+"""
+
+CREATE_SITE_FEEDBACK_INDEXES = [
+    "CREATE INDEX IF NOT EXISTS idx_site_feedback_status ON site_feedback(status);",
+    "CREATE INDEX IF NOT EXISTS idx_site_feedback_created_at ON site_feedback(created_at);",
+]

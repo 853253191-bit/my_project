@@ -18,6 +18,7 @@ const auth = useAuthStore()
 const router = useRouter()
 const favorited = ref(!!props.initialFavorited)
 const busy = ref(false)
+const beating = ref(false)
 
 watch(
   () => props.initialFavorited,
@@ -27,6 +28,13 @@ watch(
 )
 
 const label = computed(() => (favorited.value ? '已收藏' : '收藏'))
+
+function triggerBeat() {
+  beating.value = true
+  window.setTimeout(() => {
+    beating.value = false
+  }, 420)
+}
 
 async function toggle() {
   if (!props.recipeId) return
@@ -48,6 +56,7 @@ async function toggle() {
         json: { recipe_id: props.recipeId },
       })
       favorited.value = true
+      triggerBeat()
     }
     emit('change', favorited.value)
   } catch (err) {
@@ -79,7 +88,7 @@ onMounted(async () => {
     :title="label"
     @click.stop="toggle"
   >
-    <span class="fav-icon" aria-hidden="true">{{ favorited ? '♥' : '♡' }}</span>
+    <span class="fav-icon" :class="{ beat: beating }" aria-hidden="true">{{ favorited ? '❤️' : '🤍' }}</span>
     <span class="fav-text">{{ label }}</span>
   </button>
 </template>
@@ -89,13 +98,13 @@ onMounted(async () => {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid #e74c3c;
+  border: 1px solid #d0c4b8;
   background: #fff;
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-family: var(--font-body);
-  color: #e74c3c;
-  transition: all 0.2s;
+  color: #9b8b7d;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
   flex-shrink: 0;
   font-weight: 600;
 }
@@ -107,17 +116,35 @@ onMounted(async () => {
   padding: 6px 10px;
   font-size: 13px;
 }
-.fav-btn:hover {
+.fav-btn:hover:not(:disabled) {
+  border-color: #e74c3c;
+  color: #e74c3c;
   background: #fff5f5;
 }
 .fav-btn.on {
   border-color: #e74c3c;
-  color: #fff;
-  background: #e74c3c;
+  color: #e74c3c;
+  background: #fff5f5;
 }
 .fav-icon {
   font-size: 16px;
   line-height: 1;
+  display: inline-block;
+  transform-origin: center;
+}
+.fav-icon.beat {
+  animation: heart-beat 0.42s ease;
+}
+@keyframes heart-beat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .fav-btn:disabled {
   opacity: 0.55;

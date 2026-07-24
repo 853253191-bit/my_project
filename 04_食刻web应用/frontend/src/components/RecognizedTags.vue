@@ -49,11 +49,11 @@ async function removeTag(idx: number) {
 .recognized-tags {
   margin-bottom: 12px;
   padding: 12px 14px;
-  background: var(--accent-light);
+  background: #FFF0E0;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(230, 126, 34, 0.15);
   font-size: 13px;
-  color: var(--accent);
+  color: #E67E22;
   line-height: 1.5;
 }
 .recognized-tags .label {
@@ -79,7 +79,7 @@ async function removeTag(idx: number) {
   border-radius: 999px;
   border: 1px solid rgba(230, 126, 34, 0.25);
   background: #fff;
-  color: var(--accent);
+  color: #E67E22;
   font-size: 12px;
   font-family: var(--font-body);
   cursor: pointer;

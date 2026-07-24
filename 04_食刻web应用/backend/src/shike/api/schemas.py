@@ -143,3 +143,39 @@ class RecipeDetailResponse(BaseModel):
     source_url: str | None = None
     ingredients: list[str] = Field(default_factory=list)
     steps: list[Any] = Field(default_factory=list)
+
+
+class SiteFeedbackCreate(BaseModel):
+    """POST /api/site-feedback 提交站点意见。"""
+
+    content: str = Field(..., min_length=5, max_length=2000, description="意见正文")
+    contact: str | None = Field(None, max_length=120, description="可选联系方式")
+    category: str = Field("建议", max_length=20, description="建议|问题|表扬|其他")
+
+
+class SiteFeedbackItem(BaseModel):
+    """站点反馈单条。"""
+
+    id: int
+    content: str
+    contact: str | None = None
+    category: str = "建议"
+    user_id: str | None = None
+    username: str | None = None
+    status: str = "pending"
+    created_at: str | None = None
+
+
+class SiteFeedbackListResponse(BaseModel):
+    """GET /api/site-feedback 列表。"""
+
+    items: list[SiteFeedbackItem] = Field(default_factory=list)
+    total: int = 0
+
+
+class SiteFeedbackSubmitResponse(BaseModel):
+    """POST /api/site-feedback 响应。"""
+
+    ok: bool = True
+    id: int = 0
+    message: str = "感谢反馈，我们会认真阅读"

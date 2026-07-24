@@ -10,11 +10,12 @@
 from __future__ import annotations
 
 import logging
+import os
 import time
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import Depends, FastAPI, HTTPException, Query, Request
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response, StreamingResponse
 
@@ -31,6 +32,9 @@ from shike.api.schemas import (
     RecipeDetailResponse,
     RecipeItem,
     SearchRecipesResponse,
+    SiteFeedbackCreate,
+    SiteFeedbackListResponse,
+    SiteFeedbackSubmitResponse,
 )
 from shike.config import load_config, resolve_path
 from shike.db.repository import RecipeRepository
@@ -78,7 +82,7 @@ OPENAPI_TAGS = [
     {"name": "意图解析", "description": "自然语言解析为筛选条件与表单"},
     {"name": "对话", "description": "SSE 流式生成与多轮对话"},
     {"name": "菜谱", "description": "SQLite 筛选与会话"},
-    {"name": "反馈", "description": "推荐评价"},
+    {"name": "反馈", "description": "推荐评价 / 站点意见"},
     {"name": "辅助", "description": "健康检查与天气"},
 ]
 
@@ -247,6 +251,90 @@ def create_app() -> FastAPI:
         except Exception as exc:  # noqa: BLE001
             logger.exception("feedback fail | recipe_id=%s err=%s", req.recipe_id, exc)
             raise HTTPException(500, f"反馈提交失败: {exc}") from exc
+
+    @app.post(
+        "/api/site-feedback",
+        response_model=SiteFeedbackSubmitResponse,
+        tags=["反馈"],
+    )
+    async def submit_site_feedback(
+        body: SiteFeedbackCreate,
+        request: Request,
+        user: dict[str, Any] | None = Depends(get_optional_user),
+    ) -> dict[str, Any]:
+        """用户提交网页意见建议（可匿名）。"""
+        content = (body.content or "").strip()
+        if len(content) < 5:
+            raise HTTPException(400, "反馈内容至少 5 个字")
+        allowed = {"建议", "问题", "表扬", "其他"}
+        category = (body.category or "建议").strip()
+        if category not in allowed:
+            category = "其他"
+        client_ip = request.client.host if request.client else None
+        try:
+            fid = _get_repo().save_site_feedback(
+                content=content,
+                contact=body.contact,
+                category=category,
+                user_id=str(user["id"]) if user else None,
+                username=user.get("username") if user else None,
+                client_ip=client_ip,
+            )
+            logger.info(
+                "site_feedback ok | id=%s category=%s user=%s",
+                fid,
+                category,
+                user.get("username") if user else "-",
+            )
+            return {
+                "ok": True,
+                "id": fid,
+                "message": "感谢反馈，我们会认真阅读",
+            }
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("site_feedback fail | err=%s", exc)
+            raise HTTPException(500, f"反馈提交失败: {exc}") from exc
+
+    @app.get(
+        "/api/site-feedback",
+        response_model=SiteFeedbackListResponse,
+        tags=["反馈"],
+    )
+    async def list_site_feedback(
+        status: str | None = Query(None, description="pending|reviewed|archived"),
+        limit: int = Query(50, ge=1, le=200),
+        offset: int = Query(0, ge=0),
+        x_admin_token: str | None = Header(None, alias="X-Admin-Token"),
+        admin_token: str | None = Query(None, description="与 X-Admin-Token 二选一"),
+    ) -> dict[str, Any]:
+        """后台查看站点反馈；需 SITE_FEEDBACK_ADMIN_TOKEN。"""
+        expected = (os.getenv("SITE_FEEDBACK_ADMIN_TOKEN") or "").strip()
+        provided = (x_admin_token or admin_token or "").strip()
+        if not expected or provided != expected:
+            raise HTTPException(403, "无权查看反馈列表")
+        items, total = _get_repo().list_site_feedback(
+            status=status, limit=limit, offset=offset
+        )
+        return {"items": items, "total": total}
+
+    @app.patch("/api/site-feedback/{feedback_id}", tags=["反馈"])
+    async def update_site_feedback_status(
+        feedback_id: int,
+        status: str = Query(..., description="pending|reviewed|archived"),
+        x_admin_token: str | None = Header(None, alias="X-Admin-Token"),
+        admin_token: str | None = Query(None),
+    ) -> dict[str, Any]:
+        """标记反馈已读/归档。"""
+        expected = (os.getenv("SITE_FEEDBACK_ADMIN_TOKEN") or "").strip()
+        provided = (x_admin_token or admin_token or "").strip()
+        if not expected or provided != expected:
+            raise HTTPException(403, "无权操作")
+        if status not in {"pending", "reviewed", "archived"}:
+            raise HTTPException(400, "status 无效")
+        ok = _get_repo().mark_site_feedback_status(feedback_id, status)
+        if not ok:
+            raise HTTPException(404, "反馈不存在")
+        return {"ok": True, "id": feedback_id, "status": status}
 
     @app.post("/api/parse_intent", response_model=IntentResponse, tags=["意图解析"])
     async def parse_intent(req: ParseIntentRequest) -> dict[str, Any]:

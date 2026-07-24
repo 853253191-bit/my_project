@@ -16,7 +16,7 @@
       <li>前端：Vue 3 + Vite + TypeScript</li>
       <li>后端：FastAPI + Chroma + SQLite</li>
       <li>大模型：阿里云 DashScope 通义千问</li>
-      <li>部署：Docker Compose + Vercel</li>
+      <li>部署：阿里云 ECS + Nginx + Gunicorn / systemd</li>
     </ul>
   </div>
 </template>

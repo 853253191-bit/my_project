@@ -7,6 +7,7 @@
         <router-link v-if="auth.isLoggedIn" to="/favorites" class="nav-link">收藏</router-link>
         <router-link v-if="auth.isLoggedIn" to="/history" class="nav-link">历史</router-link>
         <router-link to="/about" class="nav-link">关于</router-link>
+        <router-link to="/feedback" class="nav-link">反馈</router-link>
       </nav>
       <div class="nav-user">
         <template v-if="auth.isLoggedIn">
@@ -27,6 +28,7 @@
       <span class="footer-left">食刻 · 让每一顿都有道理</span>
       <div class="footer-links">
         <router-link to="/about">关于</router-link>
+        <router-link to="/feedback">反馈</router-link>
       </div>
     </footer>
   </div>

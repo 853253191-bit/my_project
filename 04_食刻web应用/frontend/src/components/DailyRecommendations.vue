@@ -6,7 +6,9 @@ import { useSessionStore } from '../stores/session'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
 import FavoriteButton from './FavoriteButton.vue'
 
-const emit = defineEmits<{ (e: 'select', dishName: string): void }>()
+const emit = defineEmits<{
+  (e: 'detail', item: RecommendItem): void
+}>()
 const store = useSessionStore()
 
 const items = ref<DailyItem[]>([])
@@ -91,10 +93,11 @@ async function handleRefresh() {
 }
 
 function handleClick(item: DailyItem) {
-  emit('select', item.title)
+  // 点击卡片直接打开详情（与推荐区一致）
+  emit('detail', toRecommendItem(item))
 }
 
-/** DailyItem 转为收藏所需的 RecommendItem */
+/** DailyItem 转为 RecommendItem，供详情 / 收藏复用 */
 function toRecommendItem(item: DailyItem): RecommendItem {
   return {
     id: item.id,
@@ -119,7 +122,7 @@ function handleAdd(item: DailyItem, e: Event) {
 
 function handleSecretClick() {
   if (!secretDish.value) return
-  emit('select', secretDish.value.title)
+  emit('detail', toRecommendItem(secretDish.value))
   showParty.value = false
 }
 
@@ -131,9 +134,9 @@ onMounted(() => {
 <template>
   <div class="today-section">
     <div class="section-header">
-      <div class="section-title">今日主厨精选</div>
+      <div class="section-title">🔥 今日主厨精选</div>
       <div class="section-actions">
-        <span class="section-hint">点击卡片直接搜索</span>
+        <span class="section-hint">点击卡片查看详情</span>
         <button
           class="btn-refresh btn-pulse"
           type="button"

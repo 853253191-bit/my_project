@@ -15,6 +15,8 @@ from shike.db.models import (
     CREATE_FEEDBACK_TABLE,
     CREATE_INDEXES,
     CREATE_RECIPES_TABLE,
+    CREATE_SITE_FEEDBACK_INDEXES,
+    CREATE_SITE_FEEDBACK_TABLE,
 )
 
 # 前端辣度 0~3 → 允许的 spicy_level 上限（生成列 0~5）
@@ -47,6 +49,9 @@ class RecipeRepository:
                 conn.execute(stmt)
             conn.execute(CREATE_FEEDBACK_TABLE)
             for stmt in CREATE_FEEDBACK_INDEXES:
+                conn.execute(stmt)
+            conn.execute(CREATE_SITE_FEEDBACK_TABLE)
+            for stmt in CREATE_SITE_FEEDBACK_INDEXES:
                 conn.execute(stmt)
             conn.commit()
 
@@ -84,6 +89,81 @@ class RecipeRepository:
             )
             conn.commit()
             return int(cur.lastrowid)
+
+    def save_site_feedback(
+        self,
+        *,
+        content: str,
+        contact: str | None = None,
+        category: str = "建议",
+        user_id: str | None = None,
+        username: str | None = None,
+        client_ip: str | None = None,
+    ) -> int:
+        """写入站点意见反馈，返回新行 id。"""
+        with self._connect() as conn:
+            cur = conn.execute(
+                """
+                INSERT INTO site_feedback (
+                    content, contact, category, user_id, username, client_ip
+                ) VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    content.strip(),
+                    (contact or "").strip() or None,
+                    (category or "建议").strip() or "建议",
+                    user_id,
+                    username,
+                    client_ip,
+                ),
+            )
+            conn.commit()
+            return int(cur.lastrowid)
+
+    def list_site_feedback(
+        self,
+        *,
+        status: str | None = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> tuple[list[dict[str, Any]], int]:
+        """列出站点反馈，供后台整理。"""
+        limit = max(1, min(int(limit), 200))
+        offset = max(0, int(offset))
+        clauses: list[str] = []
+        params: list[Any] = []
+        if status:
+            clauses.append("status = ?")
+            params.append(status)
+        where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+        with self._connect() as conn:
+            total = conn.execute(
+                f"SELECT COUNT(*) FROM site_feedback {where}",
+                params,
+            ).fetchone()[0]
+            rows = conn.execute(
+                f"""
+                SELECT id, content, contact, category, user_id, username,
+                       client_ip, status, created_at
+                FROM site_feedback
+                {where}
+                ORDER BY created_at DESC
+                LIMIT ? OFFSET ?
+                """,
+                (*params, limit, offset),
+            ).fetchall()
+        items = [dict(r) for r in rows]
+        return items, int(total)
+
+    def mark_site_feedback_status(self, feedback_id: int, status: str) -> bool:
+        """更新反馈状态：pending / reviewed / archived。"""
+        with self._connect() as conn:
+            cur = conn.execute(
+                "UPDATE site_feedback SET status = ? WHERE id = ?",
+                (status, feedback_id),
+            )
+            conn.commit()
+            return cur.rowcount > 0
 
     def _recipe_to_row(self, recipe: dict[str, Any]) -> dict[str, Any]:
         rid = recipe.get("id") or str(uuid4())

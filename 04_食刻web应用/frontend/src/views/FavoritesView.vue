@@ -139,7 +139,7 @@ onMounted(load)
     </div>
     <div v-if="loading" class="hint">加载中…</div>
     <div v-else-if="error" class="hint error">{{ error }}</div>
-    <div v-else-if="!items.length" class="hint">还没有收藏，去首页发现好吃的吧</div>
+    <div v-else-if="!items.length" class="hint">📭 收藏夹空空如也～去首页挑几道喜欢的吧！</div>
     <div v-else class="list">
       <article
         v-for="it in items"
