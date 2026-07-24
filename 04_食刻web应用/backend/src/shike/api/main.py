@@ -14,12 +14,13 @@ import time
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 from shike.api.schemas import (
     DailyResponse,
+    FeedbackResponse,
     HealthResponse,
     IntentResponse,
     RecommendResponse,
@@ -30,6 +31,7 @@ from shike.config import load_config, resolve_path
 from shike.db.repository import RecipeRepository
 from shike.models.schemas import (
     ChatRequest,
+    FeedbackRequest,
     GenerateRequest,
     ParseIntentRequest,
     RecommendRequest,
@@ -176,6 +178,36 @@ def create_app() -> FastAPI:
                 exc,
             )
             raise HTTPException(500, f"推荐失败: {exc}") from exc
+
+    @app.post("/api/feedback", response_model=FeedbackResponse, tags=["反馈"])
+    async def submit_feedback(
+        req: FeedbackRequest,
+        request: Request,
+    ) -> dict[str, Any]:
+        """记录用户对推荐结果的好评 / 差评。"""
+        client_ip = request.client.host if request.client else None
+        try:
+            fid = _get_repo().save_feedback(
+                recipe_id=req.recipe_id,
+                rating=req.rating,
+                session_id=req.session_id,
+                user_id=req.user_id,
+                query_text=req.query_text,
+                filters=req.filters,
+                comment=req.comment,
+                client_ip=client_ip,
+            )
+            logger.info(
+                "feedback ok | id=%s recipe_id=%s rating=%s query=%r",
+                fid,
+                req.recipe_id,
+                req.rating,
+                req.query_text,
+            )
+            return {"ok": True, "id": fid, "message": "反馈已记录"}
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("feedback fail | recipe_id=%s err=%s", req.recipe_id, exc)
+            raise HTTPException(500, f"反馈提交失败: {exc}") from exc
 
     @app.post("/api/parse_intent", response_model=IntentResponse, tags=["意图解析"])
     async def parse_intent(req: ParseIntentRequest) -> dict[str, Any]:

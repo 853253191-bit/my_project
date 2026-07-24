@@ -210,6 +210,89 @@ class RecipeVectorStore:
                 break
         return out
 
+    @staticmethod
+    def calculate_preference_score(
+        recipe: dict[str, Any], filters: dict[str, Any] | None
+    ) -> float:
+        """基于用户筛选条件的偏好加分（与向量相似度叠加）。"""
+        if not filters:
+            return 0.0
+        score = 0.0
+
+        if filters.get("greasiness_max") is not None:
+            g = recipe.get("greasiness")
+            if g is not None and int(g) >= 0:
+                score += (int(filters["greasiness_max"]) - int(g)) * 0.5
+
+        if filters.get("spicy_level_max") is not None:
+            s = recipe.get("spicy_level")
+            if s is not None and int(s) >= 0:
+                score += (int(filters["spicy_level_max"]) - int(s)) * 0.5
+
+        if filters.get("estimated_time_max") is not None:
+            t = recipe.get("estimated_time")
+            tmax = int(filters["estimated_time_max"])
+            if t is not None and int(t) >= 0:
+                et = int(t)
+                if et <= tmax:
+                    score += 1.0
+                else:
+                    score -= (et - tmax) / 60.0
+
+        cuisine = filters.get("cuisine_main")
+        if cuisine and recipe.get("cuisine_main") == cuisine:
+            score += 2.0
+
+        return score
+
+    def query_with_preference(
+        self,
+        query_text: str,
+        filters: dict[str, Any] | None = None,
+        top_k: int = 3,
+    ) -> list[dict[str, Any]]:
+        """向量检索后叠加用户偏好分数，重新排序取 Top-K。
+
+        综合得分 = 归一化相似度(0~1) + PREFERENCE_WEIGHT * 偏好分数
+        """
+        weight = float(os.getenv("PREFERENCE_WEIGHT", "0.3") or "0.3")
+        # 多取候选再重排
+        candidates = self.query(
+            query_text=query_text,
+            filters=filters,
+            top_k=max(top_k * 8, top_k),
+        )
+        if not candidates:
+            return []
+
+        for hit in candidates:
+            dist = hit.get("_distance")
+            try:
+                # cosine space：distance 越小越相似，近似 sim = 1 - distance
+                sim = max(0.0, 1.0 - float(dist if dist is not None else 1.0))
+            except (TypeError, ValueError):
+                sim = 0.0
+            pref = self.calculate_preference_score(hit, filters)
+            hit["_preference_score"] = pref
+            hit["_similarity"] = sim
+            hit["_final_score"] = sim + weight * pref
+
+        candidates.sort(
+            key=lambda x: float(x.get("_final_score") or 0.0),
+            reverse=True,
+        )
+        top = candidates[:top_k]
+        if top:
+            logger.info(
+                "偏好重排 | weight=%s top1_final=%.4f pref=%.2f sim=%.4f title=%s",
+                weight,
+                float(top[0].get("_final_score") or 0),
+                float(top[0].get("_preference_score") or 0),
+                float(top[0].get("_similarity") or 0),
+                top[0].get("title"),
+            )
+        return top
+
     def sample(self, limit: int = 5) -> list[dict[str, Any]]:
         """随机/顺序取样（daily_recommendations 用）。"""
         collection = self.get_collection()

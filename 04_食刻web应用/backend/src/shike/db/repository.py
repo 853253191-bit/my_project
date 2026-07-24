@@ -10,7 +10,12 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-from shike.db.models import CREATE_INDEXES, CREATE_RECIPES_TABLE
+from shike.db.models import (
+    CREATE_FEEDBACK_INDEXES,
+    CREATE_FEEDBACK_TABLE,
+    CREATE_INDEXES,
+    CREATE_RECIPES_TABLE,
+)
 
 # 前端辣度 0~3 → 允许的 spicy_level 上限（生成列 0~5）
 SPICE_LEVEL_MAX = {0: 0, 1: 2, 2: 3, 3: 5}
@@ -40,7 +45,45 @@ class RecipeRepository:
             conn.execute(CREATE_RECIPES_TABLE)
             for stmt in CREATE_INDEXES:
                 conn.execute(stmt)
+            conn.execute(CREATE_FEEDBACK_TABLE)
+            for stmt in CREATE_FEEDBACK_INDEXES:
+                conn.execute(stmt)
             conn.commit()
+
+    def save_feedback(
+        self,
+        *,
+        recipe_id: str,
+        rating: str,
+        session_id: str | None = None,
+        user_id: str | None = None,
+        query_text: str | None = None,
+        filters: dict[str, Any] | None = None,
+        comment: str | None = None,
+        client_ip: str | None = None,
+    ) -> int:
+        """写入推荐反馈，返回新行 id。"""
+        with self._connect() as conn:
+            cur = conn.execute(
+                """
+                INSERT INTO feedback (
+                    session_id, user_id, recipe_id, query_text,
+                    filters, rating, comment, client_ip
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    session_id,
+                    user_id,
+                    recipe_id,
+                    query_text,
+                    json.dumps(filters or {}, ensure_ascii=False),
+                    rating,
+                    comment,
+                    client_ip,
+                ),
+            )
+            conn.commit()
+            return int(cur.lastrowid)
 
     def _recipe_to_row(self, recipe: dict[str, Any]) -> dict[str, Any]:
         rid = recipe.get("id") or str(uuid4())

@@ -17,6 +17,7 @@ class RecipeItem(BaseModel):
     id: str
     title: str = ""
     decision_summary: str | None = None
+    reason: str | None = None
     greasiness: int | None = None
     spicy_level: int | None = None
     ai_difficulty: str | None = None
@@ -28,6 +29,8 @@ class RecipeItem(BaseModel):
     image_url: str | None = None
     source_url: str | None = None
     distance: float | None = None
+    preference_score: float | None = None
+    final_score: float | None = None
     ingredients: list[str] = Field(default_factory=list)
 
 
@@ -37,6 +40,15 @@ class RecommendResponse(BaseModel):
     items: list[RecipeItem] = Field(default_factory=list)
     count: int = 0
     message: str = ""
+    recall_level: int | None = None
+
+
+class FeedbackResponse(BaseModel):
+    """POST /api/feedback 响应。"""
+
+    ok: bool = True
+    id: int = 0
+    message: str = "反馈已记录"
 
 
 class DailyItem(BaseModel):

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { RecommendItem } from '../api/client'
-import { spicyLabel, timeLabel, greasinessLabel, difficultyLabel } from '../api/client'
+import { spicyLabel, timeLabel, greasinessLabel, difficultyLabel, submitFeedback } from '../api/client'
 import { useSessionStore } from '../stores/session'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
 
@@ -14,6 +14,32 @@ const emit = defineEmits<{
 
 const store = useSessionStore()
 const alreadyAdded = computed(() => store.isInMyRecipes(props.item.id))
+const reasonText = computed(
+  () => props.item.reason || props.item.decision_summary || '',
+)
+
+/** 本卡片已提交的评价，避免重复提交 */
+const rated = ref<'good' | 'bad' | null>(null)
+const feedbackBusy = ref(false)
+
+async function handleFeedback(rating: 'good' | 'bad') {
+  if (rated.value || feedbackBusy.value) return
+  feedbackBusy.value = true
+  try {
+    await submitFeedback({
+      recipe_id: props.item.id,
+      rating,
+      session_id: store.sessionId || undefined,
+      query_text: store.queryText || store.lastIntentText || undefined,
+      filters: store.filters,
+    })
+    rated.value = rating
+  } catch (err) {
+    console.error(err)
+  } finally {
+    feedbackBusy.value = false
+  }
+}
 
 function handleChange() {
   emit('change')
@@ -45,12 +71,33 @@ function metaTags(item: RecommendItem) {
     </div>
     <div class="result-card-body">
       <div class="result-card-name">{{ item.title }}</div>
-      <div class="result-card-desc">{{ item.decision_summary }}</div>
+      <div class="result-card-desc">{{ reasonText }}</div>
       <div v-if="metaTags(item).length" class="result-card-meta">
         <span v-for="(tag, i) in metaTags(item)" :key="i">{{ tag }}</span>
       </div>
       <div class="result-card-actions">
         <button class="btn-change btn-pulse" type="button" @click="handleChange">换一道 🔄</button>
+        <!-- 好评 / 差评：放在「查看详情」左侧 -->
+        <button
+          class="btn-fb btn-fb-good"
+          type="button"
+          :disabled="!!rated || feedbackBusy"
+          :class="{ active: rated === 'good' }"
+          title="好评"
+          @click="handleFeedback('good')"
+        >
+          赞
+        </button>
+        <button
+          class="btn-fb btn-fb-bad"
+          type="button"
+          :disabled="!!rated || feedbackBusy"
+          :class="{ active: rated === 'bad' }"
+          title="差评"
+          @click="handleFeedback('bad')"
+        >
+          踩
+        </button>
         <button class="btn-detail btn-pulse" type="button" @click="handleDetail">查看详情</button>
         <button
           class="btn-add btn-pulse"
@@ -131,6 +178,7 @@ function metaTags(item: RecommendItem) {
   display: flex;
   gap: 12px;
   margin-top: 4px;
+  align-items: center;
 }
 .btn-change {
   padding: 8px 18px;
@@ -148,6 +196,32 @@ function metaTags(item: RecommendItem) {
 .btn-change:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+.btn-fb {
+  min-width: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--body);
+}
+.btn-fb:disabled:not(.active) {
+  opacity: 0.55;
+  cursor: default;
+}
+.btn-fb-good.active {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: #fff;
+}
+.btn-fb-bad.active {
+  background: #c62828;
+  border-color: #c62828;
+  color: #fff;
 }
 .btn-detail {
   padding: 8px 18px;

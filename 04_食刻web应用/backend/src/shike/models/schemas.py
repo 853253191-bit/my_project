@@ -118,3 +118,28 @@ class RecommendRequest(BaseModel):
 
 class ParseIntentRequest(BaseModel):
     text: str = Field(..., min_length=1)
+
+
+class FeedbackRequest(BaseModel):
+    """用户对推荐结果的评价。"""
+
+    recipe_id: str = Field(..., min_length=1)
+    rating: str = Field(..., pattern="^(good|bad|skip)$")
+    session_id: str | None = None
+    user_id: str | None = None
+    query_text: str | None = None
+    filters: dict[str, Any] = Field(default_factory=dict)
+    comment: str | None = None
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "recipe_id": "demo-1",
+                    "rating": "good",
+                    "query_text": "今天好累想喝汤",
+                    "filters": {"greasiness_max": 2},
+                }
+            ]
+        }
+    }

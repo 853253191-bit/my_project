@@ -50,6 +50,8 @@ export interface RecommendItem {
   id: string
   title: string
   decision_summary: string
+  /** 动态推荐理由（优先展示） */
+  reason?: string
   cuisine_main?: string
   greasiness?: number
   spicy_level?: number
@@ -69,6 +71,8 @@ export interface RecommendResponse {
   count: number
   message: string
   items: RecommendItem[]
+  /** 1=严格 2=放宽 3=随机兜底 */
+  recall_level?: number
 }
 
 /** /api/parse_intent 响应 */
@@ -176,6 +180,25 @@ export async function recommend(
     body: JSON.stringify({ query_text: queryText, filters, top_k: topK }),
   })
   if (!resp.ok) throw new Error(`推荐失败: ${resp.status}`)
+  return resp.json()
+}
+
+/** 提交推荐反馈（好评 / 差评） */
+export async function submitFeedback(payload: {
+  recipe_id: string
+  rating: 'good' | 'bad' | 'skip'
+  session_id?: string
+  user_id?: string
+  query_text?: string
+  filters?: RecommendFilters
+  comment?: string
+}): Promise<{ ok: boolean; id: number; message: string }> {
+  const resp = await fetch(`${API_BASE}/api/feedback`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  if (!resp.ok) throw new Error(`反馈提交失败: ${resp.status}`)
   return resp.json()
 }
 

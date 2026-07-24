@@ -320,6 +320,7 @@ watch(chatHistory, () => {
       <div v-if="store.hasResults" class="results-section">
         <div class="results-header">
           <div class="section-title">✨ 为你找到 {{ store.recommendations.length }} 道合拍的小菜</div>
+          <div v-if="store.recommendMessage" class="results-hint">{{ store.recommendMessage }}</div>
         </div>
         <div v-if="store.loading" class="results-loading">加载中…</div>
         <template v-else>
@@ -618,8 +619,9 @@ watch(chatHistory, () => {
 }
 .results-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   margin-bottom: 16px;
 }
 .results-header .section-title {
@@ -630,6 +632,11 @@ watch(chatHistory, () => {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.results-hint {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.4;
 }
 .results-loading {
   text-align: center;
