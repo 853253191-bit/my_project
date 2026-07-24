@@ -13,7 +13,10 @@
   },
   "expand_fotiaoqiang": {
     "query": "5分钟做好的佛跳墙",
-    "filters": {"estimated_time_max": 5},
+    "filters": {
+      "estimated_time_max": 1,
+      "cuisine_main": "不存在的测试菜系XYZ"
+    },
     "recall_level_in": [2, 3]
   }
 }
