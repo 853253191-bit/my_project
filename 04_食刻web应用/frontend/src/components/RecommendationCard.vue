@@ -3,7 +3,10 @@ import { computed, ref } from 'vue'
 import type { RecommendItem } from '../api/client'
 import { spicyLabel, timeLabel, greasinessLabel, difficultyLabel, submitFeedback } from '../api/client'
 import { useSessionStore } from '../stores/session'
+import { useAuthStore } from '../stores/auth'
+import { apiFetch } from '../utils/request'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
+import FavoriteButton from './FavoriteButton.vue'
 
 const props = defineProps<{ item: RecommendItem }>()
 const emit = defineEmits<{
@@ -13,12 +16,12 @@ const emit = defineEmits<{
 }>()
 
 const store = useSessionStore()
+const auth = useAuthStore()
 const alreadyAdded = computed(() => store.isInMyRecipes(props.item.id))
 const reasonText = computed(
   () => props.item.reason || props.item.decision_summary || '',
 )
 
-/** 本卡片已提交的评价，避免重复提交 */
 const rated = ref<'good' | 'bad' | null>(null)
 const feedbackBusy = ref(false)
 
@@ -30,6 +33,7 @@ async function handleFeedback(rating: 'good' | 'bad') {
       recipe_id: props.item.id,
       rating,
       session_id: store.sessionId || undefined,
+      user_id: auth.user?.id ? String(auth.user.id) : undefined,
       query_text: store.queryText || store.lastIntentText || undefined,
       filters: store.filters,
     })
@@ -41,10 +45,26 @@ async function handleFeedback(rating: 'good' | 'bad') {
   }
 }
 
+async function recordHistory() {
+  if (!auth.isLoggedIn || !props.item.id) return
+  try {
+    await apiFetch('/api/history', {
+      method: 'POST',
+      json: {
+        recipe_id: props.item.id,
+        query_text: store.queryText || store.lastIntentText || undefined,
+      },
+    })
+  } catch {
+    /* 浏览记录失败不影响主流程 */
+  }
+}
+
 function handleChange() {
   emit('change')
 }
-function handleDetail() {
+async function handleDetail() {
+  await recordHistory()
   emit('detail', props.item)
 }
 function handleAdd() {
@@ -52,7 +72,6 @@ function handleAdd() {
   if (ok) emit('added')
 }
 
-// Build meta tags
 function metaTags(item: RecommendItem) {
   const tags: string[] = []
   if (item.cuisine_main) tags.push(`🏠 ${item.cuisine_main}`)
@@ -77,7 +96,11 @@ function metaTags(item: RecommendItem) {
       </div>
       <div class="result-card-actions">
         <button class="btn-change btn-pulse" type="button" @click="handleChange">换一道 🔄</button>
-        <!-- 好评 / 差评：放在「查看详情」左侧 -->
+        <FavoriteButton
+          :recipe-id="item.id"
+          :initial-favorited="item.is_favorited"
+          size="sm"
+        />
         <button
           class="btn-fb btn-fb-good"
           type="button"
@@ -176,9 +199,10 @@ function metaTags(item: RecommendItem) {
 }
 .result-card-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-top: 4px;
   align-items: center;
+  flex-wrap: wrap;
 }
 .btn-change {
   padding: 8px 18px;

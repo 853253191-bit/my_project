@@ -14,10 +14,14 @@ import time
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import JSONResponse, Response, StreamingResponse
 
+from shike.api.auth import router as auth_router
+from shike.api.dependencies import get_optional_user, set_user_store_getter
+from shike.api.favorites import router as favorites_router
+from shike.api.history import router as history_router
 from shike.api.schemas import (
     DailyResponse,
     FeedbackResponse,
@@ -29,6 +33,7 @@ from shike.api.schemas import (
 )
 from shike.config import load_config, resolve_path
 from shike.db.repository import RecipeRepository
+from shike.db.user_store import UserStore
 from shike.models.schemas import (
     ChatRequest,
     FeedbackRequest,
@@ -41,13 +46,14 @@ from shike.models.schemas import (
 )
 from shike.services.generator import RecipeGenerator
 from shike.services.intent import parse_user_intent
-from shike.services.recommend import HybridRecommender, _ingredient_names
+from shike.services.recommend import HybridRecommender, _ingredient_names, merge_user_preferences
 from shike.services.session import SessionManager
 from shike.services.weather import WeatherService
 
 APP_VERSION = "0.1.0"
 _config = None
 _repo: RecipeRepository | None = None
+_user_store: UserStore | None = None
 _generator: RecipeGenerator | None = None
 _sessions: SessionManager | None = None
 _weather: WeatherService | None = None
@@ -63,10 +69,14 @@ if not logger.handlers:
 
 # Swagger 分组顺序
 OPENAPI_TAGS = [
+    {"name": "认证", "description": "注册 / 登录 / Token / 用户偏好"},
+    {"name": "收藏", "description": "菜谱收藏夹"},
+    {"name": "历史", "description": "浏览历史"},
     {"name": "推荐", "description": "混合检索 / 每日推荐 / 随机菜谱"},
     {"name": "意图解析", "description": "自然语言解析为筛选条件与表单"},
     {"name": "对话", "description": "SSE 流式生成与多轮对话"},
     {"name": "菜谱", "description": "SQLite 筛选与会话"},
+    {"name": "反馈", "description": "推荐评价"},
     {"name": "辅助", "description": "健康检查与天气"},
 ]
 
@@ -95,12 +105,20 @@ def _get_recommender() -> HybridRecommender:
     return _recommender
 
 
+def _get_user_store() -> UserStore:
+    if _user_store is None:
+        raise RuntimeError("用户存储未初始化")
+    return _user_store
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _config, _repo, _generator, _sessions, _weather, _recommender
+    global _config, _repo, _user_store, _generator, _sessions, _weather, _recommender
     _config = load_config()
     db_path = resolve_path(_config.data.sqlite_path)
     _repo = RecipeRepository(db_path)
+    _user_store = UserStore(db_path)
+    set_user_store_getter(_get_user_store)
     _sessions = SessionManager(_config)
     _weather = WeatherService(_config)
     _generator = RecipeGenerator(_config, _repo, _sessions, _weather)
@@ -125,6 +143,10 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
+    app.include_router(auth_router)
+    app.include_router(favorites_router)
+    app.include_router(history_router)
+
     @app.get("/api/health", response_model=HealthResponse, tags=["辅助"])
     async def health() -> dict[str, Any]:
         count = _repo.count() if _repo else 0
@@ -143,15 +165,29 @@ def create_app() -> FastAPI:
 
     # ---------- 混合检索：硬过滤 + 向量语义 ----------
     @app.post("/api/recommend", response_model=RecommendResponse, tags=["推荐"])
-    async def recommend(req: RecommendRequest) -> dict[str, Any]:
-        """硬过滤（metadata）+ 向量语义检索（document）。"""
+    async def recommend(
+        req: RecommendRequest,
+        user: dict[str, Any] | None = Depends(get_optional_user),
+    ) -> dict[str, Any]:
+        """硬过滤（metadata）+ 向量语义检索（document）。
+
+        若携带登录 Token，合并用户偏好，并对收藏菜加权。
+        """
         started = time.perf_counter()
         filters = req.filters.model_dump(exclude_none=True)
+        favorite_ids: list[str] = []
+        if user:
+            filters = merge_user_preferences(filters, user.get("preferences") or {})
+            try:
+                favorite_ids = _get_user_store().list_favorite_ids(int(user["id"]))
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("读取收藏列表失败: %s", exc)
         try:
             result = _get_recommender().recommend(
                 query_text=req.query_text,
                 filters=filters,
                 top_k=req.top_k,
+                favorite_ids=favorite_ids,
             )
             elapsed_ms = int((time.perf_counter() - started) * 1000)
             titles = [
@@ -160,7 +196,8 @@ def create_app() -> FastAPI:
                 if isinstance(item, dict)
             ]
             logger.info(
-                "recommend ok | query=%r filters=%s titles=%s elapsed_ms=%s count=%s",
+                "recommend ok | user=%s query=%r filters=%s titles=%s elapsed_ms=%s count=%s",
+                (user or {}).get("id"),
                 req.query_text,
                 filters,
                 titles,
@@ -254,10 +291,14 @@ def create_app() -> FastAPI:
     )
     async def daily_recommendations(
         limit: int = Query(5, ge=1, le=20),
-    ) -> dict[str, Any]:
+    ) -> Response:
         """每日推荐：从 Chroma 取样并回 SQLite 补全。"""
         try:
-            return _get_recommender().daily_recommendations(limit=limit)
+            data = _get_recommender().daily_recommendations(limit=limit)
+            return JSONResponse(
+                content=data,
+                headers={"Cache-Control": "public, max-age=3600"},
+            )
         except Exception as exc:  # noqa: BLE001
             raise HTTPException(500, f"每日推荐失败: {exc}") from exc
 
@@ -337,7 +378,11 @@ def create_app() -> FastAPI:
         if _weather is None:
             raise HTTPException(500, "天气服务未初始化")
         data = await _weather.get_weather(city)
-        return WeatherResponse(**data)
+        payload = WeatherResponse(**data).model_dump()
+        return JSONResponse(
+            content=payload,
+            headers={"Cache-Control": "public, max-age=1800"},
+        )
 
     @app.get(
         "/api/sessions/{session_id}",

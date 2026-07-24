@@ -4,9 +4,22 @@
       <router-link to="/" class="logo">食<span>刻</span></router-link>
       <nav>
         <router-link to="/" class="nav-link">首页</router-link>
+        <router-link v-if="auth.isLoggedIn" to="/favorites" class="nav-link">收藏</router-link>
+        <router-link v-if="auth.isLoggedIn" to="/history" class="nav-link">历史</router-link>
         <router-link to="/about" class="nav-link">关于</router-link>
       </nav>
-      <div class="nav-avatar">大</div>
+      <div class="nav-user">
+        <template v-if="auth.isLoggedIn">
+          <span class="nav-name">{{ auth.displayName }}</span>
+          <button type="button" class="nav-avatar" :title="auth.displayName" @click="logout">
+            {{ auth.avatarLetter }}
+          </button>
+        </template>
+        <template v-else>
+          <router-link to="/login" class="nav-login">登录</router-link>
+          <div class="nav-avatar guest">客</div>
+        </template>
+      </div>
     </header>
     <main class="app-main">
       <router-view />
@@ -21,6 +34,22 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from './stores/auth'
+
+const auth = useAuthStore()
+const router = useRouter()
+
+onMounted(() => {
+  performance.mark('shike-app-mount')
+  auth.bootstrap()
+})
+
+function logout() {
+  auth.logout()
+  router.push('/')
+}
 </script>
 
 <style scoped>
@@ -61,7 +90,7 @@
 
 .app-header nav {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   align-items: center;
 }
 
@@ -78,10 +107,29 @@
   color: var(--accent);
 }
 
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-name {
+  font-size: 13px;
+  color: var(--body);
+}
+
+.nav-login {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .nav-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  border: none;
   background: linear-gradient(135deg, #E67E22, #F39C12);
   display: flex;
   align-items: center;
@@ -90,6 +138,10 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.nav-avatar.guest {
+  cursor: default;
 }
 
 .app-main {
@@ -130,6 +182,12 @@
 @media (max-width: 640px) {
   .app-header {
     padding: 0 16px;
+  }
+  .app-header nav {
+    gap: 14px;
+  }
+  .nav-name {
+    display: none;
   }
   .app-main {
     padding: 16px 12px 60px;

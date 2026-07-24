@@ -32,6 +32,7 @@ class RecipeItem(BaseModel):
     preference_score: float | None = None
     final_score: float | None = None
     ingredients: list[str] = Field(default_factory=list)
+    is_favorited: bool | None = None
 
 
 class RecommendResponse(BaseModel):

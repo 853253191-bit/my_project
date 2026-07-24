@@ -1,0 +1,25 @@
+/* 全局字体与基础排版优化（系统字体栈，减少外部字体加载） */
+:root {
+  --font-title: "Songti SC", "STSong", "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local("Noto Serif SC"), local("Songti SC"), local("STSong");
+}
+
+/* 食材图标字号：保证清晰 */
+.food-emoji {
+  font-size: 56px;
+  line-height: 1;
+}

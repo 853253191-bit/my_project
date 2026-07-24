@@ -89,6 +89,62 @@ def _has_hard_filters(filters: dict[str, Any] | None) -> bool:
     return any(filters.get(k) not in (None, "", []) for k in keys)
 
 
+def merge_user_preferences(
+    filters: dict[str, Any] | None,
+    preferences: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """将用户偏好合并进本次 filters（请求中已显式设置的字段优先）。"""
+    out = dict(filters or {})
+    prefs = preferences or {}
+    if not prefs:
+        return out
+
+    for key in (
+        "greasiness_max",
+        "spicy_level_max",
+        "estimated_time_max",
+        "cuisine_main",
+        "ai_difficulty",
+    ):
+        if out.get(key) in (None, "") and prefs.get(key) not in (None, ""):
+            out[key] = prefs[key]
+
+    # 过敏原：合并去重
+    req_all = list(out.get("exclude_allergens") or [])
+    pref_all = list(prefs.get("exclude_allergens") or [])
+    merged_all: list[str] = []
+    for a in req_all + pref_all:
+        s = str(a).strip()
+        if s and s not in merged_all:
+            merged_all.append(s)
+    if merged_all:
+        out["exclude_allergens"] = merged_all
+
+    if out.get("include_diet_labels") in (None, []) and prefs.get("include_diet_labels"):
+        out["include_diet_labels"] = list(prefs["include_diet_labels"])
+
+    return out
+
+
+def apply_favorite_boost(
+    items: list[dict[str, Any]],
+    favorite_ids: list[str] | None,
+) -> list[dict[str, Any]]:
+    """标记 is_favorited，并将收藏过的菜排到前面。"""
+    fav_set = {str(x) for x in (favorite_ids or [])}
+    for it in items:
+        rid = str(it.get("id") or "")
+        it["is_favorited"] = rid in fav_set
+    if not fav_set:
+        return items
+    # 收藏优先，其次保持原相对顺序
+    boosted = sorted(
+        enumerate(items),
+        key=lambda pair: (0 if pair[1].get("is_favorited") else 1, pair[0]),
+    )
+    return [it for _, it in boosted]
+
+
 class HybridRecommender:
     def __init__(self, config: AppConfig, repo: RecipeRepository):
         self.config = config
@@ -221,10 +277,19 @@ class HybridRecommender:
         query_text: str,
         filters: dict[str, Any] | None = None,
         top_k: int = 3,
+        favorite_ids: list[str] | None = None,
     ) -> dict[str, Any]:
         self.ensure_vector_db()
         filters = dict(filters or {})
         top_k = max(int(top_k or 3), 1)
+
+        def _finalize(payload: dict[str, Any]) -> dict[str, Any]:
+            items = apply_favorite_boost(
+                list(payload.get("items") or []), favorite_ids
+            )
+            payload["items"] = items
+            payload["count"] = len(items)
+            return payload
 
         # ----- 第 1 级：严格过滤 -----
         level1 = self._search_and_dedupe(
@@ -235,12 +300,12 @@ class HybridRecommender:
                 "扩召回 level=1 | 严格过滤命中 %s 条，直接返回",
                 len(level1),
             )
-            return {
+            return _finalize({
                 "count": len(level1),
                 "message": "",
                 "items": level1,
                 "recall_level": 1,
-            }
+            })
 
         logger.info(
             "⚠️ 严格过滤仅 %s 条，开始放宽条件",
@@ -279,23 +344,23 @@ class HybridRecommender:
         if level2 and len(level2) >= top_k:
             msg = "为你适当放宽了筛选条件"
             logger.info("扩召回 level=2 | 返回 %s 条 | %s", len(level2), applied)
-            return {
+            return _finalize({
                 "count": len(level2),
                 "message": msg,
                 "items": level2[:top_k],
                 "recall_level": 2,
-            }
+            })
 
         # 严格为 0、放宽后有结果 → 仍用第 2 级
         if not level1 and level2:
             msg = "为你适当放宽了筛选条件"
             logger.info("扩召回 level=2 | 严格为0，放宽后 %s 条", len(level2))
-            return {
+            return _finalize({
                 "count": len(level2),
                 "message": msg,
                 "items": level2,
                 "recall_level": 2,
-            }
+            })
 
         # 放宽后仍不足：返回第 1 级（即使不足 top_k）
         if level1:
@@ -303,22 +368,22 @@ class HybridRecommender:
                 "扩召回 level=1(不足) | 放宽后仍不足 top_k，返回严格结果 %s 条",
                 len(level1),
             )
-            return {
+            return _finalize({
                 "count": len(level1),
                 "message": "",
                 "items": level1,
                 "recall_level": 1,
-            }
+            })
 
         # ----- 第 3 级：全库随机兜底 -----
         logger.info("⚠️ 所有过滤后为 0，启用随机兜底")
         items = self._random_fallback(query_text, limit=min(3, top_k))
-        return {
+        return _finalize({
             "count": len(items),
             "message": "当前条件太苛刻，先给你几道不错的菜开开胃",
             "items": items,
             "recall_level": 3,
-        }
+        })
 
     def daily_recommendations(self, limit: int = 5) -> dict[str, Any]:
         """每日推荐：随机取样 + 菜名语义去重。"""

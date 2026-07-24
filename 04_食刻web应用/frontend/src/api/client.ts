@@ -64,6 +64,7 @@ export interface RecommendItem {
   source_url?: string
   distance?: number
   ingredients?: string[]
+  is_favorited?: boolean
 }
 
 /** /api/recommend 响应 */
@@ -174,9 +175,17 @@ export async function recommend(
   filters: RecommendFilters,
   topK = 5,
 ): Promise<RecommendResponse> {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+  try {
+    const { getAccessToken } = await import('../utils/request')
+    const token = getAccessToken()
+    if (token) headers.Authorization = `Bearer ${token}`
+  } catch {
+    /* ignore */
+  }
   const resp = await fetch(`${API_BASE}/api/recommend`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ query_text: queryText, filters, top_k: topK }),
   })
   if (!resp.ok) throw new Error(`推荐失败: ${resp.status}`)

@@ -1,15 +1,67 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ResultView from '../views/ResultView.vue'
-import AboutView from '../views/AboutView.vue'
+import { useAuthStore } from '../stores/auth'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', name: 'home', component: HomeView },
-    { path: '/result/:sessionId', name: 'result', component: ResultView, props: true },
-    { path: '/about', name: 'about', component: AboutView },
+    {
+      path: '/',
+      name: 'home',
+      component: () => import('../views/HomeView.vue'),
+    },
+    {
+      path: '/result/:sessionId',
+      name: 'result',
+      component: () => import('../views/ResultView.vue'),
+      props: true,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue'),
+      meta: { guest: true },
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue'),
+      meta: { guest: true },
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: () => import('../views/FavoritesView.vue'),
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: () => import('../views/HistoryView.vue'),
+      meta: { requiresAuth: true },
+    },
   ],
+  scrollBehavior() {
+    return { top: 0 }
+  },
+})
+
+router.beforeEach(async (to) => {
+  const auth = useAuthStore()
+  if (!auth.user && auth.accessToken) {
+    await auth.fetchMe()
+  }
+  if (to.meta.requiresAuth && !auth.isLoggedIn) {
+    return { name: 'login', query: { redirect: to.fullPath } }
+  }
+  if (to.meta.guest && auth.isLoggedIn) {
+    return { name: 'home' }
+  }
+  return true
 })
 
 export default router
