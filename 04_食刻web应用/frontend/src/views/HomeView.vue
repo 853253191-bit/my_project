@@ -14,6 +14,7 @@ import RecognizedTags from '../components/RecognizedTags.vue'
 import FilterPanel from '../components/FilterPanel.vue'
 import RecommendationCard from '../components/RecommendationCard.vue'
 import ChatPanel from '../components/ChatPanel.vue'
+import FavoriteButton from '../components/FavoriteButton.vue'
 
 const store = useSessionStore()
 
@@ -26,6 +27,7 @@ const sending = ref(false)
 const searchedOnce = ref(false)
 const showDetail = ref(false)
 const detailLoading = ref(false)
+const detailItem = ref<RecommendItem | null>(null)
 
 const emptyTip = '哎呀，厨房暂时没存货啦，换个条件试试？'
 
@@ -144,6 +146,7 @@ async function handleChangeOne() {
 
 // ===== View detail: SSE generate full recipe =====
 async function handleDetail(item: RecommendItem) {
+  detailItem.value = item
   showDetail.value = true
   detailLoading.value = true
   store.recipeContent = ''
@@ -357,8 +360,16 @@ watch(chatHistory, () => {
     <div v-if="showDetail" class="detail-overlay" @click.self="showDetail = false">
       <div class="detail-modal">
         <div class="detail-header">
-          <h2>📋 食谱详情</h2>
-          <button class="detail-close" @click="showDetail = false">✕</button>
+          <h2>食谱详情{{ detailItem?.title ? ` · ${detailItem.title}` : '' }}</h2>
+          <div class="detail-header-actions">
+            <FavoriteButton
+              v-if="detailItem?.id"
+              :recipe-id="detailItem.id"
+              :initial-favorited="detailItem.is_favorited"
+              size="md"
+            />
+            <button class="detail-close" @click="showDetail = false">关闭</button>
+          </div>
         </div>
         <div class="detail-body">
           <div v-if="detailLoading" class="detail-loading">正在生成食谱…</div>
@@ -674,6 +685,7 @@ watch(chatHistory, () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 20px 24px;
   border-bottom: 1px solid var(--divider);
 }
@@ -681,19 +693,33 @@ watch(chatHistory, () => {
   font-family: var(--font-title);
   font-size: 20px;
   color: var(--title);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.detail-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 .detail-close {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: var(--secondary);
+  border: 1px solid var(--divider);
+  background: #fff;
+  font-size: 14px;
+  color: var(--body);
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
   transition: background 0.2s;
 }
 .detail-close:hover {
   background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .detail-body {
   padding: 24px;

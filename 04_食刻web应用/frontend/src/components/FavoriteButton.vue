@@ -88,27 +88,32 @@ onMounted(async () => {
 .fav-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  border: 1px solid var(--divider);
+  gap: 6px;
+  border: 1px solid #e74c3c;
   background: #fff;
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-family: var(--font-body);
-  color: var(--body);
+  color: #e74c3c;
   transition: all 0.2s;
+  flex-shrink: 0;
+  font-weight: 600;
 }
 .fav-btn.md {
-  padding: 8px 12px;
-  font-size: 13px;
+  padding: 8px 14px;
+  font-size: 14px;
 }
 .fav-btn.sm {
-  padding: 4px 8px;
-  font-size: 12px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.fav-btn:hover {
+  background: #fff5f5;
 }
 .fav-btn.on {
   border-color: #e74c3c;
-  color: #e74c3c;
-  background: #fff5f5;
+  color: #fff;
+  background: #e74c3c;
 }
 .fav-icon {
   font-size: 16px;

@@ -89,18 +89,20 @@ function metaTags(item: RecommendItem) {
       <RecipeFoodIcon :title="item.title" :ingredients="item.ingredients" />
     </div>
     <div class="result-card-body">
-      <div class="result-card-name">{{ item.title }}</div>
+      <div class="result-card-title-row">
+        <div class="result-card-name">{{ item.title }}</div>
+        <FavoriteButton
+          :recipe-id="item.id"
+          :initial-favorited="item.is_favorited"
+          size="md"
+        />
+      </div>
       <div class="result-card-desc">{{ reasonText }}</div>
       <div v-if="metaTags(item).length" class="result-card-meta">
         <span v-for="(tag, i) in metaTags(item)" :key="i">{{ tag }}</span>
       </div>
       <div class="result-card-actions">
         <button class="btn-change btn-pulse" type="button" @click="handleChange">换一道 🔄</button>
-        <FavoriteButton
-          :recipe-id="item.id"
-          :initial-favorited="item.is_favorited"
-          size="sm"
-        />
         <button
           class="btn-fb btn-fb-good"
           type="button"
@@ -171,6 +173,12 @@ function metaTags(item: RecommendItem) {
   justify-content: center;
   gap: 8px;
 }
+.result-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
 .result-card-name {
   font-family: var(--font-title);
   font-size: 22px;
@@ -179,6 +187,7 @@ function metaTags(item: RecommendItem) {
   line-height: 1.35;
   white-space: normal;
   word-break: break-word;
+  flex: 1;
 }
 .result-card-desc {
   font-size: 14px;

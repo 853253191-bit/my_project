@@ -4,6 +4,7 @@ import { getDailyRecommendations, timeLabel } from '../api/client'
 import type { DailyItem, RecommendItem } from '../api/client'
 import { useSessionStore } from '../stores/session'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
+import FavoriteButton from './FavoriteButton.vue'
 
 const emit = defineEmits<{ (e: 'select', dishName: string): void }>()
 const store = useSessionStore()
@@ -165,14 +166,21 @@ onMounted(() => {
             <RecipeFoodIcon :title="item.title" :ingredients="item.ingredients" />
           </div>
           <div class="today-card-body">
-            <button
-              class="btn-add-recipe"
-              type="button"
-              :disabled="isAdded(item)"
-              @click="handleAdd(item, $event)"
-            >
-              {{ isAdded(item) ? '已添加' : '添加到食谱' }}
-            </button>
+            <div class="today-card-actions" @click.stop>
+              <FavoriteButton
+                v-if="item.id && !String(item.id).startsWith('secret_')"
+                :recipe-id="item.id"
+                size="sm"
+              />
+              <button
+                class="btn-add-recipe"
+                type="button"
+                :disabled="isAdded(item)"
+                @click="handleAdd(item, $event)"
+              >
+                {{ isAdded(item) ? '已添加' : '添加到食谱' }}
+              </button>
+            </div>
             <div class="today-card-name">{{ item.title }}</div>
             <div class="today-card-tags">
               <span v-if="item.estimated_time" class="today-card-tag">{{ timeLabel(item.estimated_time) }}</span>
@@ -333,6 +341,12 @@ onMounted(() => {
   gap: 6px;
 }
 /* 图标正下方：添加到我的食谱 */
+.today-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
 .btn-add-recipe {
   width: 100%;
   padding: 5px 8px;

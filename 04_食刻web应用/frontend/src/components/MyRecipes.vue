@@ -3,6 +3,7 @@ import { useSessionStore } from '../stores/session'
 import { timeLabel } from '../api/client'
 import type { RecommendItem } from '../api/client'
 import RecipeFoodIcon from './RecipeFoodIcon.vue'
+import FavoriteButton from './FavoriteButton.vue'
 
 const store = useSessionStore()
 
@@ -70,14 +71,17 @@ function handleClear() {
             <span v-if="item.cuisine_main" class="my-card-tag">{{ item.cuisine_main }}</span>
           </div>
         </div>
-        <button
-          class="btn-remove"
-          type="button"
-          title="移除"
-          @click="handleRemove(item.id, $event)"
-        >
-          移除
-        </button>
+        <div class="my-card-actions" @click.stop>
+          <FavoriteButton :recipe-id="item.id" :initial-favorited="item.is_favorited" size="sm" />
+          <button
+            class="btn-remove"
+            type="button"
+            title="移除"
+            @click="handleRemove(item.id, $event)"
+          >
+            移除
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -190,7 +194,7 @@ function handleClear() {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px 12px 36px;
+  padding: 10px 12px 40px;
 }
 .my-card-name {
   font-size: 14px;
@@ -216,10 +220,15 @@ function handleClear() {
   padding: 2px 6px;
   border-radius: 4px;
 }
-.btn-remove {
+.my-card-actions {
   position: absolute;
   right: 8px;
   bottom: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.btn-remove {
   padding: 4px 8px;
   font-size: 12px;
   font-family: var(--font-body);

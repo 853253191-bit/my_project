@@ -11,9 +11,8 @@
       <div class="nav-user">
         <template v-if="auth.isLoggedIn">
           <span class="nav-name">{{ auth.displayName }}</span>
-          <button type="button" class="nav-avatar" :title="auth.displayName" @click="logout">
-            {{ auth.avatarLetter }}
-          </button>
+          <div class="nav-avatar" :title="auth.displayName">{{ auth.avatarLetter }}</div>
+          <button type="button" class="nav-logout" @click="logout">退出登录</button>
         </template>
         <template v-else>
           <router-link to="/login" class="nav-login">登录</router-link>
@@ -137,11 +136,29 @@ function logout() {
   color: white;
   font-size: 14px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: default;
+  user-select: none;
 }
 
 .nav-avatar.guest {
   cursor: default;
+}
+
+.nav-logout {
+  border: 1px solid var(--divider);
+  background: #fff;
+  color: var(--body);
+  font-size: 13px;
+  font-family: var(--font-body);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-logout:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .app-main {
