@@ -1,0 +1,19 @@
+{
+  "notes": "可选的人工预期结果快照，供回归对比；主断言仍在各 test_*.py 中。",
+  "soup_query": {
+    "query": "今天好累，想喝点热汤",
+    "min_hits": 1,
+    "keywords_any": ["汤", "暖胃"]
+  },
+  "filter_no_spice": {
+    "filters": {"spicy_level_max": 0},
+    "field": "spicy_level",
+    "op": "eq",
+    "value": 0
+  },
+  "expand_fotiaoqiang": {
+    "query": "5分钟做好的佛跳墙",
+    "filters": {"estimated_time_max": 5},
+    "recall_level_in": [2, 3]
+  }
+}

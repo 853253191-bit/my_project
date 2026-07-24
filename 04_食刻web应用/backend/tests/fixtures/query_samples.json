@@ -1,0 +1,63 @@
+[
+  {
+    "query": "今天好累，想喝点热汤",
+    "expected": {"contains_any": ["汤", "暖胃"]}
+  },
+  {
+    "query": "不想吃辣，想吃点清淡的",
+    "filters": {"spicy_level_max": 0, "greasiness_max": 2}
+  },
+  {
+    "query": "冰箱有鸡蛋和番茄",
+    "expected": {"contains_any": ["番茄", "蛋"]}
+  },
+  {
+    "query": "周末想做个硬菜",
+    "filters": {"estimated_time_max": 120, "ai_difficulty": "困难"}
+  },
+  {
+    "query": "减肥期间吃什么",
+    "filters": {"include_diet_labels": ["低卡", "少油"], "greasiness_max": 2}
+  },
+  {
+    "query": "下雨天想吃点热乎的",
+    "expected": {"non_empty": true}
+  },
+  {
+    "query": "给孩子做顿饭，别太辣",
+    "filters": {"spicy_level_max": 0}
+  },
+  {
+    "query": "15分钟快手菜",
+    "filters": {"estimated_time_max": 15}
+  },
+  {
+    "query": "想吃粤菜",
+    "filters": {"cuisine_main": "粤菜"}
+  },
+  {
+    "query": "对花生过敏，随便推荐",
+    "filters": {"exclude_allergens": ["花生"]}
+  },
+  {
+    "query": "今天心情很好，想庆祝一下",
+    "expected": {"non_empty": true}
+  },
+  {
+    "query": "加班到很晚，来点暖胃的",
+    "expected": {"contains_any": ["汤", "粥", "暖"]}
+  },
+  {
+    "query": "想尝鲜，来点不一样的",
+    "expected": {"non_empty": true}
+  },
+  {
+    "query": "素食友好一点",
+    "filters": {"include_diet_labels": ["素食", "纯素食"]}
+  },
+  {
+    "query": "5分钟做好的佛跳墙",
+    "filters": {"estimated_time_max": 5},
+    "expected": {"non_empty": true, "recall_level_in": [2, 3]}
+  }
+]
