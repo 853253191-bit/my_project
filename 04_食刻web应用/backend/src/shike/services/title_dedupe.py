@@ -12,7 +12,7 @@ from typing import Any
 
 from openai import OpenAI
 
-from shike.config import AppConfig
+from shike.config import AppConfig, resolve_llm_api_key
 
 logger = logging.getLogger(__name__)
 
@@ -154,11 +154,7 @@ def dedupe_by_llm(
     if len(items) <= 1:
         return items[:keep]
 
-    api_key = (
-        os.getenv("OPENAI_API_KEY", "").strip()
-        or os.getenv("DASHSCOPE_API_KEY", "").strip()
-        or config.llm.api_key
-    )
+    api_key = resolve_llm_api_key(config)
     base_url = os.getenv("OPENAI_BASE_URL", "").strip() or config.llm.base_url
     model = os.getenv("OPENAI_MODEL", "").strip() or config.llm.model
     if not api_key:

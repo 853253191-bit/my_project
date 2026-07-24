@@ -10,7 +10,7 @@ from typing import Any
 
 from openai import OpenAI
 
-from shike.config import AppConfig
+from shike.config import AppConfig, resolve_llm_api_key
 from shike.models.schemas import GenerateRequest
 
 PARSE_INTENT_SYSTEM = """你是食刻 App 的意图解析助手。根据用户一句话，提取做菜偏好，输出严格 JSON：
@@ -69,11 +69,7 @@ def _extract_json(text: str) -> dict[str, Any]:
 
 def parse_user_intent(config: AppConfig, text: str) -> dict[str, Any]:
     """调用 LLM 解析用户输入，返回 recommend / 表单回填结构。"""
-    api_key = (
-        os.getenv("OPENAI_API_KEY", "").strip()
-        or os.getenv("DASHSCOPE_API_KEY", "").strip()
-        or config.llm.api_key
-    )
+    api_key = resolve_llm_api_key(config)
     base_url = os.getenv("OPENAI_BASE_URL", "").strip() or config.llm.base_url
     model = os.getenv("OPENAI_MODEL", "").strip() or config.llm.model
     if not api_key:

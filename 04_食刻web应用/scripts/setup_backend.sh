@@ -165,6 +165,10 @@ WorkingDirectory=${BACKEND_DIR}
 # 【手动修改】可按机器规格调整 -w 参数（当前: ${GUNICORN_WORKERS}）
 Environment=PATH=${VENV_DIR}/bin
 Environment=PYTHONPATH=${BACKEND_DIR}/src
+Environment=LANG=C.UTF-8
+Environment=LC_ALL=C.UTF-8
+Environment=PYTHONIOENCODING=utf-8
+Environment=PYTHONUTF8=1
 EnvironmentFile=${ENV_FILE}
 ExecStart=${VENV_DIR}/bin/gunicorn -w ${GUNICORN_WORKERS} -k uvicorn.workers.UvicornWorker ${APP_MODULE} --bind ${BIND_HOST}:${BIND_PORT}
 Restart=always

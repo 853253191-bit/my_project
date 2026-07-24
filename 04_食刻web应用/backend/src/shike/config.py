@@ -86,14 +86,41 @@ def _load_toml(path: Path) -> dict[str, Any]:
     return tomllib.loads(path.read_text(encoding="utf-8"))
 
 
+# 部署模板里的占位符，不能当作有效 API Key
+_API_KEY_PLACEHOLDERS = frozenset({
+    "",
+    "请填写",
+    "你的API密钥",
+    "你的真实密钥",
+    "your-api-key",
+    "changeme",
+})
+
+
+def resolve_llm_api_key(cfg: AppConfig | None = None) -> str:
+    """按优先级读取可用 LLM Key，自动跳过「请填写」等占位符。"""
+    candidates = [
+        os.getenv("OPENAI_API_KEY", ""),
+        os.getenv("DASHSCOPE_API_KEY", ""),
+        (cfg.llm.api_key if cfg is not None else ""),
+    ]
+    for raw in candidates:
+        key = (raw or "").strip()
+        if not key or key in _API_KEY_PLACEHOLDERS:
+            continue
+        if key.startswith("你的") or key.startswith("请"):
+            continue
+        return key
+    return ""
+
+
 def _apply_env_overrides(cfg: AppConfig) -> AppConfig:
     data = cfg.model_dump()
-    if os.getenv("DASHSCOPE_API_KEY"):
-        data["llm"]["api_key"] = os.environ["DASHSCOPE_API_KEY"]
-        data["embedding"]["api_key"] = os.environ["DASHSCOPE_API_KEY"]
-    if os.getenv("OPENAI_API_KEY"):
-        data["llm"]["api_key"] = os.environ["OPENAI_API_KEY"]
-        data["embedding"]["api_key"] = os.environ["OPENAI_API_KEY"]
+    # 统一解析 Key，自动跳过「请填写」等占位符（避免无效 OPENAI_API_KEY 覆盖有效 DashScope）
+    api_key = resolve_llm_api_key(cfg)
+    if api_key:
+        data["llm"]["api_key"] = api_key
+        data["embedding"]["api_key"] = api_key
     if os.getenv("OPENAI_BASE_URL"):
         data["llm"]["base_url"] = os.environ["OPENAI_BASE_URL"]
         data["embedding"]["base_url"] = os.environ["OPENAI_BASE_URL"]
@@ -135,7 +162,7 @@ def resolve_path(relative: str) -> Path:
 
 
 def require_api_key(cfg: AppConfig) -> str:
-    key = cfg.llm.api_key or os.getenv("DASHSCOPE_API_KEY", "")
+    key = resolve_llm_api_key(cfg)
     if not key:
-        raise ConfigError("未配置 DASHSCOPE_API_KEY")
+        raise ConfigError("未配置 DASHSCOPE_API_KEY / OPENAI_API_KEY")
     return key

@@ -11,7 +11,7 @@ from typing import Any
 import chromadb
 from openai import OpenAI
 
-from shike.config import AppConfig, resolve_path
+from shike.config import AppConfig, resolve_path, resolve_llm_api_key
 
 logger = logging.getLogger(__name__)
 
@@ -32,16 +32,24 @@ class RecipeVectorStore:
         self._embed_client: OpenAI | None = None
         self._embed_model = ""
 
+    def close(self) -> None:
+        """释放 Chroma 连接，便于迁移时安全清空目录。"""
+        self._collection = None
+        self._client = None
+        self._embed_client = None
+        self._embed_model = ""
+
+    def _ensure_client(self):
+        if self._client is None:
+            self.chroma_path.mkdir(parents=True, exist_ok=True)
+            self._client = chromadb.PersistentClient(path=str(self.chroma_path))
+        return self._client
+
     def _ensure_embed_client(self) -> tuple[OpenAI, str]:
         if self._embed_client is not None:
             return self._embed_client, self._embed_model
         emb = self.config.embedding
-        api_key = (
-            os.getenv("OPENAI_API_KEY", "").strip()
-            or os.getenv("DASHSCOPE_API_KEY", "").strip()
-            or emb.api_key
-            or self.config.llm.api_key
-        )
+        api_key = resolve_llm_api_key(self.config)
         base_url = os.getenv("OPENAI_BASE_URL", "").strip() or emb.base_url
         model = (
             os.getenv("OPENAI_EMBEDDING_MODEL", "").strip()
@@ -63,8 +71,9 @@ class RecipeVectorStore:
 
     def get_collection(self):
         if self._collection is None:
+            client = self._ensure_client()
             # 与 migrate 一致：提高 sync_threshold，规避 Windows HNSW 持久化损坏
-            self._collection = self._client.get_or_create_collection(
+            self._collection = client.get_or_create_collection(
                 name=COLLECTION_NAME,
                 metadata={
                     "hnsw:space": "cosine",

@@ -9,6 +9,8 @@
 
 from __future__ import annotations
 
+import logging
+import time
 from contextlib import asynccontextmanager
 from typing import Any
 
@@ -48,6 +50,14 @@ _generator: RecipeGenerator | None = None
 _sessions: SessionManager | None = None
 _weather: WeatherService | None = None
 _recommender: HybridRecommender | None = None
+
+# 推荐接口请求日志（journalctl -u shike-backend 可见）
+logger = logging.getLogger("shike.api")
+if not logger.handlers:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    )
 
 # Swagger 分组顺序
 OPENAPI_TAGS = [
@@ -133,13 +143,38 @@ def create_app() -> FastAPI:
     @app.post("/api/recommend", response_model=RecommendResponse, tags=["推荐"])
     async def recommend(req: RecommendRequest) -> dict[str, Any]:
         """硬过滤（metadata）+ 向量语义检索（document）。"""
+        started = time.perf_counter()
+        filters = req.filters.model_dump(exclude_none=True)
         try:
-            return _get_recommender().recommend(
+            result = _get_recommender().recommend(
                 query_text=req.query_text,
-                filters=req.filters.model_dump(exclude_none=True),
+                filters=filters,
                 top_k=req.top_k,
             )
+            elapsed_ms = int((time.perf_counter() - started) * 1000)
+            titles = [
+                str(item.get("title") or "")
+                for item in (result.get("items") or [])
+                if isinstance(item, dict)
+            ]
+            logger.info(
+                "recommend ok | query=%r filters=%s titles=%s elapsed_ms=%s count=%s",
+                req.query_text,
+                filters,
+                titles,
+                elapsed_ms,
+                result.get("count", len(titles)),
+            )
+            return result
         except Exception as exc:  # noqa: BLE001
+            elapsed_ms = int((time.perf_counter() - started) * 1000)
+            logger.exception(
+                "recommend fail | query=%r filters=%s elapsed_ms=%s err=%s",
+                req.query_text,
+                filters,
+                elapsed_ms,
+                exc,
+            )
             raise HTTPException(500, f"推荐失败: {exc}") from exc
 
     @app.post("/api/parse_intent", response_model=IntentResponse, tags=["意图解析"])

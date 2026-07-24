@@ -59,7 +59,13 @@ class HybridRecommender:
         chroma_path = resolve_path(
             os.getenv("CHROMA_PATH", "") or self.config.rag.store_path
         )
-        migrate(db_path=db_path, chroma_path=chroma_path, batch_size=50)
+        # 必须先关闭已打开的 Chroma 连接，再清空目录，否则会报 readonly/dbmoved
+        self.store.close()
+        try:
+            migrate(db_path=db_path, chroma_path=chroma_path, batch_size=50)
+        finally:
+            # 迁移后重新打开
+            self.store = RecipeVectorStore(self.config)
 
     def _hit_to_item(self, hit: dict[str, Any]) -> dict[str, Any]:
         rid = str(hit.get("recipe_id") or hit.get("_chroma_id") or "")
