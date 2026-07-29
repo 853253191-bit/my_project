@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick, watch } from 'vue'
 import { useSessionStore } from '../stores/session'
+import { useWorkflowStore } from '../stores/workflow'
 import {
   parseIntent,
   recommend,
@@ -17,8 +18,10 @@ import FilterPanel from '../components/FilterPanel.vue'
 import RecommendationCard from '../components/RecommendationCard.vue'
 import ChatPanel from '../components/ChatPanel.vue'
 import FavoriteButton from '../components/FavoriteButton.vue'
+import WorkflowBar from '../components/WorkflowBar.vue'
 
 const store = useSessionStore()
+const workflow = useWorkflowStore()
 
 /** 今日饮食运势（页面加载时随机一条） */
 const FORTUNE_LINES = [
@@ -82,17 +85,24 @@ async function handleSend() {
 
   sending.value = true
   store.loading = true
+  workflow.send('SEND', text.slice(0, 40))
 
   try {
     // 1. Parse intent
     const parsed = await parseIntent(text)
     store.lastIntentText = text
     store.applyParsedIntent(parsed)
+    workflow.send('PARSE_OK', parsed.query_text || '')
 
     // 2. Recommend
     const resp = await recommend(store.queryText || text, store.filters, 5)
     store.setRecommendations(resp.items, resp.message)
     searchedOnce.value = true
+    if (!resp.count) {
+      workflow.send('RECOMMEND_EMPTY')
+    } else {
+      workflow.send('RECOMMEND_OK', `${resp.count} 道`)
+    }
 
     // 3. AI reply
     const tagParts = store.recognizedTags.map(t => `${t.value}`)
@@ -109,6 +119,7 @@ async function handleSend() {
       })
     }
   } catch (err) {
+    workflow.send('FAIL', err instanceof Error ? err.message : '搜索失败')
     chatHistory.value.push({ role: 'ai', text: '搜索出了点问题，请重试 😢' })
     console.error(err)
   } finally {
@@ -122,14 +133,17 @@ async function handleSpark() {
   chatHistory.value.push({ role: 'user', text: '🎲 没主意了？点我！' })
   sending.value = true
   store.loading = true
+  workflow.send('SPARK')
 
   try {
     const item = await getRandom()
     store.setRecommendations([item], '随机惊喜推荐')
     store.recognizedTags = []
     searchedOnce.value = true
+    workflow.send('RECOMMEND_OK', item.title)
     chatHistory.value.push({ role: 'ai', text: `来一道「${item.title}」试试？` })
   } catch (err) {
+    workflow.send('FAIL', err instanceof Error ? err.message : '随机推荐失败')
     chatHistory.value.push({ role: 'ai', text: '随机推荐暂时不可用，稍后再试呀' })
     console.error(err)
   } finally {
@@ -147,6 +161,7 @@ async function handleChangeOne() {
   })
 
   store.loading = true
+  workflow.send('CHANGE_ONE')
   try {
     const queryText = store.queryText || store.lastIntentText || ''
     const resp = await recommend(queryText, store.filters, 5)
@@ -154,11 +169,18 @@ async function handleChangeOne() {
     const fresh = resp.items.filter(i => !store.excludedIds.includes(i.id))
     if (fresh.length > 0) {
       store.setRecommendations(fresh, resp.message)
+      workflow.send('RECOMMEND_OK', `${fresh.length} 道`)
     } else {
       // No new items, just show what we have
       store.setRecommendations(resp.items, '没有更多了，这些也不错 👇')
+      if (resp.items.length) {
+        workflow.send('RECOMMEND_OK', '无更多新结果')
+      } else {
+        workflow.send('RECOMMEND_EMPTY')
+      }
     }
   } catch (err) {
+    workflow.send('FAIL', err instanceof Error ? err.message : '换一批失败')
     console.error(err)
   } finally {
     store.loading = false
@@ -172,6 +194,7 @@ async function handleDetail(item: RecommendItem) {
   detailLoading.value = true
   store.recipeContent = ''
   store.sources = []
+  workflow.send('OPEN_DETAIL', item.title)
 
   const recipeId = item.id && !String(item.id).startsWith('secret_') ? item.id : ''
 
@@ -187,12 +210,14 @@ async function handleDetail(item: RecommendItem) {
           title: detail.title,
           source_url: detail.source_url || '',
         }])
+        workflow.send('DETAIL_OK', detail.title)
         return
       } catch {
         // 库内无记录时继续 LLM 生成
       }
     }
 
+    workflow.send('GENERATE', item.title)
     const formData = {
       mood: store.filterForm.mood || '',
       taste: store.filterForm.taste || [],
@@ -218,11 +243,21 @@ async function handleDetail(item: RecommendItem) {
         store.appendContent(evt.data.content as string)
       }
     }
+    workflow.send('GENERATE_OK')
   } catch (err) {
     store.recipeContent = '生成失败，请重试'
+    workflow.send('FAIL', err instanceof Error ? err.message : '详情失败')
     console.error(err)
   } finally {
     detailLoading.value = false
+  }
+}
+
+/** 关闭详情弹窗并回退状态机 */
+function closeDetail() {
+  showDetail.value = false
+  if (['detail_loading', 'generating', 'detail_ready', 'error'].includes(workflow.phase)) {
+    workflow.send('CLOSE_DETAIL')
   }
 }
 
@@ -230,11 +265,18 @@ async function handleDetail(item: RecommendItem) {
 async function handleTagRemoved() {
   if (!store.queryText && !store.lastIntentText) return
   store.loading = true
+  workflow.send('CHANGE_ONE', '移除标签后重搜')
   try {
     const queryText = store.queryText || store.lastIntentText
     const resp = await recommend(queryText, store.filters, 5)
     store.setRecommendations(resp.items, resp.message)
+    if (!resp.count) {
+      workflow.send('RECOMMEND_EMPTY')
+    } else {
+      workflow.send('RECOMMEND_OK', `${resp.count} 道`)
+    }
   } catch (err) {
+    workflow.send('FAIL', err instanceof Error ? err.message : '重搜失败')
     console.error(err)
   } finally {
     store.loading = false
@@ -279,6 +321,8 @@ function resetAll() {
   searchedOnce.value = false
   chatHistory.value = []
   inputText.value = ''
+  showDetail.value = false
+  workflow.send('RESET')
 }
 
 // ===== Scroll chat to bottom =====
@@ -302,6 +346,9 @@ watch(chatHistory, () => {
     <h1>今天想吃点啥？🤔</h1>
     <p>✨ 直接聊聊，让食刻陪你挑一道合拍的小菜</p>
   </div>
+
+  <!-- 主流程状态流转条 -->
+  <WorkflowBar />
 
   <!-- 今日推荐横向滚动 -->
   <DailyRecommendations @detail="handleDetail" />
@@ -391,7 +438,7 @@ watch(chatHistory, () => {
 
   <!-- 详情弹窗 -->
   <Teleport to="body">
-    <div v-if="showDetail" class="detail-overlay" @click.self="showDetail = false">
+    <div v-if="showDetail" class="detail-overlay" @click.self="closeDetail">
       <div class="detail-modal">
         <div class="detail-header">
           <h2>食谱详情{{ detailItem?.title ? ` · ${detailItem.title}` : '' }}</h2>
@@ -402,7 +449,7 @@ watch(chatHistory, () => {
               :initial-favorited="detailItem.is_favorited"
               size="md"
             />
-            <button class="detail-close" @click="showDetail = false">关闭</button>
+            <button class="detail-close" @click="closeDetail">关闭</button>
           </div>
         </div>
         <div class="detail-body">
