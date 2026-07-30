@@ -1,0 +1,4 @@
+# 测试依赖（与生产 requirements.txt 分离）
+pytest>=8.0.0
+pytest-html>=4.0.0
+requests>=2.31.0

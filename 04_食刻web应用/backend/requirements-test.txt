@@ -1,4 +1,6 @@
 # 测试依赖（与生产 requirements.txt 分离）
+# 归档位置：test/04_mvp阶段测试/01_后端API测试/requirements-test.txt
+# 本文件保留兼容，内容与归档目录一致。
 pytest>=8.0.0
 pytest-html>=4.0.0
 requests>=2.31.0

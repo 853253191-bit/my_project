@@ -47,21 +47,33 @@ function formatTime(ts: number) {
 </script>
 
 <template>
-  <div class="workflow-bar" :class="{ collapsed: !expanded }">
+  <div class="workflow-bar" data-testid="workflow-bar" :class="{ collapsed: !expanded }">
     <div class="wb-header">
       <div class="wb-title-row">
         <span class="wb-badge">状态机</span>
-        <span class="wb-current">
-          当前：<strong>{{ workflow.phaseLabel }}</strong>
-          <code class="wb-phase-code">{{ workflow.phase }}</code>
+        <span class="wb-current" data-testid="workflow-current">
+          当前：<strong data-testid="workflow-phase-label">{{ workflow.phaseLabel }}</strong>
+          <code class="wb-phase-code" data-testid="workflow-phase">{{ workflow.phase }}</code>
         </span>
         <span v-if="workflow.lastError" class="wb-error" :title="workflow.lastError">
           {{ workflow.lastError }}
         </span>
       </div>
       <div class="wb-actions">
-        <button type="button" class="wb-btn" @click="workflow.clearHistory()">清空记录</button>
-        <button type="button" class="wb-btn" @click="expanded = !expanded">
+        <button
+          type="button"
+          class="wb-btn"
+          data-testid="workflow-clear"
+          @click="workflow.clearHistory()"
+        >
+          清空记录
+        </button>
+        <button
+          type="button"
+          class="wb-btn"
+          data-testid="workflow-toggle"
+          @click="expanded = !expanded"
+        >
           {{ expanded ? '收起' : '展开' }}
         </button>
       </div>

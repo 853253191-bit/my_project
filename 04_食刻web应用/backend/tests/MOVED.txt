@@ -1,0 +1,9 @@
+﻿用例已归档到：
+  test/04_mvp阶段测试/01_后端API测试/e2e_api/
+
+运行：
+  cd ../test/04_mvp阶段测试/01_后端API测试
+  ./run_tests.sh --smoke
+
+或仍从 backend 调用（薄包装）：
+  ./run_tests.sh --smoke

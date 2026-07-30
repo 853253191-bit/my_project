@@ -1,19 +1,24 @@
 # -*- coding: utf-8 -*-
-"""基础测试。"""
+"""Pipeline / 检索基础单元测试（原 e2e_api/test_basic.py）。"""
 
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
-BACKEND_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(BACKEND_ROOT / "src"))
+# backend 根（含 pipeline）+ backend/src（含 shike）
+_PROJECT = Path(__file__).resolve().parents[4]  # 04_食刻web应用
+_BACKEND = _PROJECT / "backend"
+for p in (_BACKEND, _BACKEND / "src"):
+    s = str(p)
+    if s not in sys.path:
+        sys.path.insert(0, s)
 
 from pipeline.clean import clean_recipes, validate_recipe
 from pipeline.seed_recipes import generate_seed_recipes
-from shike.rag.retriever import build_query
 from shike.db.repository import RecipeRepository
 from shike.rag.chunk import chunk_recipe
+from shike.rag.retriever import build_query
 
 
 def test_generate_seed_recipes_count():
@@ -44,6 +49,8 @@ def test_sqlite_upsert(tmp_path):
 
 
 def test_build_query():
-    q = build_query({"mood": "疲惫", "taste": ["清淡"], "servings": 2, "ingredients": ["鸡蛋"]})
+    q = build_query(
+        {"mood": "疲惫", "taste": ["清淡"], "servings": 2, "ingredients": ["鸡蛋"]}
+    )
     assert "疲惫" in q
     assert "鸡蛋" in q

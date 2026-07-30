@@ -36,30 +36,53 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div class="auth-page">
+  <div class="auth-page" data-testid="register-page">
     <h1 class="auth-title">注册食刻</h1>
     <p class="auth-sub">创建账号，收藏喜欢的菜并记录浏览历史</p>
     <form class="auth-form" @submit.prevent="onSubmit">
       <label>
         <span>用户名</span>
-        <input v-model="username" type="text" autocomplete="username" placeholder="3-32 个字符" />
+        <input
+          v-model="username"
+          data-testid="register-username"
+          type="text"
+          autocomplete="username"
+          placeholder="3-32 个字符"
+        />
       </label>
       <label>
         <span>邮箱</span>
-        <input v-model="email" type="email" autocomplete="email" placeholder="name@example.com" />
+        <input
+          v-model="email"
+          data-testid="register-email"
+          type="email"
+          autocomplete="email"
+          placeholder="name@example.com"
+        />
       </label>
       <label>
         <span>密码</span>
-        <input v-model="password" type="password" autocomplete="new-password" placeholder="至少 6 位" />
+        <input
+          v-model="password"
+          data-testid="register-password"
+          type="password"
+          autocomplete="new-password"
+          placeholder="至少 6 位"
+        />
       </label>
-      <p v-if="error" class="auth-error">{{ error }}</p>
-      <button class="auth-btn" type="submit" :disabled="submitting || auth.loading">
+      <p v-if="error" class="auth-error" data-testid="register-error">{{ error }}</p>
+      <button
+        class="auth-btn"
+        type="submit"
+        data-testid="register-submit"
+        :disabled="submitting || auth.loading"
+      >
         {{ submitting ? '注册中…' : '注册并登录' }}
       </button>
     </form>
     <p class="auth-switch">
       已有账号？
-      <router-link to="/login">去登录</router-link>
+      <router-link to="/login" data-testid="register-to-login">去登录</router-link>
     </p>
   </div>
 </template>

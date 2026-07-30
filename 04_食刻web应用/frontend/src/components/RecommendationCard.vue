@@ -91,6 +91,7 @@ function metaTags(item: RecommendItem) {
 <template>
   <div
     class="result-card anim-slide-up"
+    data-testid="recommend-card"
     :style="{ animationDelay: `${(animIndex ?? 0) * 0.1}s` }"
   >
     <div class="result-card-visual">
@@ -98,7 +99,7 @@ function metaTags(item: RecommendItem) {
     </div>
     <div class="result-card-body">
       <div class="result-card-title-row">
-        <div class="result-card-name">{{ item.title }}</div>
+        <div class="result-card-name" data-testid="recommend-card-title">{{ item.title }}</div>
         <FavoriteButton
           :recipe-id="item.id"
           :initial-favorited="item.is_favorited"
@@ -131,7 +132,14 @@ function metaTags(item: RecommendItem) {
         >
           踩
         </button>
-        <button class="btn-detail btn-pulse" type="button" @click="handleDetail">查看详情</button>
+        <button
+          class="btn-detail btn-pulse"
+          data-testid="btn-detail"
+          type="button"
+          @click="handleDetail"
+        >
+          查看详情
+        </button>
         <button
           class="btn-add btn-pulse"
           type="button"

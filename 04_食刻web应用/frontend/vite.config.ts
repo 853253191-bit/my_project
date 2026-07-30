@@ -9,6 +9,9 @@ const apiProxy = {
   '/api': {
     target: process.env.E2E_API_TARGET || 'http://118.178.131.84',
     changeOrigin: true,
+    // parse_intent / recommend 可能较慢，避免代理提前断开导致 Failed to fetch
+    timeout: 180_000,
+    proxyTimeout: 180_000,
   },
 }
 

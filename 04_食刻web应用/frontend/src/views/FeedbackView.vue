@@ -45,14 +45,14 @@ async function submit() {
 </script>
 
 <template>
-  <div class="page">
+  <div class="page" data-testid="feedback-page">
     <div class="card">
       <h1>意见反馈</h1>
       <p class="lead">
         使用中有不爽、想加的功能，或夸我们一句，都欢迎写下来。我们会定期整理并改进。
       </p>
 
-      <div v-if="done" class="ok">感谢反馈！我们已收到，会认真阅读～</div>
+      <div v-if="done" class="ok" data-testid="feedback-success">感谢反馈！我们已收到，会认真阅读～</div>
 
       <label class="field-label">反馈类型</label>
       <div class="cats">
@@ -62,6 +62,7 @@ async function submit() {
           type="button"
           class="cat"
           :class="{ on: category === c }"
+          :data-testid="`feedback-cat-${c}`"
           @click="category = c"
         >
           {{ c }}
@@ -72,6 +73,7 @@ async function submit() {
       <textarea
         id="fb-content"
         v-model="content"
+        data-testid="feedback-content"
         class="ta"
         rows="6"
         maxlength="2000"
@@ -83,6 +85,7 @@ async function submit() {
       <input
         id="fb-contact"
         v-model="contact"
+        data-testid="feedback-contact"
         class="inp"
         type="text"
         maxlength="120"
@@ -94,11 +97,12 @@ async function submit() {
       </p>
       <p v-else class="hint">未登录也可匿名提交。</p>
 
-      <p v-if="error" class="err">{{ error }}</p>
+      <p v-if="error" class="err" data-testid="feedback-error">{{ error }}</p>
 
       <button
         type="button"
         class="btn btn-primary submit"
+        data-testid="feedback-submit"
         :disabled="submitting"
         @click="submit"
       >

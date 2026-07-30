@@ -338,7 +338,7 @@ watch(chatHistory, () => {
 
 <template>
   <!-- Hero -->
-  <div class="hero">
+  <div class="hero" data-testid="home-hero">
     <div class="hero-meta">
       <span class="hero-greet">{{ greeting }}</span>
       <span class="hero-fortune" :title="fortuneTag">今日饮食运势 · {{ fortuneTag }}</span>
@@ -357,17 +357,23 @@ watch(chatHistory, () => {
   <MyRecipes @detail="handleDetail" />
 
   <!-- 对话交互区（视觉焦点） -->
-  <div class="chat-section">
+  <div class="chat-section" data-testid="chat-section">
     <div class="chat-title">直接告诉我你想吃什么</div>
     <div class="chat-hint">描述你的状态，我会自动识别并填好筛选条件</div>
 
     <!-- 对话历史 -->
-    <div v-if="chatHistory.length" class="chat-history" ref="chatHistoryRef">
+    <div
+      v-if="chatHistory.length"
+      class="chat-history"
+      data-testid="chat-history"
+      ref="chatHistoryRef"
+    >
       <div
         v-for="(msg, i) in chatHistory"
         :key="i"
         class="chat-bubble"
         :class="msg.role"
+        :data-testid="msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-ai'"
         v-html="msg.text"
       />
     </div>
@@ -376,6 +382,7 @@ watch(chatHistory, () => {
     <textarea
       ref="inputRef"
       class="chat-input input-pulse"
+      data-testid="chat-input"
       v-model="inputText"
       placeholder="今天想吃什么呀？告诉我你的状态～"
       rows="1"
@@ -385,13 +392,30 @@ watch(chatHistory, () => {
 
     <!-- 按钮行 -->
     <div class="chat-button-row">
-      <button class="btn-send btn-pulse" :disabled="sending" @click="handleSend">
+      <button
+        class="btn-send btn-pulse"
+        data-testid="btn-send"
+        :disabled="sending"
+        @click="handleSend"
+      >
         {{ sending ? '搜索中…' : '发送' }}
       </button>
-      <button class="btn-spark btn-pulse" :disabled="sending" @click="handleSpark">
+      <button
+        class="btn-spark btn-pulse"
+        data-testid="btn-spark"
+        :disabled="sending"
+        @click="handleSpark"
+      >
         <span>🎲 没主意了？点我！</span>
       </button>
-      <button class="btn-reset-chat btn-pulse" type="button" @click="resetAll">重置</button>
+      <button
+        class="btn-reset-chat btn-pulse"
+        data-testid="btn-reset"
+        type="button"
+        @click="resetAll"
+      >
+        重置
+      </button>
     </div>
 
     <!-- 已识别标签展示区 -->
@@ -401,12 +425,14 @@ watch(chatHistory, () => {
   <!-- 推荐结果 + 筛选条件 左右并排 -->
   <div class="split-row">
     <div class="split-main">
-      <div v-if="store.hasResults" class="results-section">
+      <div v-if="store.hasResults" class="results-section" data-testid="results-section">
         <div class="results-header">
-          <div class="section-title">🔍 为你找到 {{ store.recommendations.length }} 道合拍小菜</div>
+          <div class="section-title" data-testid="results-title">
+            🔍 为你找到 {{ store.recommendations.length }} 道合拍小菜
+          </div>
           <div v-if="store.recommendMessage" class="results-hint">{{ store.recommendMessage }}</div>
         </div>
-        <div v-if="store.loading" class="results-loading">加载中…</div>
+        <div v-if="store.loading" class="results-loading" data-testid="results-loading">加载中…</div>
         <template v-else>
           <RecommendationCard
             v-for="(item, idx) in store.recommendations"
@@ -419,7 +445,7 @@ watch(chatHistory, () => {
         </template>
       </div>
 
-      <div v-else class="results-panel">
+      <div v-else class="results-panel" data-testid="results-empty-panel">
         <div class="results-panel-title">推荐菜谱</div>
         <div class="results-panel-body">
           <template v-if="store.loading">加载中…</template>
@@ -438,10 +464,17 @@ watch(chatHistory, () => {
 
   <!-- 详情弹窗 -->
   <Teleport to="body">
-    <div v-if="showDetail" class="detail-overlay" @click.self="closeDetail">
-      <div class="detail-modal">
+    <div
+      v-if="showDetail"
+      class="detail-overlay"
+      data-testid="detail-overlay"
+      @click.self="closeDetail"
+    >
+      <div class="detail-modal" data-testid="detail-modal">
         <div class="detail-header">
-          <h2>食谱详情{{ detailItem?.title ? ` · ${detailItem.title}` : '' }}</h2>
+          <h2 data-testid="detail-title">
+            食谱详情{{ detailItem?.title ? ` · ${detailItem.title}` : '' }}
+          </h2>
           <div class="detail-header-actions">
             <FavoriteButton
               v-if="detailItem?.id"
@@ -449,12 +482,25 @@ watch(chatHistory, () => {
               :initial-favorited="detailItem.is_favorited"
               size="md"
             />
-            <button class="detail-close" @click="closeDetail">关闭</button>
+            <button class="detail-close" data-testid="detail-close" @click="closeDetail">
+              关闭
+            </button>
           </div>
         </div>
         <div class="detail-body">
-          <div v-if="detailLoading && !store.recipeContent" class="detail-loading">正在加载食谱…</div>
-          <div v-if="store.recipeContent" class="recipe-content" v-html="simpleMarkdown(store.recipeContent)" />
+          <div
+            v-if="detailLoading && !store.recipeContent"
+            class="detail-loading"
+            data-testid="detail-loading"
+          >
+            正在加载食谱…
+          </div>
+          <div
+            v-if="store.recipeContent"
+            class="recipe-content"
+            data-testid="recipe-content"
+            v-html="simpleMarkdown(store.recipeContent)"
+          />
 
           <!-- 对话微调面板 -->
           <ChatPanel v-if="store.sessionId && !detailLoading" :session-id="store.sessionId" />

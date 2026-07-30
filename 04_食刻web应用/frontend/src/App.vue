@@ -3,20 +3,20 @@
     <header class="app-header">
       <router-link to="/" class="logo">食<span>刻</span></router-link>
       <nav>
-        <router-link to="/" class="nav-link">首页</router-link>
-        <router-link v-if="auth.isLoggedIn" to="/favorites" class="nav-link">收藏</router-link>
-        <router-link v-if="auth.isLoggedIn" to="/history" class="nav-link">历史</router-link>
-        <router-link to="/about" class="nav-link">关于</router-link>
-        <router-link to="/feedback" class="nav-link">反馈</router-link>
+        <router-link to="/" class="nav-link" data-testid="nav-home">首页</router-link>
+        <router-link v-if="auth.isLoggedIn" to="/favorites" class="nav-link" data-testid="nav-favorites">收藏</router-link>
+        <router-link v-if="auth.isLoggedIn" to="/history" class="nav-link" data-testid="nav-history">历史</router-link>
+        <router-link to="/about" class="nav-link" data-testid="nav-about">关于</router-link>
+        <router-link to="/feedback" class="nav-link" data-testid="nav-feedback">反馈</router-link>
       </nav>
       <div class="nav-user">
         <template v-if="auth.isLoggedIn">
-          <span class="nav-name">{{ auth.displayName }}</span>
+          <span class="nav-name" data-testid="nav-user-name">{{ auth.displayName }}</span>
           <div class="nav-avatar" :title="auth.displayName">{{ auth.avatarLetter }}</div>
-          <button type="button" class="nav-logout" @click="logout">退出登录</button>
+          <button type="button" class="nav-logout" data-testid="nav-logout" @click="logout">退出登录</button>
         </template>
         <template v-else>
-          <router-link to="/login" class="nav-login">登录</router-link>
+          <router-link to="/login" class="nav-login" data-testid="nav-login">登录</router-link>
           <div class="nav-avatar guest">客</div>
         </template>
       </div>

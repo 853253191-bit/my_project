@@ -132,7 +132,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="today-section">
+  <div class="today-section" data-testid="daily-section">
     <div class="section-header">
       <div class="section-title">🔥 今日主厨精选</div>
       <div class="section-actions">

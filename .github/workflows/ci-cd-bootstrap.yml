@@ -82,6 +82,33 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+  ci_backend_unit:
+    name: CI - Backend Unit/Integration
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装后端依赖与测试依赖
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r "${APP_DIR}/backend/requirements.txt"
+          python -m pip install -r "${APP_DIR}/test/04_mvp阶段测试/02_后端单元集成/requirements-test.txt"
+
+      - name: 执行后端单元/集成测试
+        working-directory: ${{ env.APP_DIR }}/test/04_mvp阶段测试/02_后端单元集成
+        env:
+          PYTHONPATH: ${{ github.workspace }}/${{ env.APP_DIR }}/backend/src
+        run: python -m pytest -q
+
   ci_e2e_manual:
     name: CI - Playwright E2E (Manual)
     runs-on: ubuntu-latest

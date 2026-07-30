@@ -39,5 +39,6 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-testpaths = ["tests"]
+# API 黑盒用例已归档到 test/04_mvp阶段测试/01_后端API测试/e2e_api
+testpaths = ["../test/04_mvp阶段测试/01_后端API测试/e2e_api"]
 asyncio_mode = "auto"

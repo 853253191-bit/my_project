@@ -19,15 +19,17 @@ from typing import Any
 import pytest
 import requests
 
+# e2e_api → 01_后端API测试 → 04_mvp阶段测试 → test → 04_食刻web应用
 TESTS_DIR = Path(__file__).resolve().parent
+API_TEST_ROOT = TESTS_DIR.parent
+PROJECT_ROOT = API_TEST_ROOT.parent.parent.parent
+BACKEND_DIR = PROJECT_ROOT / "backend"
 FIXTURES_DIR = TESTS_DIR / "fixtures"
 REPORTS_DIR = TESTS_DIR / "reports"
-BACKEND_DIR = TESTS_DIR.parent
 
 
-def _load_dotenv_test() -> None:
-    """可选加载 backend/.env.test（不覆盖已有环境变量）。"""
-    env_path = BACKEND_DIR / ".env.test"
+def _load_dotenv_file(env_path: Path) -> None:
+    """加载单个 .env 文件（不覆盖已有环境变量）。"""
     if not env_path.is_file():
         return
     for line in env_path.read_text(encoding="utf-8").splitlines():
@@ -39,6 +41,12 @@ def _load_dotenv_test() -> None:
         val = val.strip().strip('"').strip("'")
         if key and key not in os.environ:
             os.environ[key] = val
+
+
+def _load_dotenv_test() -> None:
+    """优先加载测试目录 .env.test，其次 backend/.env.test。"""
+    _load_dotenv_file(API_TEST_ROOT / ".env.test")
+    _load_dotenv_file(BACKEND_DIR / ".env.test")
 
 
 _load_dotenv_test()
