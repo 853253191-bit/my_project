@@ -53,6 +53,7 @@ from shike.services.generator import RecipeGenerator
 from shike.services.intent import parse_user_intent
 from shike.services.recipe_format import format_recipe_markdown, ingredient_names
 from shike.services.recommend import HybridRecommender, merge_user_preferences
+from shike.services.request_log import log_api
 from shike.services.session import SessionManager
 from shike.services.weather import WeatherService
 
@@ -196,29 +197,33 @@ def create_app() -> FastAPI:
                 favorite_ids=favorite_ids,
             )
             elapsed_ms = int((time.perf_counter() - started) * 1000)
-            titles = [
-                str(item.get("title") or "")
-                for item in (result.get("items") or [])
-                if isinstance(item, dict)
+            items = [
+                item for item in (result.get("items") or []) if isinstance(item, dict)
             ]
-            logger.info(
-                "recommend ok | user=%s query=%r filters=%s titles=%s elapsed_ms=%s count=%s",
-                (user or {}).get("id"),
-                req.query_text,
-                filters,
-                titles,
-                elapsed_ms,
-                result.get("count", len(titles)),
+            titles = [str(item.get("title") or "") for item in items]
+            recipe_ids = [str(item.get("id") or "") for item in items if item.get("id")]
+            log_api(
+                logger,
+                "recommend",
+                "ok",
+                recipe_ids=recipe_ids,
+                user_id=(user or {}).get("id"),
+                extra=(
+                    f"query={req.query_text!r} filters={filters} "
+                    f"titles={titles} elapsed_ms={elapsed_ms} count={result.get('count', len(titles))}"
+                ),
             )
             return result
         except Exception as exc:  # noqa: BLE001
             elapsed_ms = int((time.perf_counter() - started) * 1000)
-            logger.exception(
-                "recommend fail | query=%r filters=%s elapsed_ms=%s err=%s",
-                req.query_text,
-                filters,
-                elapsed_ms,
-                exc,
+            log_api(
+                logger,
+                "recommend",
+                "fail",
+                user_id=(user or {}).get("id"),
+                extra=f"query={req.query_text!r} filters={filters} elapsed_ms={elapsed_ms} err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
             )
             raise HTTPException(500, f"推荐失败: {exc}") from exc
 
@@ -240,16 +245,28 @@ def create_app() -> FastAPI:
                 comment=req.comment,
                 client_ip=client_ip,
             )
-            logger.info(
-                "feedback ok | id=%s recipe_id=%s rating=%s query=%r",
-                fid,
-                req.recipe_id,
-                req.rating,
-                req.query_text,
+            log_api(
+                logger,
+                "feedback",
+                "ok",
+                session_id=req.session_id,
+                recipe_id=req.recipe_id,
+                user_id=req.user_id,
+                extra=f"id={fid} rating={req.rating} query={req.query_text!r}",
             )
             return {"ok": True, "id": fid, "message": "反馈已记录"}
         except Exception as exc:  # noqa: BLE001
-            logger.exception("feedback fail | recipe_id=%s err=%s", req.recipe_id, exc)
+            log_api(
+                logger,
+                "feedback",
+                "fail",
+                session_id=req.session_id,
+                recipe_id=req.recipe_id,
+                user_id=req.user_id,
+                extra=f"err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
+            )
             raise HTTPException(500, f"反馈提交失败: {exc}") from exc
 
     @app.post(
@@ -281,10 +298,10 @@ def create_app() -> FastAPI:
                 client_ip=client_ip,
             )
             logger.info(
-                "site_feedback ok | id=%s category=%s user=%s",
+                "site_feedback ok | phase=site_feedback session_id=- recipe_id=- user=%s | id=%s category=%s",
+                user.get("id") if user else "-",
                 fid,
                 category,
-                user.get("username") if user else "-",
             )
             return {
                 "ok": True,
@@ -292,7 +309,10 @@ def create_app() -> FastAPI:
                 "message": "感谢反馈，我们会认真阅读",
             }
         except Exception as exc:  # noqa: BLE001
-            logger.exception("site_feedback fail | err=%s", exc)
+            logger.exception(
+                "site_feedback fail | phase=site_feedback session_id=- recipe_id=- err=%s",
+                exc,
+            )
             raise HTTPException(500, f"反馈提交失败: {exc}") from exc
 
     @app.get(
@@ -342,8 +362,23 @@ def create_app() -> FastAPI:
         if _config is None:
             raise HTTPException(500, "应用未初始化")
         try:
-            return parse_user_intent(_config, req.text)
+            result = parse_user_intent(_config, req.text)
+            log_api(
+                logger,
+                "parse_intent",
+                "ok",
+                extra=f"text={req.text[:80]!r} query_text={result.get('query_text')!r}",
+            )
+            return result
         except Exception as exc:  # noqa: BLE001
+            log_api(
+                logger,
+                "parse_intent",
+                "fail",
+                extra=f"text={req.text[:80]!r} err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
+            )
             raise HTTPException(500, f"意图解析失败: {exc}") from exc
 
     @app.get("/api/random", response_model=RecipeItem, tags=["推荐"])
@@ -355,8 +390,17 @@ def create_app() -> FastAPI:
                 "SELECT * FROM recipes ORDER BY RANDOM() LIMIT 1"
             ).fetchone()
         if not row:
+            log_api(logger, "random", "fail", extra="reason=empty_db", level=logging.WARNING)
             raise HTTPException(404, "暂无菜谱数据")
         recipe = repo._row_to_dict(row)
+        recipe_id = str(recipe.get("id") or "")
+        log_api(
+            logger,
+            "random",
+            "ok",
+            recipe_id=recipe_id,
+            extra=f"title={recipe.get('title')!r}",
+        )
         return {
             "id": recipe.get("id"),
             "title": recipe.get("title"),
@@ -393,11 +437,32 @@ def create_app() -> FastAPI:
             data = _get_recommender().daily_recommendations(
                 limit=limit, exclude_ids=excluded or None
             )
+            items = data.get("items") or []
+            recipe_ids = [
+                str(item.get("id") or "")
+                for item in items
+                if isinstance(item, dict) and item.get("id")
+            ]
+            log_api(
+                logger,
+                "daily",
+                "ok",
+                recipe_ids=recipe_ids,
+                extra=f"limit={limit} exclude={len(excluded)} count={data.get('count', len(recipe_ids))}",
+            )
             return JSONResponse(
                 content=data,
                 headers={"Cache-Control": "no-store"},
             )
         except Exception as exc:  # noqa: BLE001
+            log_api(
+                logger,
+                "daily",
+                "fail",
+                extra=f"err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
+            )
             raise HTTPException(500, f"每日推荐失败: {exc}") from exc
 
     # ---------- 原有 SQLite 平铺列搜索 / 生成 / 对话 ----------
@@ -464,6 +529,14 @@ def create_app() -> FastAPI:
         """按 ID 直出库内详情（含 Markdown），并创建可微调会话；不调 LLM。"""
         recipe = _get_repo().get_by_id(recipe_id)
         if not recipe:
+            log_api(
+                logger,
+                "detail",
+                "fail",
+                recipe_id=recipe_id,
+                extra="reason=not_found",
+                level=logging.WARNING,
+            )
             raise HTTPException(404, "菜谱不存在")
 
         content = format_recipe_markdown(recipe)
@@ -477,6 +550,15 @@ def create_app() -> FastAPI:
         )
         _get_sessions().add_message(session.session_id, "assistant", content)
         _get_sessions().update_recipe(session.session_id, content, sources)
+
+        log_api(
+            logger,
+            "detail",
+            "ok",
+            session_id=session.session_id,
+            recipe_id=str(recipe.get("id") or recipe_id),
+            extra=f"title={recipe.get('title')!r} chars={len(content)}",
+        )
 
         return {
             "id": str(recipe.get("id") or recipe_id),
@@ -495,6 +577,12 @@ def create_app() -> FastAPI:
 
     @app.post("/api/recipes/generate", tags=["对话"])
     async def generate_recipe(req: GenerateRequest):
+        log_api(
+            logger,
+            "generate",
+            "accept",
+            extra=f"free_text={req.free_text!r} city={req.city!r}",
+        )
         return StreamingResponse(
             _get_generator().generate_stream(req),
             media_type="text/event-stream",
@@ -503,6 +591,13 @@ def create_app() -> FastAPI:
 
     @app.post("/api/chat", tags=["对话"])
     async def chat(req: ChatRequest):
+        log_api(
+            logger,
+            "chat",
+            "accept",
+            session_id=req.session_id,
+            extra=f"message={req.message[:80]!r}",
+        )
         return StreamingResponse(
             _get_generator().chat_stream(req),
             media_type="text/event-stream",

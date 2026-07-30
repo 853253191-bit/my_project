@@ -1,0 +1,12 @@
+node_modules/
+.pytest_cache/
+__pycache__/
+*.pyc
+playwright-report/
+test-results/
+blob-report/
+.playwright/
+.env.test
+reports/junit_*.xml
+reports/report_*.html
+reports/fail_*.json

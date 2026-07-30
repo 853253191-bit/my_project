@@ -24,9 +24,9 @@ async def add_favorite(
     store = get_user_store()
     fid = store.add_favorite(user["id"], body.recipe_id)
     logger.info(
-        "favorite add | user_id=%s recipe_id=%s favorite_id=%s",
-        user["id"],
+        "favorite add | phase=favorite session_id=- recipe_id=%s user=%s favorite_id=%s",
         body.recipe_id,
+        user["id"],
         fid,
     )
     return {"favorite_id": fid, "recipe_id": body.recipe_id}
@@ -41,7 +41,11 @@ async def remove_favorite(
     ok = get_user_store().remove_favorite(user["id"], recipe_id)
     if not ok:
         raise HTTPException(404, "未找到收藏记录")
-    logger.info("favorite remove | user_id=%s recipe_id=%s", user["id"], recipe_id)
+    logger.info(
+        "favorite remove | phase=favorite session_id=- recipe_id=%s user=%s",
+        recipe_id,
+        user["id"],
+    )
     return {"message": "已取消收藏"}
 
 

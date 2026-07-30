@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from collections.abc import AsyncIterator
 from typing import Any
 
@@ -15,8 +16,11 @@ from shike.models.schemas import ChatRequest, GenerateRequest
 from shike.rag.prompts import build_chat_prompt, build_generate_prompt
 from shike.rag.retriever import RecipeRetriever, build_query
 from shike.services.intent import form_to_dict, merge_chat_intent
+from shike.services.request_log import log_api
 from shike.services.session import SessionManager
 from shike.services.weather import WeatherService
+
+logger = logging.getLogger("shike.generator")
 
 
 class RecipeGenerator:
@@ -56,23 +60,62 @@ class RecipeGenerator:
 
         session = self.sessions.create(form_context=form)
         messages = build_generate_prompt(form, context, weather)
+        sid = session.session_id
 
-        yield self._sse("session", {"session_id": session.session_id})
+        log_api(
+            logger,
+            "generate",
+            "start",
+            session_id=sid,
+            recipe_ids=recipe_ids,
+            extra=f"query={query!r} free_text={req.free_text!r}",
+        )
+
+        yield self._sse("session", {"session_id": sid})
         if sources:
             yield self._sse("sources", {"recipes": sources})
 
         full_text = ""
-        async for chunk in self._stream_llm(messages):
-            full_text += chunk
-            yield self._sse("recipe_chunk", {"type": "content", "content": chunk})
+        try:
+            async for chunk in self._stream_llm(messages):
+                full_text += chunk
+                yield self._sse("recipe_chunk", {"type": "content", "content": chunk})
+        except Exception as exc:  # noqa: BLE001
+            log_api(
+                logger,
+                "generate",
+                "fail",
+                session_id=sid,
+                recipe_ids=recipe_ids,
+                extra=f"err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
+            )
+            raise
 
-        self.sessions.add_message(session.session_id, "assistant", full_text)
-        self.sessions.update_recipe(session.session_id, full_text, sources)
-        yield self._sse("done", {"session_id": session.session_id})
+        self.sessions.add_message(sid, "assistant", full_text)
+        self.sessions.update_recipe(sid, full_text, sources)
+        log_api(
+            logger,
+            "generate",
+            "ok",
+            session_id=sid,
+            recipe_ids=recipe_ids,
+            extra=f"chars={len(full_text)}",
+        )
+        yield self._sse("done", {"session_id": sid})
 
     async def chat_stream(self, req: ChatRequest) -> AsyncIterator[str]:
         session = self.sessions.get(req.session_id)
         if not session:
+            log_api(
+                logger,
+                "chat",
+                "fail",
+                session_id=req.session_id,
+                extra="reason=session_missing",
+                level=logging.WARNING,
+            )
             yield self._sse("error", {"message": "会话不存在或已过期"})
             return
 
@@ -80,21 +123,52 @@ class RecipeGenerator:
         query = build_query(form, extra=req.message)
         context, recipe_ids = self.retriever.retrieve(query, form=form)
         sources = self._build_sources(recipe_ids)
+        sid = req.session_id
 
-        self.sessions.add_message(req.session_id, "user", req.message)
+        log_api(
+            logger,
+            "chat",
+            "start",
+            session_id=sid,
+            recipe_ids=recipe_ids,
+            extra=f"message={req.message[:80]!r}",
+        )
+
+        self.sessions.add_message(sid, "user", req.message)
         messages = build_chat_prompt(session.form_context, session.last_recipe, req.message, context)
 
         if sources:
             yield self._sse("sources", {"recipes": sources})
 
         full_text = ""
-        async for chunk in self._stream_llm(messages):
-            full_text += chunk
-            yield self._sse("recipe_chunk", {"type": "content", "content": chunk})
+        try:
+            async for chunk in self._stream_llm(messages):
+                full_text += chunk
+                yield self._sse("recipe_chunk", {"type": "content", "content": chunk})
+        except Exception as exc:  # noqa: BLE001
+            log_api(
+                logger,
+                "chat",
+                "fail",
+                session_id=sid,
+                recipe_ids=recipe_ids,
+                extra=f"err={exc}",
+                level=logging.ERROR,
+                exc_info=True,
+            )
+            raise
 
-        self.sessions.add_message(req.session_id, "assistant", full_text)
-        self.sessions.update_recipe(req.session_id, full_text, sources)
-        yield self._sse("done", {"session_id": req.session_id})
+        self.sessions.add_message(sid, "assistant", full_text)
+        self.sessions.update_recipe(sid, full_text, sources)
+        log_api(
+            logger,
+            "chat",
+            "ok",
+            session_id=sid,
+            recipe_ids=recipe_ids,
+            extra=f"chars={len(full_text)}",
+        )
+        yield self._sse("done", {"session_id": sid})
 
     async def _stream_llm(self, messages: list[dict[str, str]]) -> AsyncIterator[str]:
         stream = await self._client.chat.completions.create(

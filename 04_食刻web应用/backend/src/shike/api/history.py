@@ -25,9 +25,9 @@ async def add_history(
         user["id"], body.recipe_id, body.query_text
     )
     logger.info(
-        "history add | user_id=%s recipe_id=%s history_id=%s",
-        user["id"],
+        "history add | phase=history session_id=- recipe_id=%s user=%s history_id=%s",
         body.recipe_id,
+        user["id"],
         hid,
     )
     return {"history_id": hid}
