@@ -1,0 +1,169 @@
+name: Shike CI/CD Bootstrap
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+    inputs:
+      run_api_smoke:
+        description: "是否执行后端 API 冒烟（调用现有 run_tests.sh）"
+        required: false
+        type: boolean
+        default: false
+      run_deploy:
+        description: "是否执行部署骨架（需要先配置 Secrets）"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: shike-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci_frontend_e2e:
+    name: CI - Frontend Build + E2E
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: |
+            frontend/package-lock.json
+            test/04_mvp阶段测试/03_端到端测试/package-lock.json
+
+      - name: 安装前端依赖
+        working-directory: frontend
+        run: npm ci
+
+      - name: 安装 E2E 依赖
+        working-directory: test/04_mvp阶段测试/03_端到端测试
+        run: npm ci
+
+      - name: 安装 Playwright 浏览器
+        working-directory: test/04_mvp阶段测试/03_端到端测试
+        run: npx playwright install --with-deps chromium
+
+      - name: 构建前端
+        working-directory: frontend
+        run: npm run build
+
+      - name: 执行 E2E（基于现有脚本）
+        working-directory: frontend
+        env:
+          CI: "true"
+        run: npm run test:e2e
+
+      - name: 上传 Playwright 报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: test/04_mvp阶段测试/03_端到端测试/playwright-report
+          if-no-files-found: warn
+          retention-days: 14
+
+  ci_api_smoke_manual:
+    name: CI - API Smoke (Manual)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && inputs.run_api_smoke
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装后端测试依赖
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r test/04_mvp阶段测试/01_后端API测试/requirements-test.txt
+
+      - name: 执行冒烟测试（复用归档脚本）
+        working-directory: test/04_mvp阶段测试/01_后端API测试
+        env:
+          TEST_BASE_URL: ${{ secrets.SHIKE_TEST_BASE_URL != '' && secrets.SHIKE_TEST_BASE_URL || 'http://118.178.131.84' }}
+          TEST_HOME_URL: ${{ secrets.SHIKE_TEST_HOME_URL }}
+        run: |
+          chmod +x ./run_tests.sh
+          ./run_tests.sh --smoke --report
+
+      - name: 上传 API 测试报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-smoke-report
+          path: test/04_mvp阶段测试/01_后端API测试/e2e_api/reports
+          if-no-files-found: warn
+          retention-days: 14
+
+  cd_deploy_manual:
+    name: CD - Deploy Skeleton (Manual)
+    runs-on: ubuntu-latest
+    needs: [ci_frontend_e2e]
+    if: github.event_name == 'workflow_dispatch' && inputs.run_deploy
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: 构建前端产物
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: 准备 SSH Key
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          if [[ -z "${DEPLOY_SSH_KEY}" ]]; then
+            echo "缺少 DEPLOY_SSH_KEY，跳过部署。"
+            exit 1
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "${DEPLOY_SSH_KEY}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: 部署前端 dist（初步版本）
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          if [[ -z "${DEPLOY_HOST}" || -z "${DEPLOY_USER}" || -z "${DEPLOY_PATH}" ]]; then
+            echo "缺少 DEPLOY_HOST / DEPLOY_USER / DEPLOY_PATH，无法部署。"
+            exit 1
+          fi
+          ssh-keyscan -H "${DEPLOY_HOST}" >> ~/.ssh/known_hosts
+          rsync -az --delete frontend/dist/ "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/"
+          echo "部署完成：${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}"
