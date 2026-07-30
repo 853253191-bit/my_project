@@ -1,0 +1,2 @@
+# 前端单元测试（Vitest）位于 frontend/tests/unit/
+# 运行：cd frontend && npm run test:unit

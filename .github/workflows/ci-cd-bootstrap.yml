@@ -66,6 +66,10 @@ jobs:
         working-directory: ${{ env.APP_DIR }}/frontend
         run: npm ci
 
+      - name: 前端单元测试（Vitest）
+        working-directory: ${{ env.APP_DIR }}/frontend
+        run: npm run test:unit
+
       - name: 构建前端
         working-directory: ${{ env.APP_DIR }}/frontend
         run: npm run build

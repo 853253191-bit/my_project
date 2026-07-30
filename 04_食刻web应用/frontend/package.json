@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "npm --prefix \"../test/04_mvp阶段测试/03_端到端测试\" run test:e2e",
+    "test:e2e:ui": "npm --prefix \"../test/04_mvp阶段测试/03_端到端测试\" run test:e2e:ui",
+    "test:e2e:headed": "npm --prefix \"../test/04_mvp阶段测试/03_端到端测试\" run test:e2e:headed"
   },
   "dependencies": {
     "pinia": "^2.3.0",
@@ -14,9 +19,13 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@pinia/testing": "^0.1.7",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.11",
+    "happy-dom": "^20.11.1",
     "typescript": "~5.7.2",
     "vite": "^6.0.5",
+    "vitest": "^4.1.10",
     "vue-tsc": "^2.2.0"
   }
 }
